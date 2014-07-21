@@ -1,0 +1,53 @@
+//
+//  AnalyLogin.m
+//  GuessGame
+//
+//  Created by wanglipeng on 13-8-21.
+//  Copyright (c) 2013年 wanglipeng. All rights reserved.
+//
+
+#import "AnalyUserInfo.h"
+#import "GameInfo.h"
+
+@implementation AnalyUserInfo
+- (void)analyData:(NSDictionary *)dic
+{
+    GameInfo *userGameInfo = [GameInfo SharedInstance];
+    if ([[dic objectForKey:@"response"] intValue] == 1) {
+//        NSLog(@"%@,%@,%@,%@,%@,%@,%@,%d,%d,%d,%d,%d,%d",
+//              [dic objectForKey:@"name"],
+//              [dic objectForKey:@"nickname"],
+//              [dic objectForKey:@"sex"],
+//              [dic objectForKey:@"money"],
+//              [dic objectForKey:@"email"],
+//              [dic objectForKey:@"home"],
+//              [dic objectForKey:@"tel"],
+//              [[dic objectForKey:@"level"] intValue],
+//              [[dic objectForKey:@"exp"] intValue],
+//              [[dic objectForKey:@"score"] intValue],
+//              [[dic objectForKey:@"weekscore"] intValue],
+//              [[dic objectForKey:@"num"] intValue],
+//              [[dic objectForKey:@"rightnum"] intValue]);
+
+        userGameInfo.name = [dic objectForKey:@"name"];
+        userGameInfo.nickname = [dic objectForKey:@"nickname"];
+        userGameInfo.sex = [dic objectForKey:@"sex"];
+        userGameInfo.money = [dic objectForKey:@"money"];
+        userGameInfo.email = [dic objectForKey:@"email"];
+        userGameInfo.home = [dic objectForKey:@"home"];
+        userGameInfo.tel = [dic objectForKey:@"tel"];
+        
+        userGameInfo.birth = [[dic objectForKey:@"birthday"] intValue];
+        userGameInfo.level = [[dic objectForKey:@"level"] intValue];
+        userGameInfo.exp = [[dic objectForKey:@"exp"] intValue];
+        userGameInfo.score = [[dic objectForKey:@"score"] intValue];
+        userGameInfo.weekscore = [[dic objectForKey:@"weekscore"] intValue];
+        userGameInfo.num = [[dic objectForKey:@"num"] intValue];
+        userGameInfo.rightnum = [[dic objectForKey:@"rightnum"] intValue];
+    }
+    else
+    {
+        NSLog(@"AnalyUserInfo response 0");
+    }
+}
+@end

@@ -1,0 +1,51 @@
+//
+//  AnalyGame.m
+//  GuessGame
+//
+//  Created by wanglipeng on 13-8-21.
+//  Copyright (c) 2013年 wanglipeng. All rights reserved.
+//
+
+#import "AnalyGame.h"
+#import "Common.h"
+#import "Config.h"
+#import "BasePlayView.h"
+#import "AnalyPlayBase.h"
+
+@implementation AnalyGame
+
+- (void)analyData:(NSDictionary *)dic
+{
+    NSLog(@"gametype 解析");
+    Singleton *sl = [Singleton SharedInstance];
+
+    int gametype = [[dic objectForKey:@"gametype"] intValue];
+    int playtype = [[dic objectForKey:@"playtype"] intValue];
+    int index = [[dic objectForKey:@"id"] intValue];
+    NSLog(@"gametype==%d,playtype==%d,questionIndex==%d",gametype,playtype,index);
+
+    [BaseGD SharedInstance].gameType = gametype;
+    [BaseGD SharedInstance].playType = playtype;
+    [BaseGD SharedInstance].questionIndex = index;
+
+    //gametype解析
+//    BaseAnalyData *dbManager = [sl.gameInterfaceDic valueForKey:[NSString stringWithFormat:@"%d",gametype]];
+//    [dbManager analyData:dic];
+        
+    //playType解析
+    //NSString *playTypeStr = [NSString stringWithFormat:@"%d",playtype];
+#warning change
+    NSString *playTypeStr = [NSString keyWithGame:gametype play:playtype];
+    AnalyPlayBase *analyPlayData = [sl.playInterfaceDic valueForKey:playTypeStr];
+    if (analyPlayData) {
+        id data = [analyPlayData analyPlayData:dic];
+        BasePlayView *playView = [sl.playViewDic valueForKey:playTypeStr];
+        [playView updatePlayView:data];
+    }
+    else
+    {
+        NSLog(@"没找到该类型游戏数据解析对象！！");
+    }
+}
+
+@end

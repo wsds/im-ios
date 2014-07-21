@@ -1,0 +1,125 @@
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/%E5%B9%BF%E5%91%8A%E5%BA%94%E7%94%A8%E9%A1%B9%E7%9B%AE/!svn/ver/265/trunk/IOS/ADGame/GuessGame/Class/Lib/ASI
+END
+ASIHTTPRequest.m
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/svn/%E5%B9%BF%E5%91%8A%E5%BA%94%E7%94%A8%E9%A1%B9%E7%9B%AE/!svn/ver/265/trunk/IOS/ADGame/GuessGame/Class/Lib/ASI/ASIHTTPRequest.m
+END
+ASICacheDelegate.h
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/%E5%B9%BF%E5%91%8A%E5%BA%94%E7%94%A8%E9%A1%B9%E7%9B%AE/!svn/ver/265/trunk/IOS/ADGame/GuessGame/Class/Lib/ASI/ASICacheDelegate.h
+END
+ASINetworkQueue.h
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/svn/%E5%B9%BF%E5%91%8A%E5%BA%94%E7%94%A8%E9%A1%B9%E7%9B%AE/!svn/ver/265/trunk/IOS/ADGame/GuessGame/Class/Lib/ASI/ASINetworkQueue.h
+END
+ASIDataDecompressor.h
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/svn/%E5%B9%BF%E5%91%8A%E5%BA%94%E7%94%A8%E9%A1%B9%E7%9B%AE/!svn/ver/265/trunk/IOS/ADGame/GuessGame/Class/Lib/ASI/ASIDataDecompressor.h
+END
+ASIAuthenticationDialog.h
+K 25
+svn:wc:ra_dav:version-url
+V 139
+/svn/%E5%B9%BF%E5%91%8A%E5%BA%94%E7%94%A8%E9%A1%B9%E7%9B%AE/!svn/ver/265/trunk/IOS/ADGame/GuessGame/Class/Lib/ASI/ASIAuthenticationDialog.h
+END
+ASIProgressDelegate.h
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/svn/%E5%B9%BF%E5%91%8A%E5%BA%94%E7%94%A8%E9%A1%B9%E7%9B%AE/!svn/ver/265/trunk/IOS/ADGame/GuessGame/Class/Lib/ASI/ASIProgressDelegate.h
+END
+ASIDownloadCache.m
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/%E5%B9%BF%E5%91%8A%E5%BA%94%E7%94%A8%E9%A1%B9%E7%9B%AE/!svn/ver/265/trunk/IOS/ADGame/GuessGame/Class/Lib/ASI/ASIDownloadCache.m
+END
+ASINetworkQueue.m
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/svn/%E5%B9%BF%E5%91%8A%E5%BA%94%E7%94%A8%E9%A1%B9%E7%9B%AE/!svn/ver/265/trunk/IOS/ADGame/GuessGame/Class/Lib/ASI/ASINetworkQueue.m
+END
+ASIDataDecompressor.m
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/svn/%E5%B9%BF%E5%91%8A%E5%BA%94%E7%94%A8%E9%A1%B9%E7%9B%AE/!svn/ver/265/trunk/IOS/ADGame/GuessGame/Class/Lib/ASI/ASIDataDecompressor.m
+END
+ASIAuthenticationDialog.m
+K 25
+svn:wc:ra_dav:version-url
+V 139
+/svn/%E5%B9%BF%E5%91%8A%E5%BA%94%E7%94%A8%E9%A1%B9%E7%9B%AE/!svn/ver/265/trunk/IOS/ADGame/GuessGame/Class/Lib/ASI/ASIAuthenticationDialog.m
+END
+ASIFormDataRequest.h
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/svn/%E5%B9%BF%E5%91%8A%E5%BA%94%E7%94%A8%E9%A1%B9%E7%9B%AE/!svn/ver/265/trunk/IOS/ADGame/GuessGame/Class/Lib/ASI/ASIFormDataRequest.h
+END
+ASIFormDataRequest.m
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/svn/%E5%B9%BF%E5%91%8A%E5%BA%94%E7%94%A8%E9%A1%B9%E7%9B%AE/!svn/ver/265/trunk/IOS/ADGame/GuessGame/Class/Lib/ASI/ASIFormDataRequest.m
+END
+ASIInputStream.h
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/svn/%E5%B9%BF%E5%91%8A%E5%BA%94%E7%94%A8%E9%A1%B9%E7%9B%AE/!svn/ver/265/trunk/IOS/ADGame/GuessGame/Class/Lib/ASI/ASIInputStream.h
+END
+ASIHTTPRequestConfig.h
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/svn/%E5%B9%BF%E5%91%8A%E5%BA%94%E7%94%A8%E9%A1%B9%E7%9B%AE/!svn/ver/265/trunk/IOS/ADGame/GuessGame/Class/Lib/ASI/ASIHTTPRequestConfig.h
+END
+ASIInputStream.m
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/svn/%E5%B9%BF%E5%91%8A%E5%BA%94%E7%94%A8%E9%A1%B9%E7%9B%AE/!svn/ver/265/trunk/IOS/ADGame/GuessGame/Class/Lib/ASI/ASIInputStream.m
+END
+ASIHTTPRequestDelegate.h
+K 25
+svn:wc:ra_dav:version-url
+V 138
+/svn/%E5%B9%BF%E5%91%8A%E5%BA%94%E7%94%A8%E9%A1%B9%E7%9B%AE/!svn/ver/265/trunk/IOS/ADGame/GuessGame/Class/Lib/ASI/ASIHTTPRequestDelegate.h
+END
+ASIDataCompressor.h
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/%E5%B9%BF%E5%91%8A%E5%BA%94%E7%94%A8%E9%A1%B9%E7%9B%AE/!svn/ver/265/trunk/IOS/ADGame/GuessGame/Class/Lib/ASI/ASIDataCompressor.h
+END
+ASIHTTPRequest.h
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/svn/%E5%B9%BF%E5%91%8A%E5%BA%94%E7%94%A8%E9%A1%B9%E7%9B%AE/!svn/ver/265/trunk/IOS/ADGame/GuessGame/Class/Lib/ASI/ASIHTTPRequest.h
+END
+ASIDownloadCache.h
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/%E5%B9%BF%E5%91%8A%E5%BA%94%E7%94%A8%E9%A1%B9%E7%9B%AE/!svn/ver/265/trunk/IOS/ADGame/GuessGame/Class/Lib/ASI/ASIDownloadCache.h
+END
+ASIDataCompressor.m
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/%E5%B9%BF%E5%91%8A%E5%BA%94%E7%94%A8%E9%A1%B9%E7%9B%AE/!svn/ver/265/trunk/IOS/ADGame/GuessGame/Class/Lib/ASI/ASIDataCompressor.m
+END

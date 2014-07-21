@@ -1,0 +1,36 @@
+//
+//  Params4Http.m
+//  t0218_httpRequest
+//
+//  Created by Admin on 13-2-21.
+//  Copyright (c) 2013年 tt. All rights reserved.
+//
+
+#import "Params4Http.h"
+
+@implementation Params4Http
+
+- (id)initWithUrl:(NSString *)url params:(NSDictionary *)params tag:(NSInteger)tag needLogin:(BOOL)needLogin needDefalutsHud:(BOOL)needDefalutsHud defalutHudText:(NSString *)defalutHudText
+{
+    self = [super init];
+    if (self) {
+        // Custom initialization
+        self.url = url;
+        self.params = params;
+        self.tag = tag;
+        self.needLogin = needLogin;
+        self.needDefalutsHud = needDefalutsHud;
+        self.defalutHudText = defalutHudText;
+    }
+    return self;
+}
+
+
+- (void)dealloc{
+    [_url release];
+    [_defalutHudText release];
+    [_params release];
+    [super dealloc];
+}
+
+@end

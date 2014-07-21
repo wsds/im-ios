@@ -1,0 +1,29 @@
+//
+//  AnalyGameImage.m
+//  GuessGame
+//
+//  Created by wanglipeng on 13-8-21.
+//  Copyright (c) 2013年 wanglipeng. All rights reserved.
+//
+
+#import "AnalyVoicePlay1.h"
+#import "Common.h"
+#import "Config.h"
+#import "VoicePlay1_DM.h"
+
+@implementation AnalyVoicePlay1
+
+- (id)analyPlayData:(NSDictionary *)dic
+{
+    NSLog(@"音频类题解析 问答题");
+    NSString *question = [dic objectForKey:@"question"];
+    NSString *music = [dic objectForKey:@"music"];
+    NSArray *answer = [dic objectForKey:@"answer"];
+    VoicePlay1_DM *voiceDM = [BaseGD SharedInstance].voicePlay1_data;
+    voiceDM.question = question;
+    voiceDM.musicUrl = music;
+    voiceDM.answer_ary = answer;
+    return voiceDM;
+}
+
+@end

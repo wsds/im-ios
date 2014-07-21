@@ -1,0 +1,14 @@
+//
+//  AnalyTextPlay3.h
+//  GuessGame
+//
+//  Created by wanglipeng on 13-9-27.
+//  Copyright (c) 2013年 wanglipeng. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+#import "AnalyPlayBase.h"
+
+@interface AnalyTextPlay3 : AnalyPlayBase
+
+@end

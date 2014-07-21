@@ -1,0 +1,48 @@
+//
+//  AnalyMail.m
+//  GuessGame
+//
+//  Created by wanglipeng on 13-8-21.
+//  Copyright (c) 2013年 wanglipeng. All rights reserved.
+//
+
+#import "AnalyMail.h"
+#import "Common.h"
+#import "Config.h"
+#import "MailData.h"
+#import "MailDM.h"
+#import "MailView.h"
+
+@implementation AnalyMail
+
+- (void)analyData:(NSDictionary *)dic
+{
+    Singleton *sl = [Singleton SharedInstance];
+    
+    if ([[dic valueForKey:@"act"] isEqualToString:@"receive"]) {
+        MailDM *mail = [MailDM SharedInstance];
+        [mail.receivedMail_ary  removeAllObjects];
+        
+        NSArray *mail_ary = [dic valueForKey:@"allemail"];
+        [mail_ary enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+            NSDictionary *subDic = (NSDictionary *)obj;
+            int uid = [[subDic valueForKey:@"id"] intValue];
+            int to_uid = [[subDic valueForKey:@"to_uid"] intValue];
+            NSString *content = [subDic valueForKey:@"content"];
+            NSString *sendtime = [subDic valueForKey:@"sendtime"];
+            NSLog(@"uid==%d to_uid==%d content==%@",uid,to_uid,content);
+            MailData *reMail = [[MailData alloc] init];
+            reMail.uid = uid;
+            reMail.to_uid = to_uid;
+            reMail.content = content;
+            reMail.sendtime = sendtime;
+            [mail.receivedMail_ary  addObject:reMail];
+            [reMail release];
+        }];
+
+        MailView *mailView = [sl.sysViewDic valueForKey:[NSString stringWithFormat:@"%d",SP_Mail]];
+        [mailView updateView:mail];
+    }
+}
+
+@end

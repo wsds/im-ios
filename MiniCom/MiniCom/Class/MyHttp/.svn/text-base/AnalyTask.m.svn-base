@@ -1,0 +1,29 @@
+//
+//  AnalyTask.m
+//  GuessGame
+//
+//  Created by wanglipeng on 13-8-29.
+//  Copyright (c) 2013年 wanglipeng. All rights reserved.
+//
+
+#import "AnalyTask.h"
+#import "Config.h"
+#import "Singleton.h"
+#import "TaskDM.h"
+#import "TaskView.h"
+
+@implementation AnalyTask
+- (void)analyData:(NSDictionary *)dic
+{
+    Singleton *sl = [Singleton SharedInstance];
+
+    TaskDM *task = [TaskDM SharedInstance];
+    
+    task.count = [[dic valueForKey:@"count"] intValue];
+    task.level = [[dic valueForKey:@"level"] intValue];
+    task.levelcount = [[dic valueForKey:@"levelcount"] intValue];
+
+    TaskView *taskView = [sl.sysViewDic valueForKey:[NSString stringWithFormat:@"%d",SP_Task]];
+    [taskView updateView:task];
+}
+@end

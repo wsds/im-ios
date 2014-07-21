@@ -1,0 +1,25 @@
+//
+//  AnalyTextPlay3.m
+//  GuessGame
+//
+//  Created by wanglipeng on 13-9-27.
+//  Copyright (c) 2013年 wanglipeng. All rights reserved.
+//
+
+#import "AnalyTextPlay3.h"
+#import "Common.h"
+#import "Config.h"
+#import "TextPlay3_DM.h"
+
+@implementation AnalyTextPlay3
+- (id)analyPlayData:(NSDictionary *)dic
+{
+    NSLog(@"文字类题解析 填空题");
+    NSString *question = [dic objectForKey:@"question"];
+    NSString *answer = [dic objectForKey:@"answer"];
+    TextPlay3_DM *textDM = [BaseGD SharedInstance].textPlay3_data;
+    textDM.question = question;
+    textDM.answer = answer;
+    return textDM;
+}
+@end

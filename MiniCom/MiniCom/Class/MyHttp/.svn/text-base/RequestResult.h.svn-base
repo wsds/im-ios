@@ -1,0 +1,17 @@
+//
+//  BaseResult.h
+//  t0218_httpRequest
+//
+//  Created by Admin on 13-2-21.
+//  Copyright (c) 2013年 tt. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+
+@interface RequestResult : NSObject
+
+@property (strong, nonatomic) id myData;
+@property (nonatomic) BOOL isSuccess;
+@property (nonatomic) NSInteger errorCode,tag;
+@property (strong, nonatomic) NSString *message;
+@end

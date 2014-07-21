@@ -1,0 +1,20 @@
+//
+//  Params4Http.h
+//  t0218_httpRequest
+//
+//  Created by Admin on 13-2-21.
+//  Copyright (c) 2013年 tt. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+
+@interface Params4Http : NSObject
+
+@property (strong, nonatomic) NSString *url,*defalutHudText;
+@property (strong, nonatomic) NSDictionary *params;
+@property (nonatomic) NSInteger tag;
+@property (nonatomic) BOOL needLogin,needDefalutsHud,needDebug;
+
+- (id)initWithUrl:(NSString *)url params:(NSDictionary *)params tag:(NSInteger)tag needLogin:(BOOL)needLogin needDefalutsHud:(BOOL)needDefalutsHud defalutHudText:(NSString *)defalutHudText;
+
+@end

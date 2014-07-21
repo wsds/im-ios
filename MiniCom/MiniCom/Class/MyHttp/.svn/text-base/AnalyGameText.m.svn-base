@@ -1,0 +1,25 @@
+//
+//  AnalyGameImage.m
+//  GuessGame
+//
+//  Created by wanglipeng on 13-8-21.
+//  Copyright (c) 2013年 wanglipeng. All rights reserved.
+//
+
+#import "AnalyGameImage.h"
+#import "Common.h"
+#import "Config.h"
+
+@implementation AnalyGameText
+
+- (void)analyData:(NSDictionary *)dic
+{
+    NSLog(@"文字类题解析");
+//    NSString *question = [dic objectForKey:@"question"];
+//    NSArray *answer = [dic objectForKey:@"answer"];
+//    TextGameDM *textDM = [BaseGD SharedInstance].textGDM;
+//    textDM.question = question;
+//    textDM.answer = answer;
+}
+
+@end

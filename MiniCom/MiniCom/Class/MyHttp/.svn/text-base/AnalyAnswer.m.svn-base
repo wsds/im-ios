@@ -1,0 +1,18 @@
+//
+//  AnalyAnswer.m
+//  GuessGame
+//
+//  Created by wanglipeng on 13-9-3.
+//  Copyright (c) 2013年 wanglipeng. All rights reserved.
+//
+
+#import "AnalyAnswer.h"
+#import "CheckAnswerDM.h"
+
+@implementation AnalyAnswer
+- (void)analyData:(NSDictionary *)dic
+{
+    CheckAnswerDM *answer = [CheckAnswerDM SharedInstance];
+    answer.response = [dic valueForKey:@"response"];
+}
+@end

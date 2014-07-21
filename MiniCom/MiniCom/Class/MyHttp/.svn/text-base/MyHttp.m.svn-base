@@ -1,0 +1,203 @@
+//
+//  MyHttp.m
+//  t0218_httpRequest
+//
+//  Created by tt on 13-2-18.
+//  Copyright (c) 2013年 tt. All rights reserved.
+//
+
+#import "MyHttp.h"
+#import "Config.h"
+#import "Common.h"
+#import "NSString+Custom.h"
+#import "SecurityUtil.h"
+
+#define TimeOutSeconds 7;
+
+@implementation MyHttp
+
+- (void)dealloc{
+    NSLog(@"%s",__func__);
+    [super dealloc];
+}
+
+- (id)init
+{
+    self = [super init];
+    if (self) {
+        
+    }
+    return self;
+}
+
+#pragma mark -
+#pragma mark MBProgressHUDDelegate methods
+
+- (void)clearHud {
+    // Remove HUD from screen when the HUD was hidded
+    if (self.needHud) {
+        if (_hud) {
+            [_hud setHidden:YES];
+            [_hud removeFromSuperview];
+            [_hud release];
+            _hud = nil;
+        }
+    }
+}
+
+//POST
+- (void)startPostServerType:(int)type request:(NSDictionary *)dic delegate:(id<MyHttpDelegate>)delegate tag:(int)tag{
+    //
+    NSLog(@"startPostRequest severType==%d tag==%d", type, tag);
+    if (dic) {
+        self.delegate = delegate;
+        self.viewContr = (UIViewController *)delegate;
+        self.needHud = YES;
+        if (_needHud) {
+            self.hud = [[MBProgressHUD alloc] initWithView:self.viewContr.view];
+            _hud.dimBackground = YES;
+            _hud.removeFromSuperViewOnHide = YES;
+            _hud.labelText = @"正在处理中...";
+            [self.viewContr.view addSubview:_hud];
+            [_hud show:YES];
+            //
+        }
+        NSString *urlStr = @"";
+        NSMutableDictionary *reqDic = [NSMutableDictionary dictionaryWithDictionary:dic];
+
+        self.serverType = type;
+        switch (self.serverType) {
+            case SM_Download:
+                urlStr =  URL_DownloadServer;
+                break;
+            case SM_Login:
+                urlStr =  URL_LoginServer;
+                break;
+            case SM_Game:
+                urlStr =  URL_GameServer;
+                AccountDM *account = [AccountDM SharedInstance];
+                [reqDic setValue:[NSString stringWithFormat:@"%d",account.account_id] forKey:@"id"];
+                [reqDic setValue: account.macAddress forKey:@"mac"];
+                [reqDic setValue: account.sessionId forKey:@"sessionid"];                
+                break;
+            default:
+                break;
+        }
+        dispatch_async(dispatch_get_global_queue(0, 0), ^{
+            NSLog(@"URL==%@",urlStr);
+            __block ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:urlStr]];
+            request.timeOutSeconds = TimeOutSeconds;
+            request.numberOfTimesToRetryOnTimeout = 1;
+            request.delegate = self;
+            request.tag = tag;
+            // 解析传值
+            [reqDic enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+                NSLog(@"postV/K %@==%@==",key,obj);
+                NSString *codeStr = [SecurityUtil encodeBase64String:obj];
+                [request setPostValue:codeStr forKey:key];
+            }];
+            [request startAsynchronous];
+        });
+        //
+        [self retain];
+    }
+    else
+    {
+        NSLog(@"http postDic nil");
+    }
+}
+
+- (void)requestFailed:(ASIHTTPRequest *)request{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self clearHud];
+        [Common alert4error:@"requestFailed 网络不给力 或者 服务器错误"];
+        [self release];
+    });
+}
+
+//回调
+- (void)requestFinished:(ASIHTTPRequest *)request{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self clearHud];
+        
+        NSString *str_r = [request responseString];
+        //str_r = [NSString UTF8StrToStr:str_r];
+        //NSLog(@"\n-----ResultStr==%@",str_r);
+        
+        NSString *codeStr = [SecurityUtil decodeBase64String:str_r];
+        NSLog(@"返回串解码后==%@==",codeStr);
+
+        //解析数据
+        [self setResultFromRequest:request];
+        
+        //如果需要 回调
+        if (_delegate) {
+            if ([_delegate respondsToSelector:@selector(isSuccessEqualsTrue:)]) {
+                [_delegate isSuccessEqualsTrue:request];
+            }
+        }
+        [self release];
+    });
+}
+
+- (void)setResultFromRequest:(ASIHTTPRequest *)request{
+    switch (self.serverType) {
+        case SM_Download:
+            NSLog(@"setResultFromRequest SM_Download");
+            NSDictionary *dic = [MyHttp getDicFromRequest:request];
+            BaseAnalyData *dbManager = [[Singleton SharedInstance].downLoadInterfaceDic valueForKey:[NSString stringWithFormat:@"%d",DST_GetV]];
+            if (dbManager) {
+                [dbManager analyData:dic];
+                //回调
+            }
+            else
+            {
+                NSLog(@"download 未找到 解析dbManager nil");
+            }
+            break;
+        case SM_Login:
+            NSLog(@"setResultFromRequest SM_Login");
+            break;
+        case SM_Game:
+        {
+            NSLog(@"setResultFromRequest SM_Game");
+            //记录时间戳 发送心跳判断用
+            [AccountDM SharedInstance].lastRequestDate = [NSDate date];
+            
+            //解析数据
+            NSDictionary *dic = [MyHttp getDicFromRequest:request];
+            int system = [[dic valueForKey:@"system"] intValue];
+            NSLog(@"game server Request system==%d",system);
+            BaseAnalyData *dbManager = [[Singleton SharedInstance].sysInterfaceDic valueForKey:[NSString stringWithFormat:@"%d",system]];
+            if (dbManager) {
+                [dbManager analyData:dic];
+            }
+            else
+            {
+                NSLog(@"game 未找到 解析dbManager nil");
+            }
+        }
+            break;
+        default:
+            break;
+    }
+}
+
+///////////
+
+//转换
++ (NSDictionary *)getDicFromRequest:(ASIHTTPRequest *)request{
+    NSString *str_r = [request responseString];
+    //str_r = [NSString UTF8StrToStr:str_r];
+    NSLog(@"\n-----ResultStr==%@",str_r);
+    
+    NSString *codeStr = [SecurityUtil decodeBase64String:str_r];
+    //NSLog(@"\n-----code Str==%@",codeStr);
+    
+    //NSDictionary *dic = [str_r objectFromJSONString];
+    NSDictionary *dic = [codeStr objectFromJSONString];
+    NSLog(@"\n--FromRequestResult Dic==%@",dic);
+    return dic;
+}
+
+@end

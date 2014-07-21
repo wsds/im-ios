@@ -1,0 +1,269 @@
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/%E5%B9%BF%E5%91%8A%E5%BA%94%E7%94%A8%E9%A1%B9%E7%9B%AE/!svn/ver/268/trunk/IOS/ADGame/GuessGame/Class/Lib/MyHttp
+END
+BaseAnalyData.h
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/%E5%B9%BF%E5%91%8A%E5%BA%94%E7%94%A8%E9%A1%B9%E7%9B%AE/!svn/ver/265/trunk/IOS/ADGame/GuessGame/Class/Lib/MyHttp/BaseAnalyData.h
+END
+AnalyTask.m
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/%E5%B9%BF%E5%91%8A%E5%BA%94%E7%94%A8%E9%A1%B9%E7%9B%AE/!svn/ver/265/trunk/IOS/ADGame/GuessGame/Class/Lib/MyHttp/AnalyTask.m
+END
+RequestResult.m
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/%E5%B9%BF%E5%91%8A%E5%BA%94%E7%94%A8%E9%A1%B9%E7%9B%AE/!svn/ver/265/trunk/IOS/ADGame/GuessGame/Class/Lib/MyHttp/RequestResult.m
+END
+AnalyGame.h
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/%E5%B9%BF%E5%91%8A%E5%BA%94%E7%94%A8%E9%A1%B9%E7%9B%AE/!svn/ver/265/trunk/IOS/ADGame/GuessGame/Class/Lib/MyHttp/AnalyGame.h
+END
+BaseAnalyData.m
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/%E5%B9%BF%E5%91%8A%E5%BA%94%E7%94%A8%E9%A1%B9%E7%9B%AE/!svn/ver/265/trunk/IOS/ADGame/GuessGame/Class/Lib/MyHttp/BaseAnalyData.m
+END
+AnalyGameImage.h
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/%E5%B9%BF%E5%91%8A%E5%BA%94%E7%94%A8%E9%A1%B9%E7%9B%AE/!svn/ver/265/trunk/IOS/ADGame/GuessGame/Class/Lib/MyHttp/AnalyGameImage.h
+END
+AnalyGame.m
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/%E5%B9%BF%E5%91%8A%E5%BA%94%E7%94%A8%E9%A1%B9%E7%9B%AE/!svn/ver/265/trunk/IOS/ADGame/GuessGame/Class/Lib/MyHttp/AnalyGame.m
+END
+AnalyGameImage.m
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/%E5%B9%BF%E5%91%8A%E5%BA%94%E7%94%A8%E9%A1%B9%E7%9B%AE/!svn/ver/265/trunk/IOS/ADGame/GuessGame/Class/Lib/MyHttp/AnalyGameImage.m
+END
+AnalyMail.h
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/%E5%B9%BF%E5%91%8A%E5%BA%94%E7%94%A8%E9%A1%B9%E7%9B%AE/!svn/ver/265/trunk/IOS/ADGame/GuessGame/Class/Lib/MyHttp/AnalyMail.h
+END
+AnalyMail.m
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/%E5%B9%BF%E5%91%8A%E5%BA%94%E7%94%A8%E9%A1%B9%E7%9B%AE/!svn/ver/265/trunk/IOS/ADGame/GuessGame/Class/Lib/MyHttp/AnalyMail.m
+END
+AnalyUserInfo.h
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/%E5%B9%BF%E5%91%8A%E5%BA%94%E7%94%A8%E9%A1%B9%E7%9B%AE/!svn/ver/265/trunk/IOS/ADGame/GuessGame/Class/Lib/MyHttp/AnalyUserInfo.h
+END
+AnalyTextPlay1.h
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/%E5%B9%BF%E5%91%8A%E5%BA%94%E7%94%A8%E9%A1%B9%E7%9B%AE/!svn/ver/265/trunk/IOS/ADGame/GuessGame/Class/Lib/MyHttp/AnalyTextPlay1.h
+END
+AnalyTextPlay2.h
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/%E5%B9%BF%E5%91%8A%E5%BA%94%E7%94%A8%E9%A1%B9%E7%9B%AE/!svn/ver/265/trunk/IOS/ADGame/GuessGame/Class/Lib/MyHttp/AnalyTextPlay2.h
+END
+AnalyTextPlay3.h
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/%E5%B9%BF%E5%91%8A%E5%BA%94%E7%94%A8%E9%A1%B9%E7%9B%AE/!svn/ver/265/trunk/IOS/ADGame/GuessGame/Class/Lib/MyHttp/AnalyTextPlay3.h
+END
+AnalyUserInfo.m
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/%E5%B9%BF%E5%91%8A%E5%BA%94%E7%94%A8%E9%A1%B9%E7%9B%AE/!svn/ver/265/trunk/IOS/ADGame/GuessGame/Class/Lib/MyHttp/AnalyUserInfo.m
+END
+AnalyAnswer.h
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/svn/%E5%B9%BF%E5%91%8A%E5%BA%94%E7%94%A8%E9%A1%B9%E7%9B%AE/!svn/ver/265/trunk/IOS/ADGame/GuessGame/Class/Lib/MyHttp/AnalyAnswer.h
+END
+AnalyTextPlay1.m
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/%E5%B9%BF%E5%91%8A%E5%BA%94%E7%94%A8%E9%A1%B9%E7%9B%AE/!svn/ver/265/trunk/IOS/ADGame/GuessGame/Class/Lib/MyHttp/AnalyTextPlay1.m
+END
+AnalySign.h
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/%E5%B9%BF%E5%91%8A%E5%BA%94%E7%94%A8%E9%A1%B9%E7%9B%AE/!svn/ver/265/trunk/IOS/ADGame/GuessGame/Class/Lib/MyHttp/AnalySign.h
+END
+AnalyPlayBase.h
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/%E5%B9%BF%E5%91%8A%E5%BA%94%E7%94%A8%E9%A1%B9%E7%9B%AE/!svn/ver/265/trunk/IOS/ADGame/GuessGame/Class/Lib/MyHttp/AnalyPlayBase.h
+END
+MyHttp.h
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/%E5%B9%BF%E5%91%8A%E5%BA%94%E7%94%A8%E9%A1%B9%E7%9B%AE/!svn/ver/265/trunk/IOS/ADGame/GuessGame/Class/Lib/MyHttp/MyHttp.h
+END
+AnalyTextPlay2.m
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/%E5%B9%BF%E5%91%8A%E5%BA%94%E7%94%A8%E9%A1%B9%E7%9B%AE/!svn/ver/265/trunk/IOS/ADGame/GuessGame/Class/Lib/MyHttp/AnalyTextPlay2.m
+END
+AnalyTextPlay3.m
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/%E5%B9%BF%E5%91%8A%E5%BA%94%E7%94%A8%E9%A1%B9%E7%9B%AE/!svn/ver/265/trunk/IOS/ADGame/GuessGame/Class/Lib/MyHttp/AnalyTextPlay3.m
+END
+AnalyAnswer.m
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/svn/%E5%B9%BF%E5%91%8A%E5%BA%94%E7%94%A8%E9%A1%B9%E7%9B%AE/!svn/ver/265/trunk/IOS/ADGame/GuessGame/Class/Lib/MyHttp/AnalyAnswer.m
+END
+AnalySign.m
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/%E5%B9%BF%E5%91%8A%E5%BA%94%E7%94%A8%E9%A1%B9%E7%9B%AE/!svn/ver/265/trunk/IOS/ADGame/GuessGame/Class/Lib/MyHttp/AnalySign.m
+END
+AnalyPlayBase.m
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/%E5%B9%BF%E5%91%8A%E5%BA%94%E7%94%A8%E9%A1%B9%E7%9B%AE/!svn/ver/265/trunk/IOS/ADGame/GuessGame/Class/Lib/MyHttp/AnalyPlayBase.m
+END
+MyHttp.m
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/%E5%B9%BF%E5%91%8A%E5%BA%94%E7%94%A8%E9%A1%B9%E7%9B%AE/!svn/ver/268/trunk/IOS/ADGame/GuessGame/Class/Lib/MyHttp/MyHttp.m
+END
+AnalyVoicePlay1.h
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/svn/%E5%B9%BF%E5%91%8A%E5%BA%94%E7%94%A8%E9%A1%B9%E7%9B%AE/!svn/ver/265/trunk/IOS/ADGame/GuessGame/Class/Lib/MyHttp/AnalyVoicePlay1.h
+END
+AnalyVoicePlay2.h
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/svn/%E5%B9%BF%E5%91%8A%E5%BA%94%E7%94%A8%E9%A1%B9%E7%9B%AE/!svn/ver/265/trunk/IOS/ADGame/GuessGame/Class/Lib/MyHttp/AnalyVoicePlay2.h
+END
+AnalyGameText.h
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/%E5%B9%BF%E5%91%8A%E5%BA%94%E7%94%A8%E9%A1%B9%E7%9B%AE/!svn/ver/265/trunk/IOS/ADGame/GuessGame/Class/Lib/MyHttp/AnalyGameText.h
+END
+AnalyVoicePlay1.m
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/svn/%E5%B9%BF%E5%91%8A%E5%BA%94%E7%94%A8%E9%A1%B9%E7%9B%AE/!svn/ver/265/trunk/IOS/ADGame/GuessGame/Class/Lib/MyHttp/AnalyVoicePlay1.m
+END
+AnalyVoicePlay2.m
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/svn/%E5%B9%BF%E5%91%8A%E5%BA%94%E7%94%A8%E9%A1%B9%E7%9B%AE/!svn/ver/265/trunk/IOS/ADGame/GuessGame/Class/Lib/MyHttp/AnalyVoicePlay2.m
+END
+Params4Http.h
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/svn/%E5%B9%BF%E5%91%8A%E5%BA%94%E7%94%A8%E9%A1%B9%E7%9B%AE/!svn/ver/265/trunk/IOS/ADGame/GuessGame/Class/Lib/MyHttp/Params4Http.h
+END
+AnalyGameText.m
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/%E5%B9%BF%E5%91%8A%E5%BA%94%E7%94%A8%E9%A1%B9%E7%9B%AE/!svn/ver/265/trunk/IOS/ADGame/GuessGame/Class/Lib/MyHttp/AnalyGameText.m
+END
+AnalyVersion.h
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/svn/%E5%B9%BF%E5%91%8A%E5%BA%94%E7%94%A8%E9%A1%B9%E7%9B%AE/!svn/ver/265/trunk/IOS/ADGame/GuessGame/Class/Lib/MyHttp/AnalyVersion.h
+END
+Params4Http.m
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/svn/%E5%B9%BF%E5%91%8A%E5%BA%94%E7%94%A8%E9%A1%B9%E7%9B%AE/!svn/ver/265/trunk/IOS/ADGame/GuessGame/Class/Lib/MyHttp/Params4Http.m
+END
+AnalyImagePlay1.h
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/svn/%E5%B9%BF%E5%91%8A%E5%BA%94%E7%94%A8%E9%A1%B9%E7%9B%AE/!svn/ver/265/trunk/IOS/ADGame/GuessGame/Class/Lib/MyHttp/AnalyImagePlay1.h
+END
+AnalyVersion.m
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/svn/%E5%B9%BF%E5%91%8A%E5%BA%94%E7%94%A8%E9%A1%B9%E7%9B%AE/!svn/ver/265/trunk/IOS/ADGame/GuessGame/Class/Lib/MyHttp/AnalyVersion.m
+END
+AnalyImagePlay2.h
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/svn/%E5%B9%BF%E5%91%8A%E5%BA%94%E7%94%A8%E9%A1%B9%E7%9B%AE/!svn/ver/265/trunk/IOS/ADGame/GuessGame/Class/Lib/MyHttp/AnalyImagePlay2.h
+END
+AnalyImagePlay3.h
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/svn/%E5%B9%BF%E5%91%8A%E5%BA%94%E7%94%A8%E9%A1%B9%E7%9B%AE/!svn/ver/265/trunk/IOS/ADGame/GuessGame/Class/Lib/MyHttp/AnalyImagePlay3.h
+END
+AnalyImagePlay1.m
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/svn/%E5%B9%BF%E5%91%8A%E5%BA%94%E7%94%A8%E9%A1%B9%E7%9B%AE/!svn/ver/265/trunk/IOS/ADGame/GuessGame/Class/Lib/MyHttp/AnalyImagePlay1.m
+END
+AnalyImagePlay2.m
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/svn/%E5%B9%BF%E5%91%8A%E5%BA%94%E7%94%A8%E9%A1%B9%E7%9B%AE/!svn/ver/265/trunk/IOS/ADGame/GuessGame/Class/Lib/MyHttp/AnalyImagePlay2.m
+END
+AnalyImagePlay3.m
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/svn/%E5%B9%BF%E5%91%8A%E5%BA%94%E7%94%A8%E9%A1%B9%E7%9B%AE/!svn/ver/265/trunk/IOS/ADGame/GuessGame/Class/Lib/MyHttp/AnalyImagePlay3.m
+END
+AnalyTask.h
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/%E5%B9%BF%E5%91%8A%E5%BA%94%E7%94%A8%E9%A1%B9%E7%9B%AE/!svn/ver/265/trunk/IOS/ADGame/GuessGame/Class/Lib/MyHttp/AnalyTask.h
+END
+RequestResult.h
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/%E5%B9%BF%E5%91%8A%E5%BA%94%E7%94%A8%E9%A1%B9%E7%9B%AE/!svn/ver/265/trunk/IOS/ADGame/GuessGame/Class/Lib/MyHttp/RequestResult.h
+END

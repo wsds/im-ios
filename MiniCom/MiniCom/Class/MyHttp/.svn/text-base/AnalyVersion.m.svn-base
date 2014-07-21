@@ -1,0 +1,49 @@
+//
+//  AnalyVersion.m
+//  GuessGame
+//
+//  Created by wanglipeng on 13-8-30.
+//  Copyright (c) 2013年 wanglipeng. All rights reserved.
+//
+
+#import "AnalyVersion.h"
+#import "VersionDM.h"
+#import "Config.h"
+#import "AppDelegate.h"
+
+@implementation AnalyVersion
+- (void)analyData:(NSDictionary *)dic
+{
+    NSLog(@"AnalyVersion 解析下载服务器的版本跟新信息");
+    VersionDM *version = [VersionDM SharedInstance];
+    version.version = [[dic valueForKey:@"version"] intValue];
+    version.downloadURL = [dic valueForKey:@"path"];
+    version.isdownload = [[dic valueForKey:@"isdownload"] intValue];
+    
+    if (version.isdownload == 1) {
+        NSLog(@"version==%d,path==%@",version.version,version.downloadURL);
+        //UIViewController *VC = globalApp.rootVC;
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"更新" message:[NSString stringWithFormat:@"新版本:%d,去升级吧？",version.version] delegate:self cancelButtonTitle:@"就不" otherButtonTitles:@"好吧",nil];
+        alert.tag = 0;
+        [alert show];
+        [alert release];
+    }
+    else
+    {
+        NSLog(@"最新版本");
+    }
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 0)
+    {
+    }
+    else
+    {
+        //NSString *myURL = [@"itms-services://?action=download-manifest&url=" stringByAppendingString:@"http://iof-test.italkcs.com/Appmobile/App/softphone/softphone.plist"];
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://itunes.apple.com/cn/app/tie-xin-shang-men/id688663426?mt=8"]];
+    }
+}
+
+@end

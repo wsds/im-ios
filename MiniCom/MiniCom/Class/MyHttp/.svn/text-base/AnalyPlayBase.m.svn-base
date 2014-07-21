@@ -1,0 +1,19 @@
+//
+//  AnalyPlayBase.m
+//  GuessGame
+//
+//  Created by wanglipeng on 13-9-16.
+//  Copyright (c) 2013年 wanglipeng. All rights reserved.
+//
+
+#import "AnalyPlayBase.h"
+
+@implementation AnalyPlayBase
+
+- (id)analyPlayData:(NSDictionary *)dic
+{
+
+}
+
+@end
+

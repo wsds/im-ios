@@ -1,0 +1,41 @@
+//
+//  MyHttp.h
+//  t0218_httpRequest
+//
+//  Created by tt on 13-2-18.
+//  Copyright (c) 2013年 tt. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+#import "ASIFormDataRequest.h"
+#import "JSONKit.h"
+#import "MBProgressHUD.h"
+#import "Params4Http.h"
+#import "RequestResult.h"
+
+@protocol MyHttpDelegate <NSObject>
+// 代理方法
+@optional
+- (void)customFailed:(ASIHTTPRequest *)request;
+- (void)isSuccessEqualsFalse:(RequestResult *)result;
+
+@required
+//- (void)isSuccessEqualsTrue:(RequestResult *)result;
+- (void)isSuccessEqualsTrue:(ASIHTTPRequest *)request;
+
+@end
+
+
+@interface MyHttp : NSObject<ASIHTTPRequestDelegate,UIAlertViewDelegate>
+
+@property (assign, nonatomic) id<MyHttpDelegate> delegate;
+@property (assign, nonatomic) MBProgressHUD *hud;
+@property (assign, nonatomic) BOOL needHud,needLogin,needDebug;
+@property (assign, nonatomic) UIViewController *viewContr;
+@property (assign, nonatomic) int serverType;
+
++ (NSDictionary *)getDicFromRequest:(ASIHTTPRequest *)request;
+
+- (void)startGetRequestURL:(NSString *)urlStr delegate:(id<MyHttpDelegate>)delegate tag:(int)tag;
+- (void)startPostServerType:(int)type request:(NSDictionary *)dic delegate:(id<MyHttpDelegate>)delegate tag:(int)tag;
+@end

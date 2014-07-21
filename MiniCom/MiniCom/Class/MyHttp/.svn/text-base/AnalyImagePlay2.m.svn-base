@@ -1,0 +1,26 @@
+//
+//  AnalyGameImage.m
+//  GuessGame
+//
+//  Created by wanglipeng on 13-8-21.
+//  Copyright (c) 2013年 wanglipeng. All rights reserved.
+//
+
+#import "AnalyImagePlay2.h"
+#import "ImagePlay2_DM.h"
+
+@implementation AnalyImagePlay2
+
+- (id)analyPlayData:(NSDictionary *)dic
+{
+    NSLog(@"图片类题解析 填图");
+    NSArray *question_ary = [dic objectForKey:@"place"];
+    NSString *img = [dic objectForKey:@"img"];
+    ImagePlay2_DM *imageDM = [BaseGD SharedInstance].imagePlay2_data;
+    imageDM.question_ary = question_ary;
+    imageDM.imgUrl = img;
+    return imageDM;
+}
+
+
+@end

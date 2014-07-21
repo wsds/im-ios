@@ -1,0 +1,14 @@
+//
+//  AnalyTask.h
+//  GuessGame
+//
+//  Created by wanglipeng on 13-8-29.
+//  Copyright (c) 2013年 wanglipeng. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+#import "BaseAnalyData.h"
+
+@interface AnalyTask : BaseAnalyData
+
+@end

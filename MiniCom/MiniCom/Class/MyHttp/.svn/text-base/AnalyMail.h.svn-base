@@ -1,0 +1,13 @@
+//
+//  AnalyMail.h
+//  GuessGame
+//
+//  Created by wanglipeng on 13-8-21.
+//  Copyright (c) 2013年 wanglipeng. All rights reserved.
+//
+
+#import "BaseAnalyData.h"
+
+@interface AnalyMail : BaseAnalyData
+
+@end

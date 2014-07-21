@@ -1,0 +1,34 @@
+//
+//  AnalyLogin.m
+//  GuessGame
+//
+//  Created by wanglipeng on 13-8-21.
+//  Copyright (c) 2013年 wanglipeng. All rights reserved.
+//
+
+#import "AnalySign.h"
+#import "Singleton.h"
+#import "Config.h"
+#import "SignView.h"
+
+@implementation AnalySign
+- (void)analyData:(NSDictionary *)dic
+{
+    Singleton *sl = [Singleton SharedInstance];
+    int response = [[dic objectForKey:@"response"] intValue];
+    if (response == 1) {
+        NSString *act = [dic objectForKey:@"act"];
+        SignView *signView = [sl.sysViewDic valueForKey:[NSString stringWithFormat:@"%d",SP_Sign]];
+        if ([act isEqualToString:@"everyday"]) {
+            [signView refreshEverySignView:dic];
+        }
+        else if ([act isEqualToString:@"luck"]) {
+            [signView refreshluckySignView:dic];
+        }
+    }
+    else
+    {
+        NSLog(@"AnalySign error");
+    }
+}
+@end
