@@ -85,6 +85,7 @@
 		AF65EC5A1969BC1F00AD4A02 /* JXLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = AF65EC581969BC1F00AD4A02 /* JXLabel.m */; };
 		AF65EC5D196C4A7700AD4A02 /* NumView.m in Sources */ = {isa = PBXBuildFile; fileRef = AF65EC5C196C4A7700AD4A02 /* NumView.m */; };
 		AF65EC61196DA1E800AD4A02 /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = AF65EC60196DA1E800AD4A02 /* GCDAsyncSocket.m */; };
+		AF65EDB419801B0E00AD4A02 /* SourceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AF65EDB319801B0E00AD4A02 /* SourceManager.m */; };
 		AF6B5AAC194DFDD8001B1F3E /* ChatTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AF6B5AAB194DFDD8001B1F3E /* ChatTableViewCell.m */; };
 		AF6B5AB1194F46C6001B1F3E /* MoreFriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF6B5AB0194F46C6001B1F3E /* MoreFriendViewController.m */; };
 		AF6B5AB4194F5399001B1F3E /* MoreAccountView.m in Sources */ = {isa = PBXBuildFile; fileRef = AF6B5AB3194F5399001B1F3E /* MoreAccountView.m */; };
@@ -500,6 +501,8 @@
 		AF65EC5C196C4A7700AD4A02 /* NumView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NumView.m; sourceTree = "<group>"; };
 		AF65EC5F196DA1E800AD4A02 /* GCDAsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncSocket.h; sourceTree = "<group>"; };
 		AF65EC60196DA1E800AD4A02 /* GCDAsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncSocket.m; sourceTree = "<group>"; };
+		AF65EDB219801B0E00AD4A02 /* SourceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SourceManager.h; sourceTree = "<group>"; };
+		AF65EDB319801B0E00AD4A02 /* SourceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SourceManager.m; sourceTree = "<group>"; };
 		AF6B5AAA194DFDD8001B1F3E /* ChatTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChatTableViewCell.h; path = customView/ChatTableViewCell.h; sourceTree = "<group>"; };
 		AF6B5AAB194DFDD8001B1F3E /* ChatTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChatTableViewCell.m; path = customView/ChatTableViewCell.m; sourceTree = "<group>"; };
 		AF6B5AAF194F46C6001B1F3E /* MoreFriendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreFriendViewController.h; sourceTree = "<group>"; };
@@ -1301,6 +1304,8 @@
 				AF805BCF195C86DC00A951F8 /* SquareManager.m */,
 				AF65EC2F19698EB100AD4A02 /* GroupManager.h */,
 				AF65EC3019698EB100AD4A02 /* GroupManager.m */,
+				AF65EDB219801B0E00AD4A02 /* SourceManager.h */,
+				AF65EDB319801B0E00AD4A02 /* SourceManager.m */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -2188,6 +2193,7 @@
 				AFB364171948CA4D004723B1 /* UIImageView+WebCache.m in Sources */,
 				AF322ABD1923CC62003A8816 /* JSONKit.m in Sources */,
 				AFAFDD471930793000E50066 /* MyInfoViewController.m in Sources */,
+				AF65EDB419801B0E00AD4A02 /* SourceManager.m in Sources */,
 				AFC41EDB195FEB260079716D /* UIColor+Custom.m in Sources */,
 				AFB363F4194759BF004723B1 /* GroupNavView.m in Sources */,
 				AF6B5AB4194F5399001B1F3E /* MoreAccountView.m in Sources */,

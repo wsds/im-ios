@@ -71,11 +71,13 @@
         float y = _subView_h * ((i % onePageCount) / _sub_VVV);
         CGRect frame = CGRectMake(x, y, _subView_w, _subView_h);
         GroupSubView *groupV = [[GroupSubView alloc] initWithFrame:frame];
+        groupV.delegate = self;
         [self.scrollv addSubview:groupV];
         groupV.tag = i;
         [groupV addTarget:self action:@selector(btnAction:) forControlEvents:UIControlEventTouchUpInside];
         if (i < [ary count]) {
             [groupV setType:ENUM_GROUP_SHOW];
+            groupV.longPressEnable = YES;
             GroupData *gData = [ary objectAtIndex:i];
             [groupV updateWithGroupData:gData];
         }
@@ -109,6 +111,12 @@
         GroupData *data = [self.dataAry objectAtIndex:btn.tag];
         [self.groupDelegate selectOursGroup:data];;
     }
+}
+
+- (void)longPressAction:(int)tag
+{
+    GroupData *data = [self.dataAry objectAtIndex:tag];
+    [self.groupDelegate manageOursGroup:data];
 }
 
 /*

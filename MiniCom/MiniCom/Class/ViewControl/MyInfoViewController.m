@@ -319,7 +319,7 @@
         else if([response isEqualToString:@"退出失败"])
         {
             NSString *error = [dic valueForKey:@"失败原因"];
-            [Common alert4error:error tag:0 delegate:nil];
+            //[Common alert4error:error tag:0 delegate:nil];
             
             [[AccountManager SharedInstance] setLogout];
 

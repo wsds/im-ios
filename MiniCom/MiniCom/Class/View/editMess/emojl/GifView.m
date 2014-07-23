@@ -1,6 +1,8 @@
 #import "GifView.h"
 #import "SCGIFImageView.h"
 
+#import "SourceManager.h"
+
 #define BEGIN_FLAG @"["
 #define END_FLAG @"]"
 
@@ -26,25 +28,29 @@
 
 -(void)getGifFiles{
     
-    NSString* dir=[self imageFilePath];
-    NSString* Path;
-    NSString* ext;
+//    NSString* dir=[self imageFilePath];
+//    NSString* Path;
+//    NSString* ext;
+//    NSLog(@"getGifFiles 1");
+//    NSArray *contentOfFolder = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:dir error:NULL];
+//    for (NSString *aPath in contentOfFolder) {
+//        Path = [dir stringByAppendingPathComponent:aPath];
+//        ext  = [aPath pathExtension];
+//
+//        BOOL isDir;
+//        if ([[NSFileManager defaultManager] fileExistsAtPath:Path isDirectory:&isDir] && !isDir)
+//        {
+//            if( [ext isEqualToString:@"gif"] ){
+//                SCGIFImageView* iv = [[SCGIFImageView alloc] initWithGIFFile:Path];
+//                [imageArray addObject:[iv getFrameAsImageAtIndex:0]];
+//                [faceArray addObject:[Path lastPathComponent]];
+//            }
+//        }
+//    }
+//    NSLog(@"getGifFiles 2");
     
-    NSArray *contentOfFolder = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:dir error:NULL];
-    for (NSString *aPath in contentOfFolder) {
-        Path = [dir stringByAppendingPathComponent:aPath];
-        ext  = [aPath pathExtension];
-
-        BOOL isDir;
-        if ([[NSFileManager defaultManager] fileExistsAtPath:Path isDirectory:&isDir] && !isDir)
-        {
-            if( [ext isEqualToString:@"gif"] ){
-                SCGIFImageView* iv = [[SCGIFImageView alloc] initWithGIFFile:Path];
-                [imageArray addObject:[iv getFrameAsImageAtIndex:0]];
-                [faceArray addObject:[Path lastPathComponent]];
-            }
-        }
-    }
+    imageArray = [SourceManager SharedInstance].imageArray;
+    faceArray = [SourceManager SharedInstance].faceArray;
 
     int n = fmod([faceArray count], 8);
     maxPage = [faceArray count]/8;

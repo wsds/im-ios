@@ -17,8 +17,6 @@
 
 #import "GCDAsyncSocket.h"
 
-#define DurSecond 10.0
-
 @implementation SquareMessage
 
 static SquareMessage *object = nil;
@@ -33,6 +31,15 @@ static SquareMessage *object = nil;
         }
     }
     return object;
+}
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+
+    }
+    return self;
 }
 
 - (void)setSquareMessageRequestStart:(BOOL)start
@@ -54,7 +61,8 @@ static SquareMessage *object = nil;
             return;
         }
 #warning gid
-        NSDictionary *dic_params = @{@"gid":@"98", @"flag":@"none"};
+        NSString *flagStr = [SquareManager SharedInstance].squareFlag;
+        NSDictionary *dic_params = @{@"gid":@"98", @"flag":flagStr};
         Params4Http *params = [[Params4Http alloc] initWithUrl:URL_square_getsquaremessage
                                                         params:dic_params
                                                            tag:1
@@ -62,7 +70,7 @@ static SquareMessage *object = nil;
                                                        hudText:@""
                                                      needLogin:YES];
         MyHttpRequest *myHttp = [[MyHttpRequest alloc] init];
-        myHttp.timeOut = DurSecond;
+        myHttp.timeOut = TimeOutSecond;
         [myHttp startRequest:params
                    hudOnView:nil
                     delegate:self];
@@ -192,13 +200,41 @@ static SquareMessage *object = nil;
     [[NSNotificationCenter defaultCenter] postNotificationName:SquareEvent_MessageNotification object:nil];
 }
 
+//- (void)insertSquareMessAry:(NSArray *)messageAry
+//{
+//    for (int i=0; i<[messageAry count]; i++) {
+//       NSString *squareStr = [messageAry objectAtIndex:i];
+//        NSDictionary *squareDic = [squareStr objectFromJSONString];
+//
+//        NSString *gmid = [NSString stringWithFormat:@"%@",[squareDic valueForKey:@"gmid"]];
+//        [[DBHelper sharedInstance] insertOrUpdateSquareStr:squareStr gmid:gmid];
+//    }
+//}
+
 - (void)insertSquareMessAry:(NSArray *)messageAry
 {
     for (int i=0; i<[messageAry count]; i++) {
-        NSString *squareStr = [messageAry objectAtIndex:i];
-        NSDictionary *squareDic = [squareStr objectFromJSONString];
+        NSDictionary *squareDic = nil;
+        NSString *objectStr = @"";
+        
+        NSObject *squareObject = [messageAry objectAtIndex:i];
+        if ([squareObject isKindOfClass:[NSString class]]) {
+            objectStr = (NSString *)squareObject;
+            squareDic = [objectStr objectFromJSONString];
+        }
+        else if ([squareObject isKindOfClass:[NSDictionary class]])
+        {
+            squareDic = (NSDictionary *)squareObject;
+            objectStr = [squareDic JSONString];
+        }
+        else
+        {
+            NSLog(@"not found class type");
+            return;
+        }
+        
         NSString *gmid = [NSString stringWithFormat:@"%@",[squareDic valueForKey:@"gmid"]];
-        [[DBHelper sharedInstance] insertOrUpdateSquareStr:squareStr gmid:gmid];
+        [[DBHelper sharedInstance] insertOrUpdateSquareStr:objectStr gmid:gmid];
     }
 }
 

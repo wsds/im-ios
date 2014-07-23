@@ -6,6 +6,9 @@
 //  Copyright (c) 2014年 wanglipeng. All rights reserved.
 //
 
+#define DurSecond 1.0
+#define TimeOutSecond 60.0
+
 #import <Foundation/Foundation.h>
 #import "JSONKit.h"
 #import "UrlHeader.h"

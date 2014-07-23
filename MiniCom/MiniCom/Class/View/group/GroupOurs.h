@@ -11,6 +11,8 @@
 
 @protocol GroupOursDelegate <NSObject>
 
+- (void)manageOursGroup:(GroupData *)groupData;
+
 - (void)selectOursGroup:(GroupData *)groupData;
 
 - (void)ourGroupAdd;

@@ -18,6 +18,7 @@
 #import "NewFriendViewController.h"
 #import "GroupInfoViewController.h"
 #import "CircleSetViewController.h"
+#import "GroupManagerViewController.h"
 
 #import "Common.h"
 #import "AnalyTools.h"
@@ -326,7 +327,17 @@
 //
 #pragma mark OursGroupDelegate
 
-- (void)selectOursGroup:(GroupData *)groupData;
+- (void)manageOursGroup:(GroupData *)groupData
+{
+    GroupManagerViewController *groupManagerVC = [[GroupManagerViewController alloc] init];
+    groupManagerVC.groupData = groupData;
+    
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:groupManagerVC];
+    nav.navigationBarHidden = YES;
+    [self presentViewController:nav animated:YES completion:nil];
+}
+
+- (void)selectOursGroup:(GroupData *)groupData
 {
     ChatViewController *groupVC = [[ChatViewController alloc] init];
     groupVC.sendType = SendType_Group;
@@ -554,7 +565,7 @@
         if ([response isEqualToString:@"获取附近群组成功"]) {
             NSLog(@"获取附近群组请求成功");
             NSArray *ary = [dic valueForKey:@"groups"];
-            NSLog(@"near groups ary==%@", ary);
+            //NSLog(@"near groups ary==%@", ary);
             NSMutableArray *groupAry = [[NSMutableArray alloc] init];
             if (ary && [ary count] > 0) {
                 for (int i = 0; i<[ary count]; i++) {

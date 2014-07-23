@@ -13,6 +13,7 @@
 #import "Params4Http.h"
 #import "DBHelper.h"
 #import "MyNetManager.h"
+#import "ChatMessData.h"
 
 @implementation SessionEvent
 
@@ -61,7 +62,7 @@ static SessionEvent *object = nil;
                                                        hudText:@""
                                                      needLogin:YES];
         MyHttpRequest *myHttp = [[MyHttpRequest alloc] init];
-        myHttp.timeOut = 60.0;
+        myHttp.timeOut = TimeOutSecond;
         [myHttp startRequest:params
                    hudOnView:nil
                     delegate:self];
@@ -72,7 +73,7 @@ static SessionEvent *object = nil;
 {
     NSLog(@"session_event isSuccessEquals");
     //[self sendSessionEventRequest];
-    [self performSelector:@selector(sendSessionEventRequest) withObject:nil afterDelay:1.0];
+    [self performSelector:@selector(sendSessionEventRequest) withObject:nil afterDelay:DurSecond];
 
     NSDictionary *dic = result.myData;
     NSString *response = [dic valueForKey:ResponseMessKey];
@@ -95,11 +96,11 @@ static SessionEvent *object = nil;
                 //NSLog(@"messDic==%@", messDic);
                 NSDictionary *messDic = [messStr objectFromJSONString];
                 
-                NSString *fromPhone = [messDic valueForKey:@"phone"];
-                NSString *contentType = [messDic valueForKey:@"contentType"];
-                NSString *time = [messDic valueForKey:@"time"];
-                NSString *content = [messDic valueForKey:@"content"];
-                NSLog(@"\n fromPhone==%@,\n contentType==%@,\n time==%@,\n content==%@", fromPhone, contentType, time, content);
+                //NSString *fromPhone = [messDic valueForKey:@"phone"];
+                //NSString *contentType = [messDic valueForKey:@"contentType"];
+                //NSString *time = [messDic valueForKey:@"time"];
+                //NSString *content = [messDic valueForKey:@"content"];
+                //NSLog(@"\n fromPhone==%@,\n contentType==%@,\n time==%@,\n content==%@", fromPhone, contentType, time, content);
                 
                 NSString *phoneto = @"";
 //                NSString *phonetoStr = [messDic valueForKey:@"phoneto"];
@@ -176,7 +177,7 @@ static SessionEvent *object = nil;
 - (void)customFailed:(ASIHTTPRequest *)request
 {
     //[self sendSessionEventRequest];
-    [self performSelector:@selector(sendSessionEventRequest) withObject:nil afterDelay:1.0];
+    [self performSelector:@selector(sendSessionEventRequest) withObject:nil afterDelay:DurSecond];
 
     NSLog(@"session_event customFailed");
 }

@@ -19,7 +19,7 @@ typedef enum {
 
 @interface SquareManager : NSObject
 
-@property(nonatomic, assign) NSString *squareFlag;
+@property(nonatomic, retain) NSString *squareFlag;
 
 @property(nonatomic, retain) NSArray *square_jinghua_ary;
 

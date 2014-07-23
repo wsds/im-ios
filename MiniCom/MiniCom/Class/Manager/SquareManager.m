@@ -28,7 +28,7 @@ static SquareManager *object = nil;
 {
     self = [super init];
     if (self){
-
+        _squareFlag = @"none";
     }
     return  self;
 }

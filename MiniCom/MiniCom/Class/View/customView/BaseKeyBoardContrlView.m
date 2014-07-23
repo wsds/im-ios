@@ -98,7 +98,7 @@
 
 - (void)moveInputBarWithKeyboardHeight:(float)height withDuration:(float)dur
 {
-    NSLog(@"height==%f", height);
+    //NSLog(@"height==%f", height);
     CGRect frame = CGRectMake(0, kScreen_Height - height - self.bounds.size.height, kScreen_Width, self.bounds.size.height);
     [UIView animateWithDuration:dur
                           delay:0.0

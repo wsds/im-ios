@@ -282,7 +282,7 @@
         
     }
 
-    NSLog(@"chatAry==%@", self.chatAry);
+    //NSLog(@"chatAry==%@", self.chatAry);
     [_chatTableView reloadData];
 
     if ([self.chatAry count] > 0) {
@@ -395,7 +395,7 @@
         _messageConent.frame = CGRectMake(0, 0, JXCELL_W, JXCELL_H);
         _messageConent.text   = data.content;
         float newheight =_messageConent.frame.size.height;
-        NSLog(@"height IndexPath_%d,h=%f,content=%@",indexPath.row,newheight,_messageConent.text);
+        //NSLog(@"height IndexPath_%d,h=%f,content=%@",indexPath.row,newheight,_messageConent.text);
         if(newheight > height)
         {
             height = newheight + 80.0;
@@ -432,7 +432,7 @@
         _messageConent.frame = CGRectMake(0, 0, JXCELL_W, JXCELL_H);
         _messageConent.text   = data.content;
         float newheight =_messageConent.frame.size.height;
-        NSLog(@"cell IndexPath_%d,h=%f,content=%@",indexPath.row,newheight,_messageConent.text);
+        //NSLog(@"cell IndexPath_%d,h=%f,content=%@",indexPath.row,newheight,_messageConent.text);
         if(newheight > height)
         {
             height = newheight + 80.0;
@@ -643,7 +643,7 @@
 
 - (void)moveInputBarWithKeyboardHeight:(float)height withDuration:(float)dur
 {
-    NSLog(@"height==%f", height);
+    //NSLog(@"height==%f", height);
     CGRect frame = CGRectMake(0, kScreen_Height - height - _inputView.bounds.size.height, kScreen_Width, _inputView.bounds.size.height);
     [UIView animateWithDuration:dur
                           delay:0.0

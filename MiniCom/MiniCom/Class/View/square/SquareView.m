@@ -35,8 +35,6 @@
         _subView_w = _contentScrollV.bounds.size.width / 2;
         _subView_h = _contentScrollV.bounds.size.height / 2;
         
-        NSLog(@"%f, %f", _subView_w, _subView_h);
-
 //        UILabel *label = [[UILabel alloc] init];
 //        label.frame = [Common RectMakex:0 y:0.1 w:1.0 h:0.18 onSuperBounds:self.bounds];
 //        label.textColor = [UIColor whiteColor];
@@ -68,8 +66,6 @@
     if (ary) {
         int vvv = ([ary count] + 1 ) / 2 ;
         
-        NSLog(@"vvv==%d", vvv);
-
         _contentScrollV.contentSize = CGSizeMake(_subView_w * vvv, _subView_h * 2);
 
         for (int i = 0; i < [ary count]; i++) {

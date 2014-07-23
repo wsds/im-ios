@@ -10,6 +10,7 @@
 #import "Common.h"
 #import "AccountManager.h"
 #import "LoginViewController.h"
+#import "SourceManager.h"
 
 @interface LoadingViewController ()
 
@@ -44,17 +45,25 @@
 
     //star
     _starImageView = [Common initImageName:@"app_start_star.png" onView:self.view frame:[Common RectMakex:1.0 y:0.0 w:0.5 h:0.15 onSuperBounds:kScreen_Frame]];
-    
-    [UIView animateWithDuration:1.0 animations:^{
+
+    [UIView animateWithDuration:1.5 animations:^{
         _marImageView.frame = [Common RectMakex:0 y:0.8 w:1.05 h:0.21 onSuperBounds:kScreen_Frame];
         _cityImageView.frame = [Common RectMakex:0.8 y:0.35 w:0.5 h:0.3 onSuperBounds:kScreen_Frame];
     } completion:^(BOOL finished) {
-        [UIView animateWithDuration:1.0 animations:^{
+        [UIView animateWithDuration:1.2 animations:^{
             _starImageView.frame = [Common RectMakex:-0.6 y:0.3 w:0.4 h:0.12 onSuperBounds:kScreen_Frame];
         } completion:^(BOOL finished) {
             [self loadSome];
         }];
     }];
+    
+    //load source
+    [self loadResource];
+}
+
+- (void)loadResource
+{
+    [[SourceManager SharedInstance] loadGifFile];
 }
 
 - (void)loadSome

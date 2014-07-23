@@ -15,6 +15,12 @@ typedef enum
     ENUM_GROUP_ADD
 }ENUM_GROUP_TYPE;
 
+@protocol groupSubViewDelegate <NSObject>
+
+- (void)longPressAction:(int)tag;
+
+@end
+
 @interface GroupSubView : UIView
 {
     UIView *_contentView;
@@ -31,7 +37,12 @@ typedef enum
     UIButton *_viewBtn;
     
     ENUM_GROUP_TYPE _curType;
+    
+    int _viewTag;
 }
+@property (assign, nonatomic) id <groupSubViewDelegate>delegate;
+
+@property (assign, nonatomic) BOOL longPressEnable;
 
 - (void)setType:(ENUM_GROUP_TYPE)type;
 

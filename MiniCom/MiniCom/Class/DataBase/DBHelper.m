@@ -10,6 +10,10 @@
 #import "DBFileManager.h"
 #import "FMResultSet.h"
 #import "FMDatabase.h"
+#import "FMDatabaseQueue.h"
+
+#import "ChatMessData.h"
+#import "AccountData.h"
 
 // /Users/wanglipeng/Library/Application Support/iPhone Simulator/7.1/Applications/093EBDBD-7E44-446F-8C72-EBB64D03AC40/Documents/
 
@@ -299,7 +303,7 @@ static DBHelper *gSharedInstance = nil;
         if (friendPhone && [friendPhone length] > 0) {
             sql = [NSString stringWithFormat:@"select * from tab_chatLog where phone = %@ and phoneToOrFrom = %@ and sendType = \"%@\" order by _id", curPhone, friendPhone, @"point"];
         }
-        NSLog(@"sql==%@", sql);
+        //NSLog(@"sql==%@", sql);
         FMResultSet *set = [db executeQuery:sql];
         while ([set next]) {
             ChatMessData *log = [[ChatMessData alloc] init];
@@ -324,7 +328,7 @@ static DBHelper *gSharedInstance = nil;
     NSMutableArray *ary = [NSMutableArray array];
     [self.dbQueue inDatabase:^(FMDatabase *db) {
         NSString *sql = [NSString stringWithFormat:@"select * from tab_chatLog where gid = %@ and sendType = \"%@\" order by _id", gid, @"group"];
-        NSLog(@"sql==%@", sql);
+        //NSLog(@"sql==%@", sql);
         FMResultSet *set = [db executeQuery:sql];
         while ([set next]) {
             ChatMessData *log = [[ChatMessData alloc] init];
@@ -386,7 +390,7 @@ static DBHelper *gSharedInstance = nil;
 {
     __block NSInteger sum = 0;
     [self.dbQueue inDatabase:^(FMDatabase *db) {
-        NSString *sql = [NSString stringWithFormat:@"select count(_id) from tab_chatLog where isRead = 0 and phone = \"%@\" and phoneToOrFrom = \"%@\"", curPhone, friendPhone];
+        NSString *sql = [NSString stringWithFormat:@"select count(_id) from tab_chatLog where isRead = 0 and sendType = \"point\" and phone = \"%@\" and phoneToOrFrom = \"%@\"", curPhone, friendPhone];
         FMResultSet *set = [db executeQuery:sql];
         while ([set next]) {
             sum = [set intForColumnIndex:0];
@@ -424,7 +428,7 @@ static DBHelper *gSharedInstance = nil;
     //point
     [self.dbQueue inDatabase:^(FMDatabase *db) {
         NSString *sql = [NSString stringWithFormat:@"SELECT * FROM tab_chatLog WHERE phone = %@ And sendType = \"point\"  GROUP BY phoneToOrFrom ORDER BY _id DESC", curPhone];
-        NSLog(@"sql==%@", sql);
+        //NSLog(@"sql==%@", sql);
         FMResultSet *set = [db executeQuery:sql];
         while ([set next]) {
             ChatMessData *log = [[ChatMessData alloc] init];
@@ -446,7 +450,7 @@ static DBHelper *gSharedInstance = nil;
     //group
     [self.dbQueue inDatabase:^(FMDatabase *db) {
         NSString *sql = [NSString stringWithFormat:@"SELECT * FROM tab_chatLog WHERE phone = %@ And sendType = \"group\"  GROUP BY gid ORDER BY _id DESC", curPhone];
-        NSLog(@"sql==%@", sql);
+        //NSLog(@"sql==%@", sql);
         FMResultSet *set = [db executeQuery:sql];
         while ([set next]) {
             ChatMessData *log = [[ChatMessData alloc] init];

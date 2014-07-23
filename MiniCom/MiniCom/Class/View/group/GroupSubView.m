@@ -30,6 +30,13 @@
         bg.image = bgImage;
         [bgView addSubview:bg];
         
+        //长按手势
+        UILongPressGestureRecognizer *longPressReger = [[UILongPressGestureRecognizer alloc]
+                                                        
+                                                        initWithTarget:self action:@selector(handleLongPress:)];
+        longPressReger.minimumPressDuration = 0.7;
+        [self addGestureRecognizer:longPressReger];
+        
         _contentView = [[UIView alloc] initWithFrame:[Common RectMakex:0.025 y:0.025 w:0.9 h:0.9 onSuperBounds:bgView.bounds]];
         [bgView addSubview:_contentView];
         _contentView.clipsToBounds = YES;
@@ -99,6 +106,7 @@
 {
     [super setTag:tag];
     _viewBtn.tag = tag;
+    _viewTag = tag;
 }
 
 - (void)setType:(ENUM_GROUP_TYPE)type
@@ -156,6 +164,17 @@
     }
 }
 
+-(void)handleLongPress:(UILongPressGestureRecognizer *)gestureRecognizer
+{
+    if(gestureRecognizer.state == UIGestureRecognizerStateBegan)
+    {
+        if (self.longPressEnable) {
+            if (self.delegate && [self.delegate respondsToSelector:@selector(longPressAction:)]) {
+                [self.delegate longPressAction:_viewTag];
+            }
+        }
+    }
+}
 
 /*
 // Only override drawRect: if you perform custom drawing.

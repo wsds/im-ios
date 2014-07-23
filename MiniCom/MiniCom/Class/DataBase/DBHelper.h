@@ -7,9 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "FMDatabaseQueue.h"
-#import "ChatMessData.h"
-#import "AccountData.h"
+@class FMDatabaseQueue;
+@class FMDatabase;
+@class ChatMessData;
+@class AccountData;
 
 @interface DBHelper : NSObject
 

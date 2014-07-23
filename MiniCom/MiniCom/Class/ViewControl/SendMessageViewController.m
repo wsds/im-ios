@@ -185,9 +185,64 @@
     
 }
 
+- (NSString *)getContentType
+{
+    BOOL text = [self hadText];
+    BOOL image = [self hadImage];
+    BOOL voice = [self hadVoice];
+    if (text && image && voice) {
+        return @"vit";
+    }
+    else
+    {
+        if (text && image)
+            return @"textandimage";
+        
+        if (text && voice)
+            return @"textandvoice";
+        
+        if (voice && image)
+            return @"voiceandimage";
+        
+        if (text)
+            return @"text";
+        
+        if (image)
+            return @"image";
+        
+        if (voice)
+            return @"voice";
+    }
+    return @"vit";
+}
+
+- (BOOL)hadText
+{
+    if ([_messageView.text length] > 0) {
+        return YES;
+    }
+    return NO;
+}
+
+- (BOOL)hadImage
+{
+    if ([self.imageFileName length] > 0) {
+        return YES;
+    }
+    return NO;
+}
+
+- (BOOL)hadVoice
+{
+    if ([self.voiceFileName length] > 0) {
+        return YES;
+    }
+    return NO;
+}
+
 - (void)sendToSquare
 {
-    if ([_messageView.text length] > 0 || [self.imageFileName length] > 0 || [self.voiceFileName length] > 0) {
+    if ([self hadText] > 0 || [self hadImage] > 0 || [self hadVoice]) {
         NSMutableArray *contentAry = [[NSMutableArray alloc] init];
         NSDictionary *contentDic1 = nil;
         NSDictionary *contentDic2 = nil;
@@ -206,9 +261,13 @@
         }
         
         //messagetype @"精华" @"活动"、、
-        NSArray *messageTypeAry = @[];
-        NSString *messageTypeStr = [messageTypeAry JSONString];
-        NSString *contentType = @"vit";
+//        NSArray *messageTypeAry = @[];
+//        NSString *messageTypeStr = [messageTypeAry JSONString];
+
+        NSString *messageTypeStr = @"精华";
+        
+        NSString *contentType = [self getContentType];
+        
         NSDictionary *messageDic = @{@"messageType": messageTypeStr,
                                      @"contentType": contentType,
                                      @"content": contentAry};
