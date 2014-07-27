@@ -188,6 +188,22 @@
     //
     [_itemsView setLocalTitle:@"亦庄站"];
     [_itemsView setDefaultShow];
+    
+    //
+//    NSString *statusStr = @"true";
+//    NSDictionary *dic_params = @{@"phoneask":@"13488838432",
+//                                 @"rid":@"",
+//                                 @"status":statusStr};
+//    Params4Http *params = [[Params4Http alloc] initWithUrl:URL_relation_addfriendagree
+//                                                    params:dic_params
+//                                                       tag:100
+//                                                   needHud:YES
+//                                                   hudText:@""
+//                                                 needLogin:YES];
+//    MyHttpRequest *myHttp = [[MyHttpRequest alloc] init];
+//    [myHttp startRequest:params
+//               hudOnView:self.view
+//                delegate:self];
 }
 
 - (void)requestGroup
@@ -218,8 +234,10 @@
 
 - (void)presentSendMessVC
 {
+    NSArray *subView1titleAry = @[@"精华", @"全部", @"活动", @"吐槽"];
+    NSString *messType = [subView1titleAry objectAtIndex: _itemsView.squareIndex];
     SendMessageViewController *sendMessVC = [[SendMessageViewController alloc] init];
-    //sendMessVC.delegate = self;
+    sendMessVC.messType = messType;
     [self presentViewController:sendMessVC animated:YES completion:nil];
 }
 
@@ -516,6 +534,10 @@
 
 - (void)isSuccessEquals:(RequestResult *)result
 {
+    if (result.tag == 100) {
+        NSDictionary *dic = result.myData;
+
+    }
     //group
     if (result.tag == 210) {
         NSDictionary *dic = result.myData;

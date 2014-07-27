@@ -368,6 +368,9 @@
 		AFB47EA4195F185F0016845E /* GroupNewLocalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AFB47EA3195F185F0016845E /* GroupNewLocalViewController.m */; };
 		AFB47EA7195F29250016845E /* GroupCreatSuccessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AFB47EA6195F29250016845E /* GroupCreatSuccessViewController.m */; };
 		AFB60368193392A800F93382 /* MyInfoChangeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AFB60367193392A800F93382 /* MyInfoChangeViewController.m */; };
+		AFBA218C1984D8BC00E2FE80 /* SendSquareFileScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = AFBA218B1984D8BC00E2FE80 /* SendSquareFileScrollView.m */; };
+		AFBA218F1984E4D300E2FE80 /* SquareFileData.m in Sources */ = {isa = PBXBuildFile; fileRef = AFBA218E1984E4D300E2FE80 /* SquareFileData.m */; };
+		AFBA21921984EFC200E2FE80 /* SendSquareFileEditView.m in Sources */ = {isa = PBXBuildFile; fileRef = AFBA21911984EFC200E2FE80 /* SendSquareFileEditView.m */; };
 		AFC41EDB195FEB260079716D /* UIColor+Custom.m in Sources */ = {isa = PBXBuildFile; fileRef = AFC41EDA195FEB260079716D /* UIColor+Custom.m */; };
 		AFE7741C194D9DC400C505C8 /* ChatMessData.m in Sources */ = {isa = PBXBuildFile; fileRef = AFE7741B194D9DC400C505C8 /* ChatMessData.m */; };
 /* End PBXBuildFile section */
@@ -877,6 +880,12 @@
 		AFB47EA6195F29250016845E /* GroupCreatSuccessViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupCreatSuccessViewController.m; sourceTree = "<group>"; };
 		AFB60366193392A800F93382 /* MyInfoChangeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyInfoChangeViewController.h; sourceTree = "<group>"; };
 		AFB60367193392A800F93382 /* MyInfoChangeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyInfoChangeViewController.m; sourceTree = "<group>"; };
+		AFBA218A1984D8BC00E2FE80 /* SendSquareFileScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SendSquareFileScrollView.h; sourceTree = "<group>"; };
+		AFBA218B1984D8BC00E2FE80 /* SendSquareFileScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SendSquareFileScrollView.m; sourceTree = "<group>"; };
+		AFBA218D1984E4D300E2FE80 /* SquareFileData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SquareFileData.h; sourceTree = "<group>"; };
+		AFBA218E1984E4D300E2FE80 /* SquareFileData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SquareFileData.m; sourceTree = "<group>"; };
+		AFBA21901984EFC200E2FE80 /* SendSquareFileEditView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SendSquareFileEditView.h; sourceTree = "<group>"; };
+		AFBA21911984EFC200E2FE80 /* SendSquareFileEditView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SendSquareFileEditView.m; sourceTree = "<group>"; };
 		AFC41ED9195FEB260079716D /* UIColor+Custom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Custom.h"; sourceTree = "<group>"; };
 		AFC41EDA195FEB260079716D /* UIColor+Custom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Custom.m"; sourceTree = "<group>"; };
 		AFE7741A194D9DC400C505C8 /* ChatMessData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatMessData.h; sourceTree = "<group>"; };
@@ -1247,6 +1256,8 @@
 				AFA671FA193952FE000A2A3C /* SquareMessData.m */,
 				AF805B9D1958933100A951F8 /* SquareContentData.h */,
 				AF805B9E1958933100A951F8 /* SquareContentData.m */,
+				AFBA218D1984E4D300E2FE80 /* SquareFileData.h */,
+				AFBA218E1984E4D300E2FE80 /* SquareFileData.m */,
 			);
 			name = Square;
 			sourceTree = "<group>";
@@ -1684,6 +1695,10 @@
 				AFA67200193958E2000A2A3C /* SquareSubView.m */,
 				AFA6720519399D36000A2A3C /* SquareInfoView.h */,
 				AFA6720619399D36000A2A3C /* SquareInfoView.m */,
+				AFBA218A1984D8BC00E2FE80 /* SendSquareFileScrollView.h */,
+				AFBA218B1984D8BC00E2FE80 /* SendSquareFileScrollView.m */,
+				AFBA21901984EFC200E2FE80 /* SendSquareFileEditView.h */,
+				AFBA21911984EFC200E2FE80 /* SendSquareFileEditView.m */,
 			);
 			path = square;
 			sourceTree = "<group>";
@@ -2142,6 +2157,7 @@
 				AFAFDD3D193075E900E50066 /* GroupOurs.m in Sources */,
 				AF805BEE195C86DC00A951F8 /* SquareMessage.m in Sources */,
 				AFB363EE194755E2004723B1 /* ChatViewController.m in Sources */,
+				AFBA21921984EFC200E2FE80 /* SendSquareFileEditView.m in Sources */,
 				AFAFDD441930777100E50066 /* SquareView.m in Sources */,
 				AFAFDD4A193079FC00E50066 /* NavView.m in Sources */,
 				AF159C911944B61500AB96B4 /* RecordVoiceViewController.m in Sources */,
@@ -2164,6 +2180,7 @@
 				AFAFDD40193075FD00E50066 /* GroupNear.m in Sources */,
 				AFA96B4119449B9200F20285 /* GifView.m in Sources */,
 				AFB364161948CA4D004723B1 /* UIButton+WebCache.m in Sources */,
+				AFBA218C1984D8BC00E2FE80 /* SendSquareFileScrollView.m in Sources */,
 				AF322A961923CC62003A8816 /* ASIFormDataRequest.m in Sources */,
 				AFAFDD371930440600E50066 /* OwnFriendView.m in Sources */,
 				AF805BB0195C82F500A951F8 /* VoicePlayAnimationView.m in Sources */,
@@ -2176,6 +2193,7 @@
 				AF805BE9195C86DC00A951F8 /* MyHttpRequest.m in Sources */,
 				AF322A991923CC62003A8816 /* ASINetworkQueue.m in Sources */,
 				AF65EC5A1969BC1F00AD4A02 /* JXLabel.m in Sources */,
+				AFBA218F1984E4D300E2FE80 /* SquareFileData.m in Sources */,
 				AF322A971923CC62003A8816 /* ASIHTTPRequest.m in Sources */,
 				AF322A951923CC62003A8816 /* ASIDownloadCache.m in Sources */,
 				AF805BA41959CF8A00A951F8 /* GTMBase64.m in Sources */,

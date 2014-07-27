@@ -45,7 +45,7 @@
     _username_tf.placeholder = @"请输入验证消息";
     _username_tf.delegate = self;
     _username_tf.returnKeyType = UIReturnKeyDone;
-    _username_tf.keyboardType = UIKeyboardTypeNumberPad;
+    //_username_tf.keyboardType = UIKeyboardTypeNumberPad;
     _username_tf.textColor = [UIColor whiteColor];
     [_findFriendView.contentView addSubview:_username_tf];
     

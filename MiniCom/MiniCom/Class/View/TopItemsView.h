@@ -45,12 +45,14 @@ typedef enum {
     UIView *_subView3;
     
     NSArray *_titleAry;
-    E_ShowView_Square   _squareIndex;
-    E_ShowView_Group    _groupIndex;
-    E_ShowView_Own      _ownIndex;
 }
 
 @property(nonatomic, assign) id<TopItemsViewBtnSelectDelegate> delegate;
+
+@property(nonatomic, assign) E_ShowView_Square   squareIndex;
+@property(nonatomic, assign) E_ShowView_Group    groupIndex;
+@property(nonatomic, assign) E_ShowView_Own      ownIndex;
+
 
 - (void)setLocalTitle:(NSString *)loacl;
 

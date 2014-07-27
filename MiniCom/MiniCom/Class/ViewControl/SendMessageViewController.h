@@ -11,24 +11,29 @@
 #import "RecordVoiceViewController.h"
 #import "ChoosePhotoViewController.h"
 #import "EmojiView.h"
+@class SendSquareFileScrollView;
+@class SendSquareFileEditView;
 
 @interface SendMessageViewController : UIViewController<UIImagePickerControllerDelegate, ChoosePhotoViewDelegate, RecordVoiceViewDelegate>
 {
+    UIView *_messEditView;
+    
     UITextView *_messageView;
-    
-    UIView *_fileView;
-    UIImageView *_voiceImageView;
-    UIImageView *_photoImageView;
-    
+    SendSquareFileScrollView *_fileView;
     MessageControlView *_inputView;
     
     RecordVoiceViewController *_recordVC;
     ChoosePhotoViewController *_choosePhotoVC;
     EmojiView* _faceView;
+    
+    //
+    SendSquareFileEditView *_fileEditView;
 }
 
-@property(nonatomic, retain) NSString *imageFileName;
+@property(nonatomic, retain) NSString *messType;
 
-@property(nonatomic, retain) NSString *voiceFileName;
+@property(nonatomic, retain) NSMutableArray *imageFileArray;
+
+@property(nonatomic, retain) NSMutableArray *voiceFileArray;
 
 @end

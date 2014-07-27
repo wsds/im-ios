@@ -97,24 +97,6 @@
 
 - (void)addTextView:(NSString *)text
 {
-//    UIFont *font = [UIFont systemFontOfSize:[Common getCurFontSize:BaseFontSize_L]];
-//    CGSize size = [text sizeWithFont:font constrainedToSize:CGSizeMake(_scrollv.bounds.size.width, 2000.0f) lineBreakMode:NSLineBreakByWordWrapping];
-//    
-//    UILabel *lb = [[UILabel alloc] init];
-//    lb.numberOfLines = 0;
-//    lb.font = font;
-//    lb.text = text;
-//    lb.lineBreakMode = NSLineBreakByWordWrapping;
-//    lb.textColor = [UIColor whiteColor];
-//    lb.backgroundColor = [UIColor clearColor];
-//    [_scrollv addSubview:lb];
-    
-//    _cur_y += _yOffset;
-//    CGRect frame = CGRectMake(0, _cur_y, size.width, size.height);
-//    lb.frame = frame;
-//    _cur_y += frame.size.height;
-//    _cur_y += _yOffset;
-    
     _cur_y += _yOffset;
     CGRect frame = CGRectMake(0, _cur_y, _scrollv.bounds.size.width, 20);
     
@@ -124,12 +106,12 @@
     _messageConent.userInteractionEnabled = NO;
     _messageConent.numberOfLines = 0;
     _messageConent.lineBreakMode = NSLineBreakByWordWrapping;
-    _messageConent.font = [UIFont systemFontOfSize:BaseFontSize_L];
-    _messageConent.text = text;
     [_scrollv addSubview:_messageConent];
-    
-    frame = _messageConent.frame;
-    _cur_y += frame.size.height;
+    _messageConent.text = text;
+
+    CGRect frame2 = CGRectMake(0, _cur_y, _scrollv.bounds.size.width, _messageConent.frame.size.height);
+    _messageConent.frame = frame2;
+    _cur_y += frame2.size.height;
     _cur_y += _yOffset;
 }
 

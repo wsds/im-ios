@@ -109,7 +109,7 @@
     }
     NSDictionary *dic_params = @{@"phoneask":account.phone,
                                  @"rid":account.rid,
-                                 @"status":statusStr};
+                                 @"status":[NSNumber numberWithBool:status]};
     Params4Http *params = [[Params4Http alloc] initWithUrl:URL_relation_addfriendagree
                                                     params:dic_params
                                                        tag:100

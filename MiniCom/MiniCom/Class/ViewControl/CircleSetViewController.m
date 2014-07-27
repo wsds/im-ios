@@ -308,7 +308,7 @@
         NSLog(@"phone==%@", phone);
         NSLog(@"rid==%@", rid);
         NSLog(@"filter==%@", filter);
-        NSDictionary *dic_params = @{@"rid":rid,
+        NSDictionary *dic_params = @{@"rid":@"",
                                      @"phoneto":[@[phone] JSONString],
                                      @"filter":filter};
         Params4Http *params = [[Params4Http alloc] initWithUrl:URL_circle_moveorout
@@ -406,6 +406,7 @@
             NSLog(@"移出/移入 失败");
             NSString *error = [dic valueForKey:@"失败原因"];
             NSLog(@"error==%@", error);
+            [Common alert4error:error tag:0 delegate:nil];
         }
         else
         {

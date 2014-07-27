@@ -149,10 +149,10 @@
     _timeLen = audioRecorder.currentTime;
     [audioRecorder stop];
     
-    if (_timeLen<1) {
-        [Common alert4error:@"录的时间过短" tag:0 delegate:nil];
-        return;
-    }
+//    if (_timeLen<1) {
+//        [Common alert4error:@"录的时间过短" tag:0 delegate:nil];
+//        return;
+//    }
     
     NSData *recordData = [NSData dataWithContentsOfFile:pathURL.path];    
     self.recordData = recordData;

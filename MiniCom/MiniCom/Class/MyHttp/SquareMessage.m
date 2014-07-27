@@ -197,7 +197,10 @@ static SquareMessage *object = nil;
     //解析 设置到内存
     [self setSquareDataWithMessAry:squareAry];
     
-    [[NSNotificationCenter defaultCenter] postNotificationName:SquareEvent_MessageNotification object:nil];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [[NSNotificationCenter defaultCenter] postNotificationName:SquareEvent_MessageNotification object:nil];
+
+    });
 }
 
 //- (void)insertSquareMessAry:(NSArray *)messageAry

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>BA5485DB-568E-4CA7-9FDF-B5D91A21AFC9</string>
+	<key>IDESourceControlProjectName</key>
+	<string>MiniCom</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>F2DACAD6-5DDE-40AD-9363-B3675C9BCD4D</key>
+		<string>https://github.com/wsds/im-ios.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>MiniCom/MiniCom.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>F2DACAD6-5DDE-40AD-9363-B3675C9BCD4D</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/wsds/im-ios.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>F2DACAD6-5DDE-40AD-9363-B3675C9BCD4D</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>F2DACAD6-5DDE-40AD-9363-B3675C9BCD4D</string>
+			<key>IDESourceControlWCCName</key>
+			<string>wxgs_im-ios</string>
+		</dict>
+	</array>
+</dict>
+</plist>
