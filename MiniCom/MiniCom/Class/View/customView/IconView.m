@@ -17,8 +17,10 @@
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
-        
-        if ([title length] == 0) {
+        if ([title isKindOfClass:[NSNull class]]) {
+            return nil;
+        }
+        if (title != nil && [title length] == 0) {
             title = @"无名";
         }
                 

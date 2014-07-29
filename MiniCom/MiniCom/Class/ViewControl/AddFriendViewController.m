@@ -78,7 +78,7 @@
         NSLog(@"message==%@", _username_tf.text);
         
         NSDictionary *dic_params = @{@"phoneto":self.friendPhone,
-                                     @"rid":@"rid",
+                                     //@"rid":@"rid",
                                      @"message":_username_tf.text};
         Params4Http *params = [[Params4Http alloc] initWithUrl:URL_relation_addfriend
                                                         params:dic_params

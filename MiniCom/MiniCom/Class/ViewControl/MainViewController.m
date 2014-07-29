@@ -192,7 +192,6 @@
     //
 //    NSString *statusStr = @"true";
 //    NSDictionary *dic_params = @{@"phoneask":@"13488838432",
-//                                 @"rid":@"",
 //                                 @"status":statusStr};
 //    Params4Http *params = [[Params4Http alloc] initWithUrl:URL_relation_addfriendagree
 //                                                    params:dic_params
@@ -694,9 +693,11 @@
                     NSMutableArray *frindsAry = [[NSMutableArray alloc] init];
                     for (int i=0; i<[ary count]; i++) {
                         NSDictionary *accountDic = [ary objectAtIndex:i];
-                        AccountData *data = [AnalyTools analyAccount:accountDic];
-                        [frindsAry addObject:data];
-                        [[DBHelper sharedInstance] insertOrUpdateAccount:data];
+                        if (accountDic) {
+                            AccountData *data = [AnalyTools analyAccount:accountDic];
+                            [frindsAry addObject:data];
+                            [[DBHelper sharedInstance] insertOrUpdateAccount:data];
+                        }
                     }
                     circle.rid = rid;
                     circle.name = circleName;

@@ -76,6 +76,9 @@
 
 - (void)addSubviewWithAry:(NSArray *)ary
 {
+    if ([ary isKindOfClass:[NSNull class]]) {
+        return;
+    }
     if (ary && [ary count] > 0) {
         int onePageCount = _sub_HHH * _sub_VVV;
         int page = 0;
@@ -86,7 +89,7 @@
         {
             page = (int)(([ary count] - 1 )/ onePageCount) + 1;
         }
-        NSLog(@"page==%d", page);
+        NSLog(@"friend page==%d", page);
         _pageController.numberOfPages = page;
         
         self.scrollv.contentSize = CGSizeMake(self.scrollv.bounds.size.width * page, self.scrollv.bounds.size.height);
@@ -97,11 +100,12 @@
             float x = _sub_VVV * _subView_w * (i / onePageCount) + (i % _sub_VVV) * _subView_w;
             float y = _subView_h * ((i % onePageCount) / _sub_VVV);
             CGRect frame = CGRectMake(x, y, _subView_w, _subView_h);
-            
-            IconView *icon = [[IconView alloc] initWithFrame:frame image:acc.head title:acc.nickName];
-            [icon addTarget:self action:@selector(btnAction:) forControlEvents:UIControlEventTouchUpInside];
-            icon.tag = i;
-            [self.scrollv addSubview:icon];
+            if (acc.nickName) {
+                IconView *icon = [[IconView alloc] initWithFrame:frame image:acc.head title:acc.nickName];
+                [icon addTarget:self action:@selector(btnAction:) forControlEvents:UIControlEventTouchUpInside];
+                icon.tag = i;
+                [self.scrollv addSubview:icon];
+            }
         }
     }
     else

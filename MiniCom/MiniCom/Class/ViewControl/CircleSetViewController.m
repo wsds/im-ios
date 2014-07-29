@@ -308,7 +308,7 @@
         NSLog(@"phone==%@", phone);
         NSLog(@"rid==%@", rid);
         NSLog(@"filter==%@", filter);
-        NSDictionary *dic_params = @{@"rid":@"",
+        NSDictionary *dic_params = @{@"rid":rid,
                                      @"phoneto":[@[phone] JSONString],
                                      @"filter":filter};
         Params4Http *params = [[Params4Http alloc] initWithUrl:URL_circle_moveorout
@@ -321,6 +321,10 @@
         [myHttp startRequest:params
                    hudOnView:self.view
                     delegate:self];
+    }
+    else
+    {
+        NSLog(@"no have rid | phone");
     }
 }
 

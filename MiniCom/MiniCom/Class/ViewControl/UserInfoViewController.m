@@ -255,7 +255,7 @@
 - (void)deleteFriend:(NSString *)friend
 {
     if ([friend length] > 0) {
-        NSDictionary *dic_params = @{@"phoneto":friend};
+        NSDictionary *dic_params = @{@"phoneto":[@[friend] JSONString]};
         Params4Http *params = [[Params4Http alloc] initWithUrl:URL_relation_deletefriend
                                                         params:dic_params
                                                            tag:200

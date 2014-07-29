@@ -28,7 +28,9 @@
     account.mainBusiness = [valueDic valueForKey:@"mainBusiness"];
     account.nickName = [valueDic valueForKey:@"nickName"];
     account.phone = [NSString stringWithFormat:@"%@", [valueDic valueForKey:@"phone"]];
-    account.sex = [valueDic valueForKey:@"sex"];
+    if ([valueDic valueForKey:@"sex"]) {
+        account.sex = [valueDic valueForKey:@"sex"];
+    }
     account.userBackground = [valueDic valueForKey:@"userBackground"];
     
     account.gid = [NSString stringWithFormat:@"%@",[valueDic valueForKey:@"gid"]];
