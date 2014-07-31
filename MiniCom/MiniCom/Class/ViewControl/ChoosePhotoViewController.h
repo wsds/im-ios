@@ -20,6 +20,9 @@
     UIButton *_lbtn;
     UIButton *_rbtn;
 }
+
+@property (nonatomic, assign) BOOL allowsEditing;
+
 @property (nonatomic, assign) id<ChoosePhotoViewDelegate>delegate;
 
 @end

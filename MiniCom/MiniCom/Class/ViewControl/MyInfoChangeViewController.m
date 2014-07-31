@@ -12,6 +12,7 @@
 #import "NavView.h"
 #import "BaseTitleView.h"
 #import "UIImageView+WebCache.h"
+#import "UIImage+Custom.h"
 #import "SaveAccountCtrView.h"
 #import "PhotoControlView.h"
 #import "AccountManager.h"
@@ -318,7 +319,11 @@
     //上传头像
     NSString *newImageFileName = @"";
     if (self.isIconChange) {
-        NSData *data = [Common scaleAndTransImage:_icon_imgV.image];
+        
+        UIImage *newImage = [_icon_imgV.image imageByScalingAndCroppingForSize:CGSizeMake(100, 100)];
+        
+        NSData *data = [Common scaleAndTransImage:newImage];
+        
         newImageFileName = [Common getFileNameResouceData:data type:@"jpg"];
         [[MyNetManager SharedInstance] reqestUploadResouceData:data name:newImageFileName];
     }
@@ -430,7 +435,7 @@
 	if([mediaType isEqualToString:@"public.image"])	//被选中的是图片
 	{
         //获取照片实例
-		UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
+		UIImage *image = [info objectForKey:UIImagePickerControllerEditedImage];
 		
         NSString *fileName = [[NSString alloc] init];
         

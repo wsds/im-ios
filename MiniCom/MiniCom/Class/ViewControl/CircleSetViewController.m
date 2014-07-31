@@ -187,7 +187,13 @@
 {
     self.curAccount = account;
     
-    [self movePhone:account.phone rid:self.curCircle.rid filter:@"REMOVE"];
+    if (self.curCircle.rid == nil || [self.curCircle.rid length] == 0) {
+        [self updateRemove];
+    }
+    else
+    {
+        [self movePhone:account.phone rid:self.curCircle.rid filter:@"REMOVE"];
+    }
 }
 
 #pragma mark GroupMemberSelectView callback
@@ -196,7 +202,13 @@
 {
     self.curAccount = account;
     
-    [self movePhone:account.phone rid:self.curCircle.rid filter:@"SHIFTIN"];
+    if (self.curCircle.rid == nil || [self.curCircle.rid length] == 0) {
+        [self updateShiftin];
+    }
+    else
+    {
+        [self movePhone:account.phone rid:self.curCircle.rid filter:@"SHIFTIN"];
+    }
 }
 
 - (void)updateSelectFriend:(NSArray *)friends
@@ -332,7 +344,7 @@
 {
     if ([name length] > 0) {
         NSDictionary *dic_params = @{@"rid":rid,
-                                     @"circleName":name};
+                                     @"name":name};
         Params4Http *params = [[Params4Http alloc] initWithUrl:URL_circle_modify
                                                         params:dic_params
                                                            tag:100
@@ -380,6 +392,24 @@
     }
 }
 
+- (void)updateRemove
+{
+    [self.curCircle.accounts removeObject:self.curAccount];
+    [self updateWithCircleAry:self.myCircleAry];
+    
+    [self.selectedFriendsAry addObject:self.curAccount];
+    [self updateSelectFriend:self.selectedFriendsAry];
+}
+
+- (void)updateShiftin
+{
+    [self.selectedFriendsAry removeObject:self.curAccount];
+    [self updateSelectFriend:self.selectedFriendsAry];
+    
+    [self.curCircle.accounts addObject:self.curAccount];
+    [self updateWithCircleAry:self.myCircleAry];
+}
+
 - (void)isSuccessEquals:(RequestResult *)result
 {
     if (result.tag == 0) {
@@ -388,21 +418,13 @@
         NSString *response = [dic valueForKey:messKey];
         if ([response isEqualToString:@"移出成功"] || [response isEqualToString:@"移入成功"]) {
             if ([response isEqualToString:@"移出成功"]) {
-                [self.curCircle.accounts removeObject:self.curAccount];
-                [self updateWithCircleAry:self.myCircleAry];
-                
-                [self.selectedFriendsAry addObject:self.curAccount];
-                [self updateSelectFriend:self.selectedFriendsAry];
+                [self updateRemove];
             }
             else if([response isEqualToString:@"移入成功"])
             {
-                [self.selectedFriendsAry removeObject:self.curAccount];
-                [self updateSelectFriend:self.selectedFriendsAry];
-                
-                [self.curCircle.accounts addObject:self.curAccount];
-                [self updateWithCircleAry:self.myCircleAry];
+                [self updateShiftin];
             }
-            //update
+            //update request
             [self.mainVCdelegate getCirclesAndFriends];
         }
         else if([response isEqualToString:@"移出失败"] || [response isEqualToString:@"移入失败"])

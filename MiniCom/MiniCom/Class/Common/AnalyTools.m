@@ -36,7 +36,9 @@
     account.gid = [NSString stringWithFormat:@"%@",[valueDic valueForKey:@"gid"]];
 
     account.message = [valueDic valueForKey:@"message"];
-    account.rid = [NSString stringWithFormat:@"%@", [valueDic valueForKey:@"rid"]];
+    if ([valueDic valueForKey:@"rid"]) {
+        account.rid = [NSString stringWithFormat:@"%@", [valueDic valueForKey:@"rid"]];
+    }
     account.uid = [NSString stringWithFormat:@"%@", [valueDic valueForKey:@"uid"]];
 
     return account;

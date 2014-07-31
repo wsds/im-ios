@@ -66,8 +66,25 @@
         
         //image
         if ([self.imageName length] > 0) {
-            _imageView = [Common initImageName:@"" onView:_contentView frame:[Common RectMakex:0 y:0.1 w:0.9 h:0.65 onSuperBounds:_contentView.bounds]];
-            [_imageView setImageWithURL:[Common getUrlWithImageName:self.imageName] placeholderImage:[Common getDefaultBadImage]];
+            _imageView = [Common initImageName:@"" onView:_contentView frame:[Common RectMakex:0 y:0.1 w:1.0 h:0.65 onSuperBounds:_contentView.bounds]];
+            //[_imageView setImageWithURL:[Common getUrlWithImageName:self.imageName] placeholderImage:[Common getDefaultBadImage]];
+            
+            __block float www = _imageView.bounds.size.width;
+            __block float hhh = _imageView.bounds.size.height;
+            
+            [_imageView setImageWithURL:[Common getUrlWithImageName:self.imageName] success:^(UIImage *image) {
+                float vvv = image.size.width / image.size.height;
+                if (vvv > 1.0) {
+                    hhh = www / vvv;
+                }
+                else
+                {
+                    www = hhh * vvv;
+                }
+                _imageView.frame = CGRectMake((_imageView.frame.size.width - www) / 2, (_imageView.frame.size.height - hhh) / 2, www, hhh);
+            } failure:^(NSError *error) {
+            
+            }];
         }
         
         //voice

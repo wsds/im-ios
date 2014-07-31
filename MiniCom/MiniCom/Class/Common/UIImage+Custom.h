@@ -22,4 +22,6 @@
 //
 //+ (void)downloadSDimageUrl:(NSString *)urlStr delegate:(id)delegate;
 
+- (UIImage*)imageByScalingAndCroppingForSize:(CGSize)targetSize;
+
 @end

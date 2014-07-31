@@ -47,4 +47,6 @@
 
 + (NSData *)scaleAndTransImage:(UIImage *)image;
 
++ (NSData *)scaleAndTransMiniImage:(UIImage *)image;
+
 @end

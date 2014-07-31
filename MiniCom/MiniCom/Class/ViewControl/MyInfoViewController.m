@@ -124,6 +124,7 @@
     NSLog(@"backGroundBtnAction");
     ChoosePhotoViewController *choosePhotoVC = [[ChoosePhotoViewController alloc] init];
     choosePhotoVC.delegate = self;
+    choosePhotoVC.allowsEditing = YES;
     [self presentViewController:choosePhotoVC animated:YES completion:nil];
 }
 

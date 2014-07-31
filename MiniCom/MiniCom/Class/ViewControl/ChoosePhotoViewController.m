@@ -80,7 +80,6 @@
     if ([UIImagePickerController isSourceTypeAvailable: sourceType]) {
         UIImagePickerController *picker = [[UIImagePickerController alloc] init];
         picker.delegate = self;
-        //picker.allowsEditing = YES;
         picker.sourceType = sourceType;
         picker.mediaTypes = [[NSArray alloc] initWithObjects:(NSString*)kUTTypeImage, nil];
         [self presentViewController:picker animated:YES completion:nil];
@@ -113,7 +112,7 @@
 	if([mediaType isEqualToString:@"public.image"])	//被选中的是图片
 	{
         //获取照片实例
-		UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
+        UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
 		
         NSString *fileName = [[NSString alloc] init];
         

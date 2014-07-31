@@ -685,8 +685,10 @@
                     CircleData *circle = [[CircleData alloc] init];
                     
                     NSDictionary *circles = [circlesAry objectAtIndex:i];
-                    
-                    NSString *rid = [NSString stringWithFormat:@"%@", [circles valueForKey:@"rid"]];
+                    NSString *rid = @"";
+                    if ([circles valueForKey:@"rid"]) {
+                        rid = [NSString stringWithFormat:@"%@", [circles valueForKey:@"rid"]];
+                    }
                     NSString *circleName = [circles valueForKey:@"name"];
                     NSArray *ary = [circles valueForKey:@"accounts"];
                     //存储用户信息
