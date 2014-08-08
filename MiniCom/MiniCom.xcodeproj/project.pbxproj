@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		783A3A071994D1FC0053BCE7 /* dialog_mach.png in Resources */ = {isa = PBXBuildFile; fileRef = 783A3A061994D1FC0053BCE7 /* dialog_mach.png */; };
+		783A3A091994D88C0053BCE7 /* dialog_search.png in Resources */ = {isa = PBXBuildFile; fileRef = 783A3A081994D88C0053BCE7 /* dialog_search.png */; };
+		787555CF19938AF100A97DF4 /* dialog_close.png in Resources */ = {isa = PBXBuildFile; fileRef = 787555CE19938AF100A97DF4 /* dialog_close.png */; };
+		787555D119938DB900A97DF4 /* input_clear.png in Resources */ = {isa = PBXBuildFile; fileRef = 787555D019938DB900A97DF4 /* input_clear.png */; };
+		7888BFA01991CC2F00FC47ED /* background4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7888BF9F1991CC2F00FC47ED /* background4.jpg */; };
 		AF159C901944B61500AB96B4 /* ChoosePhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF159C8D1944B61500AB96B4 /* ChoosePhotoViewController.m */; };
 		AF159C911944B61500AB96B4 /* RecordVoiceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF159C8F1944B61500AB96B4 /* RecordVoiceViewController.m */; };
 		AF3229E91923C87A003A8816 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF3229E81923C87A003A8816 /* Foundation.framework */; };
@@ -386,6 +391,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		783A3A061994D1FC0053BCE7 /* dialog_mach.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dialog_mach.png; sourceTree = "<group>"; };
+		783A3A081994D88C0053BCE7 /* dialog_search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dialog_search.png; sourceTree = "<group>"; };
+		787555CE19938AF100A97DF4 /* dialog_close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dialog_close.png; sourceTree = "<group>"; };
+		787555D019938DB900A97DF4 /* input_clear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = input_clear.png; sourceTree = "<group>"; };
+		7888BF9F1991CC2F00FC47ED /* background4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background4.jpg; sourceTree = "<group>"; };
 		AF159C8C1944B61500AB96B4 /* ChoosePhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChoosePhotoViewController.h; sourceTree = "<group>"; };
 		AF159C8D1944B61500AB96B4 /* ChoosePhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChoosePhotoViewController.m; sourceTree = "<group>"; };
 		AF159C8E1944B61500AB96B4 /* RecordVoiceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordVoiceViewController.h; sourceTree = "<group>"; };
@@ -1353,6 +1363,7 @@
 				AF4D8B671928B8FA00650E1F /* card_background_click.png */,
 				AF4D8B681928B8FA00650E1F /* card_background_normal.png */,
 				AF4D8B691928B8FA00650E1F /* group_frame.png */,
+				787555CE19938AF100A97DF4 /* dialog_close.png */,
 				AF4D8B6A1928B8FA00650E1F /* holding.png */,
 				AF4D8B6B1928B8FA00650E1F /* line_blue.png */,
 				AF4D8B6C1928B8FA00650E1F /* line_gray.png */,
@@ -1366,7 +1377,9 @@
 				AF98BE8819251A7B0090F9E3 /* background.jpg */,
 				AF98BE8919251A7B0090F9E3 /* background1.png */,
 				AF98BE8A19251A7B0090F9E3 /* background2.jpg */,
+				787555D019938DB900A97DF4 /* input_clear.png */,
 				AF98BE8B19251A7B0090F9E3 /* background3.jpg */,
+				7888BF9F1991CC2F00FC47ED /* background4.jpg */,
 				AF98BE8C19251A7B0090F9E3 /* barometer.png */,
 				AF98BE8D19251A7B0090F9E3 /* btn_setting_normal.png */,
 				AF98BE8E19251A7B0090F9E3 /* button_addmembers.png */,
@@ -1405,11 +1418,13 @@
 				AF98BEB319251A7B0090F9E3 /* comment.png */,
 				AF98BEB419251A7B0090F9E3 /* cursor.png */,
 				AF98BEB519251A7B0090F9E3 /* defaultimage.jpg */,
+				783A3A081994D88C0053BCE7 /* dialog_search.png */,
 				AF98BEB619251A7B0090F9E3 /* distance.png */,
 				AF98BEB719251A7B0090F9E3 /* face_add.png */,
 				AF98BEB819251A7B0090F9E3 /* face_delete.png */,
 				AF98BEB919251A7B0090F9E3 /* face_left.png */,
 				AF98BEBA19251A7B0090F9E3 /* face_man.png */,
+				783A3A061994D1FC0053BCE7 /* dialog_mach.png */,
 				AF98BEBB19251A7B0090F9E3 /* face_right.png */,
 				AF98BEBC19251A7B0090F9E3 /* group_addnew.png */,
 				AF98BEBE19251A7B0090F9E3 /* group_icon.png */,
@@ -1871,6 +1886,7 @@
 				AF98BF0A19251A7B0090F9E3 /* chat_picture_normal.png in Resources */,
 				AF98BF5719251A7B0090F9E3 /* time.png in Resources */,
 				AF3229F31923C87A003A8816 /* InfoPlist.strings in Resources */,
+				7888BFA01991CC2F00FC47ED /* background4.jpg in Resources */,
 				AF98BF3B19251A7B0090F9E3 /* picandvoice_affirm.png in Resources */,
 				AFA96BEF1944A1A600F20285 /* f071.png in Resources */,
 				AF98BF1219251A7B0090F9E3 /* circlemenu_item1.png in Resources */,
@@ -1886,6 +1902,7 @@
 				AF4D8B741928B8FA00650E1F /* line_blue.png in Resources */,
 				AF805BF2195C913300A951F8 /* goldup.mp3 in Resources */,
 				AF98BF1119251A7B0090F9E3 /* circlemenu_disk_outer.png in Resources */,
+				787555CF19938AF100A97DF4 /* dialog_close.png in Resources */,
 				AFA96BAB1944A1A600F20285 /* f003.png in Resources */,
 				AFA96BD51944A1A600F20285 /* f045.png in Resources */,
 				AF65EC5419699B4A00AD4A02 /* playback_close@2x.png in Resources */,
@@ -1975,6 +1992,7 @@
 				AF98BF2D19251A7B0090F9E3 /* head_voice_start.png in Resources */,
 				AFA96BCA1944A1A600F20285 /* f034.png in Resources */,
 				AF98BF3119251A7B0090F9E3 /* icon.png in Resources */,
+				787555D119938DB900A97DF4 /* input_clear.png in Resources */,
 				AF65EC45196997D900AD4A02 /* tusiji_11.gif in Resources */,
 				AFA96BAF1944A1A600F20285 /* f007.png in Resources */,
 				AF98BEF819251A7B0090F9E3 /* background3.jpg in Resources */,
@@ -2019,6 +2037,7 @@
 				AFA96BC71944A1A600F20285 /* f031.png in Resources */,
 				AF98BF4819251A7B0090F9E3 /* release_voice.png in Resources */,
 				AFA96C071944A1A600F20285 /* f095.png in Resources */,
+				783A3A071994D1FC0053BCE7 /* dialog_mach.png in Resources */,
 				AFA96BF61944A1A600F20285 /* f078.png in Resources */,
 				AF98BF5119251A7B0090F9E3 /* square_icon_selected.png in Resources */,
 				AFA96BB91944A1A600F20285 /* f017.png in Resources */,
@@ -2034,6 +2053,7 @@
 				AFA96BDD1944A1A600F20285 /* f053.png in Resources */,
 				AFA96BE81944A1A600F20285 /* f064.png in Resources */,
 				AF98BEEF19251A7B0090F9E3 /* app_start.png in Resources */,
+				783A3A091994D88C0053BCE7 /* dialog_search.png in Resources */,
 				AFA96C031944A1A600F20285 /* f091.png in Resources */,
 				AF98BF1019251A7B0090F9E3 /* circlemenu_disk.png in Resources */,
 				AF98BF5019251A7B0090F9E3 /* square_icon.png in Resources */,

@@ -1099,7 +1099,7 @@ api = {
          ***************************************/
         "square_getsquareusers": {
                 description: {
-                        id: 1001205,
+                        id: 1001206,
                         url: "/api2/square/getsquareusers"
                     },
                 request: {
@@ -1117,7 +1117,7 @@ api = {
          ***************************************/
         "square_getonlinecount": {
                 description: {
-                        id: 1001206,
+                        id: 1001207,
                         url: "/api2/square/getonlinecount"
                     },
                 request: {
@@ -1129,6 +1129,8 @@ api = {
                     }
             }
 }
+
+
 message = {
         gmid: "1",
         messageType: "精华",
