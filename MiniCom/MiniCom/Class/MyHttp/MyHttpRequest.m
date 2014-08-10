@@ -44,7 +44,7 @@
     
     NSString *phone = [AccountManager SharedInstance].username;
     NSString *accKey = [AccountManager SharedInstance].accessKey;
-    accKey = TempCommonAccKey;
+    //accKey = TempCommonAccKey;
     
     NSMutableDictionary *requestDic = [NSMutableDictionary dictionaryWithDictionary:@{@"phone":phone, @"accessKey":accKey}];
     if (self.needLogin) {
@@ -116,7 +116,7 @@
 }
 
 - (void)requestFinished:(ASIHTTPRequest *)request{
-    NSLog(@"requestFinished");
+    //NSLog(@"requestFinished");
     RequestResult *result = [self getResultFromRequest:request];
     if (_delegate && [_delegate respondsToSelector:@selector(isSuccessEquals:)]) {
         [_delegate isSuccessEquals:result];

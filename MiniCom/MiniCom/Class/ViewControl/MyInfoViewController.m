@@ -21,7 +21,6 @@
 #import "TwoDCodeView.h"
 #import "UIImageView+WebCache.h"
 
-#import "RSA.h"
 #import "AnalyTools.h"
 
 @interface MyInfoViewController ()
@@ -166,42 +165,9 @@
 
 - (void)changeInfoAction
 {
-//    NSString *accessKey = @"0c6749a5b765a9604f27e78449cb074d9acddd0206275f5f5cb2a745bf8a214e08bb8b90d9133e49f4bae9f1d6e01db53043cfec6989508d01ada1d6007cc6d2";
-//    //NSString *pbKey = @"5db114f97e3b71e1316464bd4ba54b25a8f015ccb4bdf7796eb4767f9828841#5db114f97e3b71e1316464bd4ba54b25a8f015ccb4bdf7796eb4767f9828841#3e4ee7b8455ad00c3014e82057cbbe0bd7365f1fa858750830f01ca7e456b659";
-//    [self rsaAcc:accessKey pbKey:pbKey];
-    
     MyInfoChangeViewController *myInfoChangeVC = [[MyInfoChangeViewController alloc] init];
     myInfoChangeVC.account = self.account;
     [self presentViewController:myInfoChangeVC animated:YES completion:nil];
-}
-
-
-- (void)rsaAcc:(NSString *)acckey pbKey:(NSString *)pbkey
-{
-    NSLog(@"acckey==%@", acckey);
-    //NSLog(@"pbkey==%@", pbkey);
-
-    RSA *rsa = [RSA shareInstance];
-    [rsa generateKeyPairRSACompleteBlock:^{
-        if (acckey) {
-            //encrypt
-            //NSData *encryptData = [acckey dataUsingEncoding:NSUTF8StringEncoding];
-            NSData *encryptData = [acckey dataUsingEncoding:NSUTF8StringEncoding];
-            NSLog(@"encryptData==%@", encryptData);
-            
-            //decrypt
-            NSData *decryptData = [rsa RSA_DecryptUsingPublicKeyWithData:encryptData];
-            //NSData *decryptData = [rsa RSA_DecryptUsingPrivateKeyWithData:encryptData];
-            
-            NSLog(@"decryptData==%@", decryptData);
-
-            NSString *newAcckey = [[NSString alloc] initWithData:decryptData encoding:NSUTF8StringEncoding];
-            
-            NSLog(@"newAcckey==%@", newAcckey);
-        }
-    }];
-    
-    //42b34908b9959f546fde97300640913ee664dfbd
 }
 
 -(NSData*)stringToByte:(NSString*)string
@@ -321,12 +287,11 @@
         {
             NSString *error = [dic valueForKey:@"失败原因"];
             //[Common alert4error:error tag:0 delegate:nil];
-            
-            [[AccountManager SharedInstance] setLogout];
-
-            [self navAction];
-            [self.mainVCdelegate presentLoginVC];
         }
+        [[AccountManager SharedInstance] setLogout];
+        
+        [self navAction];
+        [self.mainVCdelegate presentLoginVC];
     }
 //    else if(result.tag == 1)
 //    {

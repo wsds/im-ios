@@ -45,7 +45,6 @@
 		AF322AD21923CED7003A8816 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AF322AD11923CED7003A8816 /* libz.dylib */; };
 		AF322AD41923CF9C003A8816 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AF322AD31923CF9C003A8816 /* libxml2.dylib */; };
 		AF322AD61923CFFF003A8816 /* libxml2.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AF322AD51923CFFF003A8816 /* libxml2.2.dylib */; };
-		AF3F4DAA193783EA00842491 /* RSA.m in Sources */ = {isa = PBXBuildFile; fileRef = AF3F4DA9193783EA00842491 /* RSA.m */; };
 		AF4C2A841951F0AA005EF16C /* ChatCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AF4C2A831951F0AA005EF16C /* ChatCell.m */; };
 		AF4D8B581928A5F300650E1F /* LoadingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF4D8B551928A5F300650E1F /* LoadingViewController.m */; };
 		AF4D8B591928A5F300650E1F /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF4D8B571928A5F300650E1F /* MainViewController.m */; };
@@ -371,6 +370,9 @@
 		AFBA218C1984D8BC00E2FE80 /* SendSquareFileScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = AFBA218B1984D8BC00E2FE80 /* SendSquareFileScrollView.m */; };
 		AFBA218F1984E4D300E2FE80 /* SquareFileData.m in Sources */ = {isa = PBXBuildFile; fileRef = AFBA218E1984E4D300E2FE80 /* SquareFileData.m */; };
 		AFBA21921984EFC200E2FE80 /* SendSquareFileEditView.m in Sources */ = {isa = PBXBuildFile; fileRef = AFBA21911984EFC200E2FE80 /* SendSquareFileEditView.m */; };
+		AFBA24831997293F00E2FE80 /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AFBA24811997293F00E2FE80 /* libcrypto.a */; };
+		AFBA24841997293F00E2FE80 /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AFBA24821997293F00E2FE80 /* libssl.a */; };
+		AFBA255A1997439100E2FE80 /* libRSA1.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AFBA25591997439100E2FE80 /* libRSA1.a */; };
 		AFC41EDB195FEB260079716D /* UIColor+Custom.m in Sources */ = {isa = PBXBuildFile; fileRef = AFC41EDA195FEB260079716D /* UIColor+Custom.m */; };
 		AFE7741C194D9DC400C505C8 /* ChatMessData.m in Sources */ = {isa = PBXBuildFile; fileRef = AFE7741B194D9DC400C505C8 /* ChatMessData.m */; };
 /* End PBXBuildFile section */
@@ -450,8 +452,6 @@
 		AF322AD11923CED7003A8816 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		AF322AD31923CF9C003A8816 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		AF322AD51923CFFF003A8816 /* libxml2.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.2.dylib; path = usr/lib/libxml2.2.dylib; sourceTree = SDKROOT; };
-		AF3F4DA8193783EA00842491 /* RSA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSA.h; sourceTree = "<group>"; };
-		AF3F4DA9193783EA00842491 /* RSA.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSA.m; sourceTree = "<group>"; };
 		AF4C2A821951F0AA005EF16C /* ChatCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChatCell.h; path = own/ChatCell.h; sourceTree = "<group>"; };
 		AF4C2A831951F0AA005EF16C /* ChatCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChatCell.m; path = own/ChatCell.m; sourceTree = "<group>"; };
 		AF4D8B541928A5F300650E1F /* LoadingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadingViewController.h; sourceTree = "<group>"; };
@@ -886,6 +886,10 @@
 		AFBA218E1984E4D300E2FE80 /* SquareFileData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SquareFileData.m; sourceTree = "<group>"; };
 		AFBA21901984EFC200E2FE80 /* SendSquareFileEditView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SendSquareFileEditView.h; sourceTree = "<group>"; };
 		AFBA21911984EFC200E2FE80 /* SendSquareFileEditView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SendSquareFileEditView.m; sourceTree = "<group>"; };
+		AFBA24811997293F00E2FE80 /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libcrypto.a; sourceTree = "<group>"; };
+		AFBA24821997293F00E2FE80 /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libssl.a; sourceTree = "<group>"; };
+		AFBA25581997439100E2FE80 /* RSA1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSA1.h; sourceTree = "<group>"; };
+		AFBA25591997439100E2FE80 /* libRSA1.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libRSA1.a; sourceTree = "<group>"; };
 		AFC41ED9195FEB260079716D /* UIColor+Custom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Custom.h"; sourceTree = "<group>"; };
 		AFC41EDA195FEB260079716D /* UIColor+Custom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Custom.m"; sourceTree = "<group>"; };
 		AFE7741A194D9DC400C505C8 /* ChatMessData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatMessData.h; sourceTree = "<group>"; };
@@ -899,14 +903,17 @@
 			files = (
 				AFB150471957575600AF448F /* CoreLocation.framework in Frameworks */,
 				AF322AD61923CFFF003A8816 /* libxml2.2.dylib in Frameworks */,
+				AFBA24831997293F00E2FE80 /* libcrypto.a in Frameworks */,
 				AF322AD41923CF9C003A8816 /* libxml2.dylib in Frameworks */,
 				AF322AD21923CED7003A8816 /* libz.dylib in Frameworks */,
 				AF322ACD1923CEA7003A8816 /* libsqlite3.0.dylib in Frameworks */,
+				AFBA255A1997439100E2FE80 /* libRSA1.a in Frameworks */,
 				AF322AC81923CD6A003A8816 /* CFNetwork.framework in Frameworks */,
 				AF322AC91923CD6A003A8816 /* MobileCoreServices.framework in Frameworks */,
 				AF322ACA1923CD6A003A8816 /* SystemConfiguration.framework in Frameworks */,
 				AF3229EB1923C87A003A8816 /* CoreGraphics.framework in Frameworks */,
 				AF3229ED1923C87A003A8816 /* UIKit.framework in Frameworks */,
+				AFBA24841997293F00E2FE80 /* libssl.a in Frameworks */,
 				AF3229E91923C87A003A8816 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1035,10 +1042,11 @@
 		AF322A1F1923CC62003A8816 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				AFBA24321997293F00E2FE80 /* Slib */,
+				AFBA2397199720C600E2FE80 /* RSA */,
 				AF65EC5E196DA1E800AD4A02 /* TCP */,
 				AF805BA01959CF8A00A951F8 /* GTMBase64 */,
 				AFB363FB1948CA4D004723B1 /* SDWebImage */,
-				AF3F4DA7193783EA00842491 /* RSA */,
 				AF322A201923CC62003A8816 /* ASI */,
 				AF322A731923CC62003A8816 /* FMDB */,
 				AF322A7E1923CC62003A8816 /* HUD */,
@@ -1146,15 +1154,6 @@
 				AF322AC31923CC97003A8816 /* icon.png */,
 			);
 			path = app;
-			sourceTree = "<group>";
-		};
-		AF3F4DA7193783EA00842491 /* RSA */ = {
-			isa = PBXGroup;
-			children = (
-				AF3F4DA8193783EA00842491 /* RSA.h */,
-				AF3F4DA9193783EA00842491 /* RSA.m */,
-			);
-			path = RSA;
 			sourceTree = "<group>";
 		};
 		AF4D8B511928A5F300650E1F /* Model */ = {
@@ -1786,6 +1785,48 @@
 			name = Cell;
 			sourceTree = "<group>";
 		};
+		AFBA2397199720C600E2FE80 /* RSA */ = {
+			isa = PBXGroup;
+			children = (
+				AFBA25561997439100E2FE80 /* include */,
+				AFBA25591997439100E2FE80 /* libRSA1.a */,
+			);
+			path = RSA;
+			sourceTree = "<group>";
+		};
+		AFBA24321997293F00E2FE80 /* Slib */ = {
+			isa = PBXGroup;
+			children = (
+				AFBA24801997293F00E2FE80 /* lib */,
+			);
+			path = Slib;
+			sourceTree = "<group>";
+		};
+		AFBA24801997293F00E2FE80 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				AFBA24811997293F00E2FE80 /* libcrypto.a */,
+				AFBA24821997293F00E2FE80 /* libssl.a */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
+		AFBA25561997439100E2FE80 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				AFBA25571997439100E2FE80 /* RSA1 */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		AFBA25571997439100E2FE80 /* RSA1 */ = {
+			isa = PBXGroup;
+			children = (
+				AFBA25581997439100E2FE80 /* RSA1.h */,
+			);
+			path = RSA1;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -2130,7 +2171,6 @@
 				AFB60368193392A800F93382 /* MyInfoChangeViewController.m in Sources */,
 				AFB364151948CA4D004723B1 /* SDWebImagePrefetcher.m in Sources */,
 				AF805BE8195C86DC00A951F8 /* SquareManager.m in Sources */,
-				AF3F4DAA193783EA00842491 /* RSA.m in Sources */,
 				AFA96B3F19449B9200F20285 /* EmojiView.m in Sources */,
 				AFAFDD33193034EC00E50066 /* GroupBaseView.m in Sources */,
 				AF805BED195C86DC00A951F8 /* SessionEvent.m in Sources */,
@@ -2349,11 +2389,17 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MiniCom/MiniCom-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Applications/Xcode\\ 3.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include",
+					"$(PROJECT_DIR)/MiniCom/Lib/Slib/include",
+				);
 				INFOPLIST_FILE = "MiniCom/MiniCom-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/MiniCom/Lib/VoiceConvert/lib",
+					"$(PROJECT_DIR)/MiniCom/Lib/Slib/lib",
+					"$(PROJECT_DIR)/MiniCom/Lib/RSA",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -2368,11 +2414,17 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MiniCom/MiniCom-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Applications/Xcode\\ 3.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include",
+					"$(PROJECT_DIR)/MiniCom/Lib/Slib/include",
+				);
 				INFOPLIST_FILE = "MiniCom/MiniCom-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/MiniCom/Lib/VoiceConvert/lib",
+					"$(PROJECT_DIR)/MiniCom/Lib/Slib/lib",
+					"$(PROJECT_DIR)/MiniCom/Lib/RSA",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;

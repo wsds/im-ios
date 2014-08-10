@@ -22,7 +22,8 @@
 #import "AccountData.h"
 #import "SessionEvent.h"
 
-#import "RSA.h"
+//#import "RSADecode.h"
+#import "RSA1.h"
 
 #define AnimationDur 0.3
 
@@ -430,7 +431,7 @@ enum
                 NSString *accessKey = [dic valueForKey:@"accessKey"];
                 NSString *PbKey = [dic valueForKey:@"PbKey"];
                 
-                NSLog(@"\n uid==%@,\n accessKey==%@,\n PbKey==%@\n", uid, accessKey, PbKey);
+                //NSLog(@"\n uid==%@,\n accessKey==%@,\n PbKey==%@\n", uid, accessKey, PbKey);
                 [self loginOkToSaveUid:uid accessKey:accessKey pbKey:PbKey];
             }
             else if([response isEqualToString:@"普通鉴权失败"])
@@ -442,7 +443,7 @@ enum
         }
         case ENUM_Request_CodeLogin:
         {
-            NSLog(@"code login==%@", result.message);
+            //NSLog(@"code login==%@", result.message);
             NSDictionary *dic = result.myData;
             NSString *response = [dic valueForKey:ResponseMessKey];
             if ([response isEqualToString:@"验证成功"]) {
@@ -451,7 +452,7 @@ enum
                 NSString *accessKey = [dic valueForKey:@"accessKey"];
                 NSString *PbKey = [dic valueForKey:@"PbKey"];
 
-                NSLog(@"\n uid==%@,\n accessKey==%@,\n PbKey==%@\n", uid, accessKey, PbKey);
+                //NSLog(@"\n uid==%@,\n accessKey==%@,\n PbKey==%@\n", uid, accessKey, PbKey);
                 [self loginOkToSaveUid:uid accessKey:accessKey pbKey:PbKey];
                 
                 [_login_codeView stopTimer];
@@ -474,7 +475,7 @@ enum
                 NSString *accessKey = [dic valueForKey:@"accessKey"];
                 NSString *PbKey = [dic valueForKey:@"PbKey"];
                 
-                NSLog(@"\n uid==%@,\n accessKey==%@,\n PbKey==%@\n", uid, accessKey, PbKey);
+                //NSLog(@"\n uid==%@,\n accessKey==%@,\n PbKey==%@\n", uid, accessKey, PbKey);
                 //[self loginOkToSaveUid:uid accessKey:accessKey pbKey:PbKey];
                 [AccountManager SharedInstance].username = self.userName;
                 [AccountManager SharedInstance].uid = uid;
@@ -514,7 +515,7 @@ enum
         }
         case ENUM_Request_SendRegister_Code:
         {
-            NSLog(@"send register code==%@", result.message);
+            //NSLog(@"send register code==%@", result.message);
             NSDictionary *dic = result.myData;
             NSString *response = [dic valueForKey:ResponseMessKey];
             if ([response isEqualToString:@"手机号验证成功"]) {
@@ -564,19 +565,18 @@ enum
                accessKey:(NSString *)accessKey
                    pbKey:(NSString *)pbKey
 {
-    NSLog(@"username==%@ password==%@, to save uid/access/pbkey", self.userName, self.passWord);
+    //NSLog(@"username==%@ password==%@, to save uid/access/pbkey", self.userName, self.passWord);
     //[Common alert4error:[NSString stringWithFormat:@"%@ 登录成功", self.userName] tag:0 delegate:nil];
     
-    //save account info
-    //accessKey = [accessKey stringByReplacingOccurrencesOfString:@" " withString:@""];
-    
-    //[self rsaAcc: accessKey pbKey:pbKey];
+    //decrypt
+    NSString *decAccessKey = [RSADecode decryptHexStr:accessKey keyStr:pbKey];
 
+    //save account info
     [[AccountManager SharedInstance] setAndSaveUsername:self.userName];
 #warning self.passWord注册后设置密码还没有获得
     [[AccountManager SharedInstance] setAndSavePassword:self.passWord];
     [[AccountManager SharedInstance] setAndUid:uid
-                                     accesskey:accessKey
+                                     accesskey:decAccessKey
                                          pbkey:pbKey];
     
     //上传位置信息
@@ -589,24 +589,6 @@ enum
         }
     }
 }
-
-- (void)rsaAcc:(NSString *)acckey pbKey:(NSString *)pbkey
-{
-    RSA *rsa = [RSA shareInstance];
-    [rsa generateKeyPairRSACompleteBlock:^{
-        if (acckey) {
-            //encrypt
-            NSData *encryptData = [acckey dataUsingEncoding:NSUTF8StringEncoding];
-            
-            //decrypt
-            NSData *decryptData = [rsa RSA_DecryptUsingPublicKeyWithData:encryptData];
-            NSString *newAcckey = [[NSString alloc] initWithData:decryptData encoding:NSUTF8StringEncoding];
-            
-            NSLog(@"newAcckey==%@", newAcckey);
-        }
-    }];
-}
-
 
 - (void)didReceiveMemoryWarning
 {

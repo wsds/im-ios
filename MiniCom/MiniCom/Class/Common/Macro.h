@@ -69,8 +69,6 @@ typedef id  (^IDBlock_id)  (id);
 #define DefaultIconName @"face_man.png"
 
 #define TempCommonAccKey @"lejoying"
-//#define TempCommonAccKey @"af6d6d3220cf9f45efaf25a1b3e1f3ed117c6e50"
-//#define TempCommonAccKey @"42b34908b9959f546fde97300640913ee664dfbd"
 
 #define ContentType_Text  @"text"
 #define ContentType_Image @"image"

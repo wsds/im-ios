@@ -6,6 +6,8 @@
 	<dict>
 		<key>MiniCom.xcscheme</key>
 		<dict>
+			<key>isShown</key>
+			<true/>
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
@@ -18,6 +20,66 @@
 			<true/>
 		</dict>
 		<key>AF3229FF1923C87A003A8816</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AFBA225119970F8F00E2FE80</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AFBA225E19970F9000E2FE80</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AFBA24061997245400E2FE80</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AFBA24131997245400E2FE80</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AFBA248819972A0300E2FE80</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AFBA249519972A0300E2FE80</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AFBA24BA199735F600E2FE80</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AFBA24C7199735F600E2FE80</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AFBA24EE19973BD900E2FE80</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AFBA24FB19973BD900E2FE80</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AFBA251D19973DE100E2FE80</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AFBA252A19973DE100E2FE80</key>
 		<dict>
 			<key>primary</key>
 			<true/>

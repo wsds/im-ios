@@ -38,6 +38,66 @@
                ReferencedContainer = "container:MiniCom.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "AFBA225E19970F9000E2FE80"
+               BuildableName = "SLIBTests.xctest"
+               BlueprintName = "SLIBTests"
+               ReferencedContainer = "container:MiniCom.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "AFBA24131997245400E2FE80"
+               BuildableName = "STests.xctest"
+               BlueprintName = "STests"
+               ReferencedContainer = "container:MiniCom.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "AFBA249519972A0300E2FE80"
+               BuildableName = "RSADecodeTests.xctest"
+               BlueprintName = "RSADecodeTests"
+               ReferencedContainer = "container:MiniCom.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "AFBA24C7199735F600E2FE80"
+               BuildableName = "DecodeTests.xctest"
+               BlueprintName = "DecodeTests"
+               ReferencedContainer = "container:MiniCom.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "AFBA24FB19973BD900E2FE80"
+               BuildableName = "RSATests.xctest"
+               BlueprintName = "RSATests"
+               ReferencedContainer = "container:MiniCom.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "AFBA252A19973DE100E2FE80"
+               BuildableName = "RSA1Tests.xctest"
+               BlueprintName = "RSA1Tests"
+               ReferencedContainer = "container:MiniCom.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
