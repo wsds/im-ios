@@ -93,7 +93,6 @@
 		AF6B5ABD19506E88001B1F3E /* GroupData.m in Sources */ = {isa = PBXBuildFile; fileRef = AF6B5ABC19506E88001B1F3E /* GroupData.m */; };
 		AF6B5AC019506F26001B1F3E /* LocalData.m in Sources */ = {isa = PBXBuildFile; fileRef = AF6B5ABF19506F26001B1F3E /* LocalData.m */; };
 		AF805B9F1958933100A951F8 /* SquareContentData.m in Sources */ = {isa = PBXBuildFile; fileRef = AF805B9E1958933100A951F8 /* SquareContentData.m */; };
-		AF805BA41959CF8A00A951F8 /* GTMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = AF805BA21959CF8A00A951F8 /* GTMBase64.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		AF805BA71959EA2F00A951F8 /* SaveAccountCtrView.m in Sources */ = {isa = PBXBuildFile; fileRef = AF805BA61959EA2F00A951F8 /* SaveAccountCtrView.m */; };
 		AF805BB0195C82F500A951F8 /* VoicePlayAnimationView.m in Sources */ = {isa = PBXBuildFile; fileRef = AF805BAF195C82F500A951F8 /* VoicePlayAnimationView.m */; };
 		AF805BB3195C83CE00A951F8 /* BaseAnimationView.m in Sources */ = {isa = PBXBuildFile; fileRef = AF805BB2195C83CE00A951F8 /* BaseAnimationView.m */; };
@@ -373,6 +372,7 @@
 		AFBA24831997293F00E2FE80 /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AFBA24811997293F00E2FE80 /* libcrypto.a */; };
 		AFBA24841997293F00E2FE80 /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AFBA24821997293F00E2FE80 /* libssl.a */; };
 		AFBA255A1997439100E2FE80 /* libRSA1.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AFBA25591997439100E2FE80 /* libRSA1.a */; };
+		AFBA255F199A5A7400E2FE80 /* GTMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = AFBA255D199A5A7400E2FE80 /* GTMBase64.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		AFC41EDB195FEB260079716D /* UIColor+Custom.m in Sources */ = {isa = PBXBuildFile; fileRef = AFC41EDA195FEB260079716D /* UIColor+Custom.m */; };
 		AFE7741C194D9DC400C505C8 /* ChatMessData.m in Sources */ = {isa = PBXBuildFile; fileRef = AFE7741B194D9DC400C505C8 /* ChatMessData.m */; };
 /* End PBXBuildFile section */
@@ -522,9 +522,6 @@
 		AF6B5ABF19506F26001B1F3E /* LocalData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalData.m; sourceTree = "<group>"; };
 		AF805B9D1958933100A951F8 /* SquareContentData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SquareContentData.h; sourceTree = "<group>"; };
 		AF805B9E1958933100A951F8 /* SquareContentData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SquareContentData.m; sourceTree = "<group>"; };
-		AF805BA11959CF8A00A951F8 /* GTMBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMBase64.h; sourceTree = "<group>"; };
-		AF805BA21959CF8A00A951F8 /* GTMBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMBase64.m; sourceTree = "<group>"; };
-		AF805BA31959CF8A00A951F8 /* GTMDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
 		AF805BA51959EA2F00A951F8 /* SaveAccountCtrView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SaveAccountCtrView.h; sourceTree = "<group>"; };
 		AF805BA61959EA2F00A951F8 /* SaveAccountCtrView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SaveAccountCtrView.m; sourceTree = "<group>"; };
 		AF805BAE195C82F500A951F8 /* VoicePlayAnimationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VoicePlayAnimationView.h; sourceTree = "<group>"; };
@@ -890,6 +887,9 @@
 		AFBA24821997293F00E2FE80 /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libssl.a; sourceTree = "<group>"; };
 		AFBA25581997439100E2FE80 /* RSA1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSA1.h; sourceTree = "<group>"; };
 		AFBA25591997439100E2FE80 /* libRSA1.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libRSA1.a; sourceTree = "<group>"; };
+		AFBA255C199A5A7400E2FE80 /* GTMBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMBase64.h; sourceTree = "<group>"; };
+		AFBA255D199A5A7400E2FE80 /* GTMBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMBase64.m; sourceTree = "<group>"; };
+		AFBA255E199A5A7400E2FE80 /* GTMDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
 		AFC41ED9195FEB260079716D /* UIColor+Custom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Custom.h"; sourceTree = "<group>"; };
 		AFC41EDA195FEB260079716D /* UIColor+Custom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Custom.m"; sourceTree = "<group>"; };
 		AFE7741A194D9DC400C505C8 /* ChatMessData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatMessData.h; sourceTree = "<group>"; };
@@ -1042,10 +1042,10 @@
 		AF322A1F1923CC62003A8816 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				AFBA255B199A5A7400E2FE80 /* GTMBase64 */,
 				AFBA24321997293F00E2FE80 /* Slib */,
 				AFBA2397199720C600E2FE80 /* RSA */,
 				AF65EC5E196DA1E800AD4A02 /* TCP */,
-				AF805BA01959CF8A00A951F8 /* GTMBase64 */,
 				AFB363FB1948CA4D004723B1 /* SDWebImage */,
 				AF322A201923CC62003A8816 /* ASI */,
 				AF322A731923CC62003A8816 /* FMDB */,
@@ -1259,16 +1259,6 @@
 				AFBA218E1984E4D300E2FE80 /* SquareFileData.m */,
 			);
 			name = Square;
-			sourceTree = "<group>";
-		};
-		AF805BA01959CF8A00A951F8 /* GTMBase64 */ = {
-			isa = PBXGroup;
-			children = (
-				AF805BA11959CF8A00A951F8 /* GTMBase64.h */,
-				AF805BA21959CF8A00A951F8 /* GTMBase64.m */,
-				AF805BA31959CF8A00A951F8 /* GTMDefines.h */,
-			);
-			path = GTMBase64;
 			sourceTree = "<group>";
 		};
 		AF805BB7195C86DC00A951F8 /* Common */ = {
@@ -1827,6 +1817,16 @@
 			path = RSA1;
 			sourceTree = "<group>";
 		};
+		AFBA255B199A5A7400E2FE80 /* GTMBase64 */ = {
+			isa = PBXGroup;
+			children = (
+				AFBA255C199A5A7400E2FE80 /* GTMBase64.h */,
+				AFBA255D199A5A7400E2FE80 /* GTMBase64.m */,
+				AFBA255E199A5A7400E2FE80 /* GTMDefines.h */,
+			);
+			path = GTMBase64;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -2218,6 +2218,7 @@
 				AF5E2F1C1965BE3900E6D9C9 /* CircleSetViewController.m in Sources */,
 				AF4D8B581928A5F300650E1F /* LoadingViewController.m in Sources */,
 				AFAFDD40193075FD00E50066 /* GroupNear.m in Sources */,
+				AFBA255F199A5A7400E2FE80 /* GTMBase64.m in Sources */,
 				AFA96B4119449B9200F20285 /* GifView.m in Sources */,
 				AFB364161948CA4D004723B1 /* UIButton+WebCache.m in Sources */,
 				AFBA218C1984D8BC00E2FE80 /* SendSquareFileScrollView.m in Sources */,
@@ -2236,7 +2237,6 @@
 				AFBA218F1984E4D300E2FE80 /* SquareFileData.m in Sources */,
 				AF322A971923CC62003A8816 /* ASIHTTPRequest.m in Sources */,
 				AF322A951923CC62003A8816 /* ASIDownloadCache.m in Sources */,
-				AF805BA41959CF8A00A951F8 /* GTMBase64.m in Sources */,
 				AF4C2A841951F0AA005EF16C /* ChatCell.m in Sources */,
 				AF322ABA1923CC62003A8816 /* FMDatabaseQueue.m in Sources */,
 				AFAFDD2D1930342600E50066 /* Register_CodeView.m in Sources */,
