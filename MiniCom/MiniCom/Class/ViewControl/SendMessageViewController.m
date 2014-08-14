@@ -43,7 +43,7 @@
     // Do any additional setup after loading the view.
     
     //bg
-    [Common addImageName:@"background3.jpg" onView:self.view frame:[Common RectMakex:0 y:0 w:1.0 h:1.0 onSuperBounds:kScreen_Frame]];
+    [Common addImageName:@"background4.jpg" onView:self.view frame:[Common RectMakex:0 y:0 w:1.0 h:1.0 onSuperBounds:kScreen_Frame]];
     
     [self loadMessEditView];
     

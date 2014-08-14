@@ -77,7 +77,7 @@
     _viewAry = [[NSMutableArray alloc] init];
     
     //bg
-    [Common addImageName:@"background2.jpg" onView:self.view frame:[Common RectMakex:0 y:0 w:1.0 h:1.0 onSuperBounds:kScreen_Frame]];
+    [Common addImageName:@"background4.jpg" onView:self.view frame:[Common RectMakex:0 y:0 w:1.0 h:1.0 onSuperBounds:kScreen_Frame]];
     
     //contentView
     [self loadContentView];
@@ -128,7 +128,7 @@
     
     //
     _nearGroupView = [[GroupNear alloc] initWithFrame:[Common RectMakex:0.05 y:0.05 w:0.9 h:0.7 onSuperBounds:_contentView.bounds] title:@"附近活跃群组" needBack:NO delegate:self tag:0];
-    [_nearGroupView setFootTitle:@"亦庄站"];
+    //[_nearGroupView setFootTitle:@"亦庄站"];
     _nearGroupView.groupDelegate = self;
     [_contentView addSubview:_nearGroupView];
     
@@ -186,12 +186,13 @@
     [self requestOwn];
     
     //
-    [_itemsView setLocalTitle:@"亦庄站"];
+    //[_itemsView setLocalTitle:@"亦庄站"];
     [_itemsView setDefaultShow];
     
-    //
+    
 //    NSString *statusStr = @"true";
 //    NSDictionary *dic_params = @{@"phoneask":@"13488838432",
+//                                 @"rid":@"",
 //                                 @"status":statusStr};
 //    Params4Http *params = [[Params4Http alloc] initWithUrl:URL_relation_addfriendagree
 //                                                    params:dic_params
@@ -233,7 +234,7 @@
 
 - (void)presentSendMessVC
 {
-    NSArray *subView1titleAry = @[@"精华", @"全部", @"活动", @"吐槽"];
+    NSArray *subView1titleAry = @[@"精华", @"全部", @"活动", @"吐槽0"];
     NSString *messType = [subView1titleAry objectAtIndex: _itemsView.squareIndex];
     SendMessageViewController *sendMessVC = [[SendMessageViewController alloc] init];
     sendMessVC.messType = messType;
@@ -685,21 +686,17 @@
                     CircleData *circle = [[CircleData alloc] init];
                     
                     NSDictionary *circles = [circlesAry objectAtIndex:i];
-                    NSString *rid = @"";
-                    if ([circles valueForKey:@"rid"]) {
-                        rid = [NSString stringWithFormat:@"%@", [circles valueForKey:@"rid"]];
-                    }
+                    
+                    NSString *rid = [NSString stringWithFormat:@"%@", [circles valueForKey:@"rid"]];
                     NSString *circleName = [circles valueForKey:@"name"];
                     NSArray *ary = [circles valueForKey:@"accounts"];
                     //存储用户信息
                     NSMutableArray *frindsAry = [[NSMutableArray alloc] init];
                     for (int i=0; i<[ary count]; i++) {
                         NSDictionary *accountDic = [ary objectAtIndex:i];
-                        if (accountDic) {
-                            AccountData *data = [AnalyTools analyAccount:accountDic];
-                            [frindsAry addObject:data];
-                            [[DBHelper sharedInstance] insertOrUpdateAccount:data];
-                        }
+                        AccountData *data = [AnalyTools analyAccount:accountDic];
+                        [frindsAry addObject:data];
+                        [[DBHelper sharedInstance] insertOrUpdateAccount:data];
                     }
                     circle.rid = rid;
                     circle.name = circleName;
@@ -708,7 +705,8 @@
                     [myCircleAry addObject:circle];
                 }
                 //保存我密友及分组
-                [AccountManager SharedInstance].circleAry = myCircleAry;
+                [AccountManager SharedInsta
+nce].circleAry = myCircleAry;
                 
                 [_myFriendsView updateWithCircleAry:myCircleAry];
             }

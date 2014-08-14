@@ -12,7 +12,6 @@
 #import "NavView.h"
 #import "BaseTitleView.h"
 #import "UIImageView+WebCache.h"
-#import "UIImage+Custom.h"
 #import "SaveAccountCtrView.h"
 #import "PhotoControlView.h"
 #import "AccountManager.h"
@@ -54,7 +53,7 @@
     _cellText_Ary = @[@"修改个人资料", @"头像", @"名字", @"性别", @"手机", @"主要业务"];
     
     //bg
-    [Common addImageName:@"background1.png" onView:self.view frame:[Common RectMakex:0 y:0 w:1.0 h:1.0 onSuperBounds:kScreen_Frame]];
+    [Common addImageName:@"background4.png" onView:self.view frame:[Common RectMakex:0 y:0 w:1.0 h:1.0 onSuperBounds:kScreen_Frame]];
     
     _bgBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     _bgBtn.frame = kScreen_Frame;
@@ -319,11 +318,7 @@
     //上传头像
     NSString *newImageFileName = @"";
     if (self.isIconChange) {
-        
-        UIImage *newImage = [_icon_imgV.image imageByScalingAndCroppingForSize:CGSizeMake(100, 100)];
-        
-        NSData *data = [Common scaleAndTransImage:newImage];
-        
+        NSData *data = [Common scaleAndTransImage:_icon_imgV.image];
         newImageFileName = [Common getFileNameResouceData:data type:@"jpg"];
         [[MyNetManager SharedInstance] reqestUploadResouceData:data name:newImageFileName];
     }
@@ -435,7 +430,7 @@
 	if([mediaType isEqualToString:@"public.image"])	//被选中的是图片
 	{
         //获取照片实例
-		UIImage *image = [info objectForKey:UIImagePickerControllerEditedImage];
+		UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
 		
         NSString *fileName = [[NSString alloc] init];
         

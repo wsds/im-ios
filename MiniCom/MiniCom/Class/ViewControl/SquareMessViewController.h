@@ -15,7 +15,7 @@
 @protocol SquareInfoViewDelegate;
 @protocol MyHttpDelegate;
 
-@interface SquareMessViewController : UIViewController<UIScrollViewDelegate,SquareInfoViewDelegate, MyHttpDelegate>
+@interface SquareMessViewController : UIViewController<UIScrollViewDelegate,SquareInfoViewDelegate,MyHttpDelegate>
 {
     UIScrollView *_scrollv;
     

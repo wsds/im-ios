@@ -45,6 +45,15 @@ typedef enum {
     UIView *_subView3;
     
     NSArray *_titleAry;
+    
+    UIView *view1;
+    UIView  *MHview;
+     UILabel *label;
+    UILabel  *label1;
+    UILabel  *label2;
+    UILabel  *label3;
+   
+ 
 }
 
 @property(nonatomic, assign) id<TopItemsViewBtnSelectDelegate> delegate;
