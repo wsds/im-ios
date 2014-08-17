@@ -901,6 +901,7 @@
 		AFBA255C199A5A7400E2FE80 /* GTMBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMBase64.h; sourceTree = "<group>"; };
 		AFBA255D199A5A7400E2FE80 /* GTMBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMBase64.m; sourceTree = "<group>"; };
 		AFBA255E199A5A7400E2FE80 /* GTMDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
+		AFBA2560199D082800E2FE80 /* ReadMe.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReadMe.h; sourceTree = "<group>"; };
 		AFC41ED9195FEB260079716D /* UIColor+Custom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Custom.h"; sourceTree = "<group>"; };
 		AFC41EDA195FEB260079716D /* UIColor+Custom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Custom.m"; sourceTree = "<group>"; };
 		AFE7741A194D9DC400C505C8 /* ChatMessData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatMessData.h; sourceTree = "<group>"; };
@@ -1003,6 +1004,7 @@
 				AF322A8B1923CC62003A8816 /* Resources */,
 				AF3229FA1923C87A003A8816 /* Images.xcassets */,
 				AF3229EF1923C87A003A8816 /* Supporting Files */,
+				AFBA2560199D082800E2FE80 /* ReadMe.h */,
 			);
 			path = MiniCom;
 			sourceTree = "<group>";
