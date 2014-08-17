@@ -44,7 +44,7 @@
     
     NSString *phone = [AccountManager SharedInstance].username;
     NSString *accKey = [AccountManager SharedInstance].accessKey;
-    //accKey = TempCommonAccKey;
+    accKey = TempCommonAccKey;
     
     NSMutableDictionary *requestDic = [NSMutableDictionary dictionaryWithDictionary:@{@"phone":phone, @"accessKey":accKey}];
     if (self.needLogin) {
@@ -79,7 +79,7 @@
 - (void)requestUrl:(NSString *)url dic:(NSDictionary *)dic tag:(int)tag
 {
     //NSLog(@"request url==%@", url);
-    //NSLog(@"requestDic==%@", dic);
+    NSLog(@"requestDic==%@", dic);
 
     __block ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:url]];
     request.timeOutSeconds = self.timeOut;
@@ -116,7 +116,7 @@
 }
 
 - (void)requestFinished:(ASIHTTPRequest *)request{
-    //NSLog(@"requestFinished");
+    NSLog(@"requestFinished");
     RequestResult *result = [self getResultFromRequest:request];
     if (_delegate && [_delegate respondsToSelector:@selector(isSuccessEquals:)]) {
         [_delegate isSuccessEquals:result];
@@ -127,7 +127,8 @@
 
 - (RequestResult *)getResultFromRequest:(ASIHTTPRequest *)request{
     NSString *str_r = [request responseString];
-    //NSLog(@"responseString==%@\n", str_r);
+    //打印responseSring
+    NSLog(@"responseString==%@\n", str_r);
 
     NSDictionary *dic = [str_r objectFromJSONString];
     //NSLog(@"result dic==%@", dic);

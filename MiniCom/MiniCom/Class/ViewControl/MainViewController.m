@@ -30,7 +30,7 @@
 
 #import "SessionEvent.h"
 #import "SquareMessage.h"
-
+#import "SquareManager.h"
 #import "GroupData.h"
 #import "CircleData.h"
 #import "DBHelper.h"
@@ -229,7 +229,54 @@
 {
     MyInfoViewController *myInfoVC = [[MyInfoViewController alloc] init];
     myInfoVC.mainVCdelegate = self;
+    
     [self presentViewController:myInfoVC animated:YES completion:nil];
+  /*
+    UIView *messageView=[[UIView alloc]init];
+    messageView.frame=CGRectMake(50, 100, 200, 200);
+    messageView.backgroundColor=[UIColor  yellowColor];
+    */
+}
+/////////////////////////////////////////////////
+-(void)MeViewVC{
+    /*
+   // self.xxView.hidden=YES;
+    UIView  *meView=[[UIView  alloc]init];
+    meView.frame=CGRectMake(5, 119, 310, 100);
+    meView.backgroundColor=[UIColor  grayColor];
+    [self.view addSubview:meView];
+    
+    UIImageView *meImg=[[UIImageView alloc]initWithFrame:CGRectMake(10, 10,50 ,50)];
+    meImg.image=[UIImage imageNamed:@"face_man.png"];
+    meImg.layer.cornerRadius = 25;
+    meImg.layer.masksToBounds = YES;
+    [meView  addSubview:meImg];
+    
+    UILabel *label1=[[UILabel alloc]init];
+    label1.frame=CGRectMake(60, 20, 50, 20);
+    label1.text=@"呵呵";
+    [label1 setFont:[UIFont systemFontOfSize:13.0]];
+    label1.textColor=[UIColor whiteColor];
+    [meView addSubview:label1];
+    
+    UIImageView *meImg1=[[UIImageView alloc]initWithFrame:CGRectMake(270,10,30,40)];
+    meImg1.image=[UIImage imageNamed:@"into.png"];
+    [meView  addSubview:meImg1];
+   
+    
+    UIView *mpView=[[UIView alloc]init];
+    mpView.frame=CGRectMake(5, 230, 310, 50);
+    mpView.backgroundColor=[UIColor grayColor];
+    [self.view addSubview:mpView];
+    
+    UIView *settingView=[[UIView alloc]init];
+    settingView.frame=CGRectMake(5, 290, 310, 50);
+    settingView.backgroundColor=[UIColor grayColor];
+    [self.view addSubview:settingView];
+    
+    */
+    
+
 }
 
 - (void)presentSendMessVC
@@ -307,6 +354,7 @@
 }
 
 - (void)showOwnSelectViewByTag:(E_ShowView_Own)tag
+
 {
     NSLog(@"Own==%d", tag);
     label.text = [NSString stringWithFormat:@"Own==%d", tag];
@@ -314,15 +362,21 @@
     switch (tag) {
         case E_ShowView_Own_MiYou:
             view = _myFriendsView;
+            
+            [self presentSendMessVC];
+            
             //[self getAskFriends];
             //[self getCirclesAndFriends];
             break;
         case E_ShowView_Own_XiaoXi:
             view = _myMessageView;
+            
             [_myMessageView updateChatTable];
             break;
         case E_ShowView_Own_MingPian:
             [self presentMyInfoVC];
+            
+            //[self MeViewVC];
             break;
         default:
             break;
@@ -332,8 +386,6 @@
         view.hidden = NO;
     }
 }
-
-
 
 - (void)showChatView
 {
@@ -705,8 +757,7 @@
                     [myCircleAry addObject:circle];
                 }
                 //保存我密友及分组
-                [AccountManager SharedInsta
-nce].circleAry = myCircleAry;
+                [AccountManager SharedInstance].circleAry = myCircleAry;
                 
                 [_myFriendsView updateWithCircleAry:myCircleAry];
             }

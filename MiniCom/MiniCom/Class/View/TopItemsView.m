@@ -98,7 +98,7 @@ enum{
         [btn3 addTarget:self action:@selector(sub2BtnAction:) forControlEvents:UIControlEventTouchUpInside];
         [btn3 setTag:i];
         
-        [btn4 addTarget:self action:@selector(sub3BtnAction:) forControlEvents:UIControlEventTouchUpInside];
+        [btn4 addTarget:self action:@selector(xxView:) forControlEvents:UIControlEventTouchUpInside];
         [btn4 setTag:i];
         
         [_baseView addSubview:btn1];
@@ -132,6 +132,117 @@ enum{
 
 }
 
+-(void)xxView:(MyButton *)sender{
+
+    NSLog(@"ccccc");
+  
+    xxView=[[UIView  alloc]init];
+    xxView.frame=CGRectMake(9, 90, 305, 300);
+    xxView.backgroundColor=[UIColor clearColor];
+    xxView.backgroundColor = [UIColor colorWithPatternImage: [UIImage imageNamed:@"background4.jpg"] ];
+    [_baseView addSubview:xxView];
+   //搜索好友
+    UIView *searchFriendView=[[UIView  alloc]init];
+    searchFriendView.frame=CGRectMake(1, 10, 304, 35);
+    searchFriendView.backgroundColor=[UIColor grayColor];
+    [xxView addSubview:searchFriendView];
+   
+    UIImageView *searchImg=[[UIImageView alloc]initWithFrame:CGRectMake(10, 10,20 , 20)];
+    searchImg.image=[UIImage imageNamed:@"dialog_search.png"];
+    [searchFriendView  addSubview:searchImg];
+    
+    UILabel * searchLabel=[[UILabel alloc]init];
+    searchLabel.frame=CGRectMake(40, 10, 100, 20);
+    searchLabel.text=@"搜索好友";
+    searchLabel.textColor=[UIColor whiteColor];
+    [searchFriendView addSubview:searchLabel];
+    
+    //新的好友
+    
+    UIView *newFriendView=[[UIView  alloc]init];
+    newFriendView.frame=CGRectMake(0, 50, 304, 35);
+    newFriendView.backgroundColor=[UIColor grayColor];
+    [xxView addSubview:newFriendView];
+
+    UIImageView *newImg=[[UIImageView alloc]initWithFrame:CGRectMake(10, 10,20 , 20)];
+    newImg.image=[UIImage imageNamed:@"header.png"];
+    [newFriendView addSubview:newImg];
+    
+    UILabel * newLabel=[[UILabel alloc]init];
+    newLabel.frame=CGRectMake(40, 10, 100, 20);
+    newLabel.text=@"新的好友";
+    newLabel.textColor=[UIColor whiteColor];
+    [newFriendView addSubview:newLabel];
+
+    //默认分组
+    UIView  *defaultGroupview=[[UIView  alloc]init];
+    defaultGroupview.frame=CGRectMake(0, 90, 304, 210);
+    defaultGroupview.backgroundColor=[UIColor grayColor];
+    [xxView addSubview:defaultGroupview];
+    
+    UIImageView *newImg1=[[UIImageView alloc]initWithFrame:CGRectMake(10, 10,20 , 20)];
+    newImg1.image=[UIImage imageNamed:@"header.png"];
+    [defaultGroupview addSubview:newImg1];
+    
+    
+    UILabel * defaultLabel=[[UILabel alloc]init];
+    defaultLabel.frame=CGRectMake(40, 10, 100, 20);
+    defaultLabel.text=@"默认分组(3)";
+    defaultLabel.textColor=[UIColor whiteColor];
+    [defaultGroupview addSubview:defaultLabel];
+    
+    UIView *lineView=[[UIView alloc]init];
+    lineView.frame=CGRectMake(0, 40, 290, 1);
+    lineView.backgroundColor=[UIColor whiteColor];
+    [defaultGroupview addSubview:lineView];
+    
+    
+    UIImageView *defaultimg1=[[UIImageView alloc]initWithFrame:CGRectMake(15, 50,50, 50)];
+    defaultimg1.image=[UIImage imageNamed:@"face_man.png"];
+    //把图片设置成圆形
+    defaultimg1.layer.cornerRadius = 25;
+    defaultimg1.layer.masksToBounds = YES;
+    [defaultGroupview addSubview:defaultimg1];
+
+    UIImageView *defaultimg2=[[UIImageView alloc]initWithFrame:CGRectMake(75, 50,50, 50)];
+    defaultimg2.image=[UIImage imageNamed:@"face_man.png"];
+    //把图片设置成圆形
+    defaultimg2.layer.cornerRadius = 25;
+    defaultimg2.layer.masksToBounds = YES;
+    [defaultGroupview addSubview:defaultimg2];
+    
+    
+    UIImageView *defaultimg3=[[UIImageView alloc]initWithFrame:CGRectMake(135, 50,50, 50)];
+    defaultimg3.image=[UIImage imageNamed:@"face_man.png"];
+    //把图片设置成圆形
+    defaultimg3.layer.cornerRadius = 25;
+    defaultimg3.layer.masksToBounds = YES;
+    [defaultGroupview addSubview:defaultimg3];
+    
+    UILabel *labelperson1=[[UILabel alloc]init];
+    labelperson1.frame=CGRectMake(25, 101, 50, 20);
+    labelperson1.text=@"152~";
+    [labelperson1 setFont:[UIFont systemFontOfSize:13.0]];
+    labelperson1.textColor=[UIColor whiteColor];
+    [defaultGroupview addSubview:labelperson1];
+    
+    UILabel *labelperson2=[[UILabel alloc]init];
+    labelperson2.frame=CGRectMake(80, 101, 50, 20);
+    labelperson2.text=@"乔晓松";
+    [labelperson2 setFont:[UIFont systemFontOfSize:13.0]];
+    labelperson2.textColor=[UIColor whiteColor];
+    [defaultGroupview addSubview:labelperson2];
+    
+    UILabel *labelperson3=[[UILabel alloc]init];
+    labelperson3.frame=CGRectMake(145, 101, 50, 20);
+    labelperson3.text=@"罗阳";
+    [labelperson3 setFont:[UIFont systemFontOfSize:13.0]];
+    labelperson3.textColor=[UIColor whiteColor];
+    [defaultGroupview addSubview:labelperson3];
+    
+    
+    
+}
 -(void)onClickUILable:(UITapGestureRecognizer *)sender{
     
     //UITapGestureRecognizer *tap = (UITapGestureRecognizer*)sender;
@@ -172,7 +283,7 @@ enum{
     [view1 addSubview:label1];
     
     //创建手势实例，并连接方法UITapGestureRecognizer,点击手势
-    //
+   
     UITapGestureRecognizer *tapGesture1=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(onClickUILable1:)];
     
     label1.userInteractionEnabled=YES;
@@ -400,8 +511,8 @@ enum{
     //_subView3.backgroundColor = [UIColor grayColor];
     [_subView addSubview:_subView3];
     _subView3.tag = E_own;
-/*
-    NSArray *subView3titleAry = @[@"密友", @"消息", @"名片"];
+
+    NSArray *subView3titleAry = @[@"好友", @"消息", @"我"];
     float w3 = 1.0 / [subView3titleAry count];
     for (int i = 0; i < [subView3titleAry count]; i++) {
         MyButton *btn = [MyButton buttonWithType:UIButtonTypeCustom];
@@ -413,7 +524,7 @@ enum{
         [btn setTag:i];
         [_subView3 addSubview:btn];
     }
- */
+ 
     
 }
 
@@ -609,6 +720,7 @@ enum{
         }
         _ownIndex = sender.tag;
     }
+  
     if (self.delegate && [self.delegate respondsToSelector:@selector(showOwnSelectViewByTag:)]) {
         [self.delegate showOwnSelectViewByTag:sender.tag];
     }

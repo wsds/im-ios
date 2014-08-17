@@ -17,7 +17,9 @@
 
 #import "OwnFriendView.h"
 #import "OwnMessageView.h"
+#import "SquareManager.h"
 
+#import "TopItemsView.h"
 @protocol LoadingDelegate;
 @protocol TopItemsViewBtnSelectDelegate;
 @protocol GroupOursDelegate;
@@ -48,6 +50,7 @@
     
     OwnFriendView *_myFriendsView;
     OwnMessageView *_myMessageView;
+    
 }
 
 @property(retain, nonatomic)NSString *cityCode;
