@@ -286,6 +286,7 @@
     SendMessageViewController *sendMessVC = [[SendMessageViewController alloc] init];
     sendMessVC.messType = messType;
     [self presentViewController:sendMessVC animated:YES completion:nil];
+  
 }
 
 - (void)presentLoginVC
@@ -363,7 +364,6 @@
         case E_ShowView_Own_MiYou:
             view = _myFriendsView;
             
-            [self presentSendMessVC];
             
             //[self getAskFriends];
             //[self getCirclesAndFriends];

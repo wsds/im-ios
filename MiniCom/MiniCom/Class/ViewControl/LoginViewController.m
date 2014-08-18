@@ -23,7 +23,7 @@
 #import "SessionEvent.h"
 
 //#import "RSADecode.h"
-#import "RSA1.h"
+//#import "RSA1.h"
 
 #define AnimationDur 0.3
 
@@ -569,15 +569,15 @@ enum
     //[Common alert4error:[NSString stringWithFormat:@"%@ 登录成功", self.userName] tag:0 delegate:nil];
     
     //decrypt
-    NSString *decAccessKey = [RSADecode decryptHexStr:accessKey keyStr:pbKey];
+    //NSString *decAccessKey = [RSADecode decryptHexStr:accessKey keyStr:pbKey];
 
     //save account info
     [[AccountManager SharedInstance] setAndSaveUsername:self.userName];
 #warning self.passWord注册后设置密码还没有获得
     [[AccountManager SharedInstance] setAndSavePassword:self.passWord];
-    [[AccountManager SharedInstance] setAndUid:uid
-                                     accesskey:decAccessKey
-                                         pbkey:pbKey];
+   // [[AccountManager SharedInstance] setAndUid:uid
+    //                                 accesskey:decAccessKey
+     //                                   pbkey:pbKey];
     
     //上传位置信息
     [[MyNetManager SharedInstance] reqestUploadLocationLat:[AccountManager SharedInstance].latitude longitude:[AccountManager SharedInstance].longitude];

@@ -47,12 +47,18 @@ typedef enum {
     NSArray *_titleAry;
     
     UIView  *view1;
+    UIView  *view2;
+    UIView *view3;
     UIView  *MHview;
     UILabel *label;
     UILabel  *label1;
     UILabel  *label2;
     UILabel  *label3;
     UIView  *xxView;
+    
+    
+    
+    
    
  
 }

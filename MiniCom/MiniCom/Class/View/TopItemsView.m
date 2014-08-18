@@ -50,61 +50,58 @@ enum{
     float www = 1.0 / [_titleAry count];
 
     for (int i = 0; i < [_titleAry count]; i++) {
-        MyButton *btn1 = [MyButton buttonWithType:UIButtonTypeCustom];
-        MyButton *btn2 = [MyButton buttonWithType:UIButtonTypeCustom];
-        MyButton *btn3 = [MyButton buttonWithType:UIButtonTypeCustom];
-        MyButton *btn4 = [MyButton buttonWithType:UIButtonTypeCustom];
+        MyButton *btn = [MyButton buttonWithType:UIButtonTypeCustom];
+      
+        btn.tag=i;
+        [btn addTarget:self action:@selector(clickBtn:) forControlEvents:UIControlEventTouchUpInside];
+        btn.frame = [Common RectMakex:www * i y:0 w:www h:1.0 onSuperBounds:_baseView.bounds];
         
-        btn1.frame = [Common RectMakex:www * i y:0 w:www h:1.0 onSuperBounds:_baseView.bounds];
-        
-        btn2.frame = [Common RectMakex:(www * i)*1.5  y:0 w:www h:1.0 onSuperBounds:_baseView.bounds];
-        
+        /*btn2.frame = [Common RectMakex:(www * i)*1.5  y:0 w:www h:1.0 onSuperBounds:_baseView.bounds];
         btn3.frame = [Common RectMakex:www * i y:0 w:www h:1.0 onSuperBounds:_baseView.bounds];
         btn4.frame = [Common RectMakex:www * i y:0 w:www h:1.0 onSuperBounds:_baseView.bounds];
+       */
        
-    
-        if (i == [_titleAry count] - 4) {
-            [btn1 setImage:[UIImage imageNamed:@"square_release.png"] forState:UIControlStateNormal];
-            [btn1 setImageEdgeInsets:UIEdgeInsetsMake(btn1.frame.size.height/4, btn1.frame.size.width/3, btn1.frame.size.height /4, btn1.frame.size.width /3)];
+        if (btn.tag == [_titleAry count] - 4){
+            [btn setImage:[UIImage imageNamed:@"square_release.png"] forState:UIControlStateNormal];
+            [btn setImageEdgeInsets:UIEdgeInsetsMake(btn.frame.size.height/4, btn.frame.size.width/3, btn.frame.size.height /4, btn.frame.size.width /3)];
         }
          
-        else if(i == [_titleAry count]-3){
-            [btn2 setImage:[UIImage imageNamed:@"square_icon_selected.png"] forState:UIControlStateNormal];
-            [btn2 setImageEdgeInsets:UIEdgeInsetsMake(btn2.frame.size.height/4, btn2.frame.size.width/1, btn2.frame.size.height /4, btn2.frame.size.width /3)];
+        else if(btn.tag  == [_titleAry count]-3){
+            [btn setImage:[UIImage imageNamed:@"square_icon_selected.png"] forState:UIControlStateNormal];
+            [btn setImageEdgeInsets:UIEdgeInsetsMake(btn.frame.size.height/4, btn.frame.size.width/1, btn.frame.size.height /4, btn.frame.size.width /3)];
         
         
-        }else if(i == [_titleAry count]- 2){
-            [btn3 setImage:[UIImage imageNamed:@"group_icon.png"] forState:UIControlStateNormal];
-            [btn3 setImageEdgeInsets:UIEdgeInsetsMake(btn3.frame.size.height/4, btn3.frame.size.width/1, btn3.frame.size.height /4, btn3.frame.size.width /3)];
+        }else if(btn.tag  == [_titleAry count]- 2){
+            [btn setImage:[UIImage imageNamed:@"group_icon.png"] forState:UIControlStateNormal];
+            [btn setImageEdgeInsets:UIEdgeInsetsMake(btn.frame.size.height/4, btn.frame.size.width/1, btn.frame.size.height /4, btn.frame.size.width /3)];
         
-        }else if(i == [_titleAry count] -1){
+        }else if(btn.tag  == [_titleAry count] -1){
         {
-           [btn4 setImage:[UIImage imageNamed:@"person_icon.png"] forState:UIControlStateNormal];
-           [btn4 setImageEdgeInsets:UIEdgeInsetsMake(btn4.frame.size.height/4, btn4.frame.size.width/3, btn4.frame.size.height /4, btn4.frame.size.width /3)];
+           [btn setImage:[UIImage imageNamed:@"person_icon.png"] forState:UIControlStateNormal];
+           [btn setImageEdgeInsets:UIEdgeInsetsMake(btn.frame.size.height/4, btn.frame.size.width/3, btn.frame.size.height /4, btn.frame.size.width /3)];
             
             
-            [btn1 setTitle:[_titleAry objectAtIndex:i] forState:UIControlStateNormal];
-            [btn1 setSelectedImageModel:E_Sanjiao];
+            [btn setTitle:[_titleAry objectAtIndex:i] forState:UIControlStateNormal];
+            [btn setSelectedImageModel:E_Sanjiao];
             
             
         }
         }
-        [btn1 addTarget:self action:@selector(baseBtnAction:) forControlEvents:UIControlEventTouchUpInside];
-        [btn1 setTag:i];
         
-        [btn2 addTarget:self action:@selector(sub1BtnAction:) forControlEvents:UIControlEventTouchUpInside];
-        [btn2 setTag:i];
+        [btn addTarget:self action:@selector(baseBtnAction:) forControlEvents:UIControlEventTouchUpInside];
+        [btn setTag:i];
         
-        [btn3 addTarget:self action:@selector(sub2BtnAction:) forControlEvents:UIControlEventTouchUpInside];
-        [btn3 setTag:i];
+        [btn addTarget:self action:@selector(sub1BtnAction:) forControlEvents:UIControlEventTouchUpInside];
+        [btn setTag:i];
         
-        [btn4 addTarget:self action:@selector(xxView:) forControlEvents:UIControlEventTouchUpInside];
-        [btn4 setTag:i];
+        [btn addTarget:self action:@selector(sub2BtnAction:) forControlEvents:UIControlEventTouchUpInside];
+        [btn setTag:i];
         
-        [_baseView addSubview:btn1];
-        [_baseView addSubview:btn2];
-        [_baseView addSubview:btn3];
-        [_baseView addSubview:btn4];
+        [btn addTarget:self action:@selector(xxView:) forControlEvents:UIControlEventTouchUpInside];
+        [btn setTag:i];
+        
+        [_baseView addSubview:btn];
+    
          
     }
     //--------- 在循环外面  就不导致label循环创建了----------//
@@ -131,11 +128,42 @@ enum{
    
 
 }
+-(void)clickBtn:(id)sender{
 
+    UIButton *btn=(UIButton *)sender;
+    if (btn.tag==0) {
+        //第一个方法
+    }else if(btn.tag==1){
+       //第二个方法
+    }else if(btn.tag==2){
+       //第三个方法
+    }else if (btn.tag==3){
+      //第四个方法
+    
+    }
+
+
+
+}
 -(void)xxView:(MyButton *)sender{
 
     NSLog(@"ccccc");
-  
+    label.text=@"";
+    float www = 1.0 / [_titleAry count];
+    UILabel  *label4=[[UILabel alloc]init];
+    label4.frame=[Common RectMakex:www  y:0 w:www h:1.0 onSuperBounds:_baseView.bounds];
+    label4.text=@"新建群组";
+    label4.textColor=[UIColor whiteColor];
+    [_baseView addSubview:label4];
+    
+    UITapGestureRecognizer *newtapGesture=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(newonClick:)];
+    
+    label4.userInteractionEnabled=YES;
+    newtapGesture.numberOfTouchesRequired=1;
+    [label4 addGestureRecognizer:newtapGesture];
+
+    
+    /*
     xxView=[[UIView  alloc]init];
     xxView.frame=CGRectMake(9, 90, 305, 300);
     xxView.backgroundColor=[UIColor clearColor];
@@ -239,10 +267,74 @@ enum{
     [labelperson3 setFont:[UIFont systemFontOfSize:13.0]];
     labelperson3.textColor=[UIColor whiteColor];
     [defaultGroupview addSubview:labelperson3];
-    
+    */
     
     
 }
+-(void)newonClick:(UITapGestureRecognizer *)sender{
+    
+    
+    
+    view3=[[UIView alloc]initWithFrame:CGRectMake(40, 80, 240, 350)];
+    view3.backgroundColor = [UIColor whiteColor];
+    view3.tag=1;
+    view3.userInteractionEnabled=YES;
+    NSLog(@"333");
+    [self.window addSubview:view3];
+    
+    
+    UIButton *deletebtn1=[UIButton buttonWithType:UIButtonTypeCustom];
+    
+    deletebtn1.frame=CGRectMake(0, 0, 14, 14);
+    deletebtn1.tag=101;
+    [deletebtn1 setBackgroundImage:[UIImage imageNamed:@"input_clear.png"] forState:UIControlStateNormal];
+    [deletebtn1 addTarget:self action:@selector(cancelbtn1:) forControlEvents:UIControlEventTouchUpInside];
+    
+    [view3 addSubview:deletebtn1];
+    
+    UIImageView *newimg1=[[UIImageView alloc]initWithFrame:CGRectMake(30, 50,42, 42)];
+    newimg1.image=[UIImage imageNamed:@"face_man.png"];
+    //把图片设置成圆形
+    newimg1.layer.cornerRadius = 20;
+    newimg1.layer.masksToBounds = YES;
+    [view3 addSubview:newimg1];
+    
+    label1=[[UILabel alloc]initWithFrame:CGRectMake(83, 50, 100, 50)];
+    [label1 setBackgroundColor:[UIColor clearColor]];
+    [label1 setFont:[UIFont systemFontOfSize:13.0]];
+    label1.textColor = [UIColor blackColor];
+    label1.text=@"新建群组";
+    [view3 addSubview:label1];
+    
+    UIImageView *newimg2=[[UIImageView alloc]initWithFrame:CGRectMake(200, 60,8, 30)];
+    newimg2.image=[UIImage imageNamed:@"dialog_mach.png"];
+    [view3 addSubview:newimg2];
+    
+    UIView *newlineview1=[[UIView alloc]initWithFrame:CGRectMake(25, 100, 200, 1)];
+    newlineview1.backgroundColor=[UIColor grayColor];
+    [view3 addSubview:newlineview1];
+    
+    UIImageView *Groupimg1=[[UIImageView alloc]init];
+    Groupimg1.image=[UIImage imageNamed:@"gshare_group.png"];
+    
+    [view1 addSubview:Groupimg1];
+
+    
+    
+    
+    
+
+
+
+}
+-(void)cancelbtn1:(UIButton *)sender{
+  CATransition *animation = [CATransition animation];
+  animation.type = kCATransitionPush;
+  animation.duration = 0.4;
+  [view3.layer addAnimation:animation forKey:nil];
+  view3.hidden=YES;
+}
+
 -(void)onClickUILable:(UITapGestureRecognizer *)sender{
     
     //UITapGestureRecognizer *tap = (UITapGestureRecognizer*)sender;
@@ -360,7 +452,7 @@ enum{
     lineview3.backgroundColor=[UIColor grayColor];
     [view1 addSubview:lineview3];
     //VIEW2
-    UIView  *view2=[[UIView alloc]initWithFrame:CGRectMake(20, 315, 200, 25)];
+    view2=[[UIView alloc]initWithFrame:CGRectMake(20, 315, 200, 25)];
     view2.backgroundColor=[UIColor cyanColor];
     [view1 addSubview:view2];
    

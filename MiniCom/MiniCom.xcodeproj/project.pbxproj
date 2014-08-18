@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7822444719A1A8B500683C20 /* scanner.png in Resources */ = {isa = PBXBuildFile; fileRef = 7822444519A1A8B500683C20 /* scanner.png */; };
+		7822444819A1A8B500683C20 /* gshare_group.png in Resources */ = {isa = PBXBuildFile; fileRef = 7822444619A1A8B500683C20 /* gshare_group.png */; };
 		783A3A071994D1FC0053BCE7 /* dialog_mach.png in Resources */ = {isa = PBXBuildFile; fileRef = 783A3A061994D1FC0053BCE7 /* dialog_mach.png */; };
 		783A3A091994D88C0053BCE7 /* dialog_search.png in Resources */ = {isa = PBXBuildFile; fileRef = 783A3A081994D88C0053BCE7 /* dialog_search.png */; };
 		787555CF19938AF100A97DF4 /* dialog_close.png in Resources */ = {isa = PBXBuildFile; fileRef = 787555CE19938AF100A97DF4 /* dialog_close.png */; };
@@ -52,7 +54,6 @@
 		AF322AD21923CED7003A8816 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AF322AD11923CED7003A8816 /* libz.dylib */; };
 		AF322AD41923CF9C003A8816 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AF322AD31923CF9C003A8816 /* libxml2.dylib */; };
 		AF322AD61923CFFF003A8816 /* libxml2.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AF322AD51923CFFF003A8816 /* libxml2.2.dylib */; };
-		AF3F4DAA193783EA00842491 /* RSA.m in Sources */ = {isa = PBXBuildFile; fileRef = AF3F4DA9193783EA00842491 /* RSA.m */; };
 		AF4C2A841951F0AA005EF16C /* ChatCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AF4C2A831951F0AA005EF16C /* ChatCell.m */; };
 		AF4D8B581928A5F300650E1F /* LoadingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF4D8B551928A5F300650E1F /* LoadingViewController.m */; };
 		AF4D8B591928A5F300650E1F /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF4D8B571928A5F300650E1F /* MainViewController.m */; };
@@ -393,6 +394,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7822444519A1A8B500683C20 /* scanner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scanner.png; sourceTree = "<group>"; };
+		7822444619A1A8B500683C20 /* gshare_group.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gshare_group.png; sourceTree = "<group>"; };
 		783A3A061994D1FC0053BCE7 /* dialog_mach.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dialog_mach.png; sourceTree = "<group>"; };
 		783A3A081994D88C0053BCE7 /* dialog_search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dialog_search.png; sourceTree = "<group>"; };
 		787555CE19938AF100A97DF4 /* dialog_close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dialog_close.png; sourceTree = "<group>"; };
@@ -464,8 +467,6 @@
 		AF322AD11923CED7003A8816 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		AF322AD31923CF9C003A8816 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		AF322AD51923CFFF003A8816 /* libxml2.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.2.dylib; path = usr/lib/libxml2.2.dylib; sourceTree = SDKROOT; };
-		AF3F4DA8193783EA00842491 /* RSA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSA.h; sourceTree = "<group>"; };
-		AF3F4DA9193783EA00842491 /* RSA.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSA.m; sourceTree = "<group>"; };
 		AF4C2A821951F0AA005EF16C /* ChatCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChatCell.h; path = own/ChatCell.h; sourceTree = "<group>"; };
 		AF4C2A831951F0AA005EF16C /* ChatCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChatCell.m; path = own/ChatCell.m; sourceTree = "<group>"; };
 		AF4D8B541928A5F300650E1F /* LoadingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadingViewController.h; sourceTree = "<group>"; };
@@ -1165,8 +1166,6 @@
 		AF3F4DA7193783EA00842491 /* RSA */ = {
 			isa = PBXGroup;
 			children = (
-				AF3F4DA8193783EA00842491 /* RSA.h */,
-				AF3F4DA9193783EA00842491 /* RSA.m */,
 			);
 			path = RSA;
 			sourceTree = "<group>";
@@ -1378,6 +1377,8 @@
 				AF98BE8519251A7B0090F9E3 /* app_start_star.png */,
 				AF98BE8619251A7B0090F9E3 /* app_start_text.png */,
 				AF98BE8719251A7B0090F9E3 /* back.png */,
+				7822444519A1A8B500683C20 /* scanner.png */,
+				7822444619A1A8B500683C20 /* gshare_group.png */,
 				AF98BE8819251A7B0090F9E3 /* background.jpg */,
 				AF98BE8919251A7B0090F9E3 /* background1.png */,
 				AF98BE8A19251A7B0090F9E3 /* background2.jpg */,
@@ -1955,6 +1956,7 @@
 				AFA96BCD1944A1A600F20285 /* f037.png in Resources */,
 				AFA96BE41944A1A600F20285 /* f060.png in Resources */,
 				AFA96BAE1944A1A600F20285 /* f006.png in Resources */,
+				7822444819A1A8B500683C20 /* gshare_group.png in Resources */,
 				AF98BF3919251A7B0090F9E3 /* person_icon.png in Resources */,
 				AFA96BEC1944A1A600F20285 /* f068.png in Resources */,
 				AF98BEF719251A7B0090F9E3 /* background2.jpg in Resources */,
@@ -1982,6 +1984,7 @@
 				AFA96BB41944A1A600F20285 /* f012.png in Resources */,
 				AFA96BC01944A1A600F20285 /* f024.png in Resources */,
 				AF98BEFB19251A7B0090F9E3 /* button_addmembers.png in Resources */,
+				7822444719A1A8B500683C20 /* scanner.png in Resources */,
 				AFA96BC11944A1A600F20285 /* f025.png in Resources */,
 				AF65EC4F196997D900AD4A02 /* tusiji_6.gif in Resources */,
 				AF98BF5219251A7B0090F9E3 /* square_release.png in Resources */,
@@ -2158,7 +2161,6 @@
 				AFB60368193392A800F93382 /* MyInfoChangeViewController.m in Sources */,
 				AFB364151948CA4D004723B1 /* SDWebImagePrefetcher.m in Sources */,
 				AF805BE8195C86DC00A951F8 /* SquareManager.m in Sources */,
-				AF3F4DAA193783EA00842491 /* RSA.m in Sources */,
 				AFA96B3F19449B9200F20285 /* EmojiView.m in Sources */,
 				AFAFDD33193034EC00E50066 /* GroupBaseView.m in Sources */,
 				AF805BED195C86DC00A951F8 /* SessionEvent.m in Sources */,
