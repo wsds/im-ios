@@ -55,7 +55,11 @@ typedef enum {
     UILabel  *label2;
     UILabel  *label3;
     UIView  *xxView;
-    
+    UIImageView *GBView;
+    UIImageView  *joinView;
+    UILabel *newGrouplabel;
+    UIImageView *qrcodeView;
+    UILabel *personlabel;
     
     
     

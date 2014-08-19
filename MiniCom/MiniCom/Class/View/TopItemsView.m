@@ -44,50 +44,85 @@ enum{
     _baseView.backgroundColor = [UIColor colorWithRed:0.14 green:0.16 blue:0.26 alpha:1.0];
     [self addSubview:_baseView];
     
+    GBView=[[UIImageView alloc]init];
+    GBView.frame=CGRectMake(17, 15, 30, 25);
+    GBView.image=[UIImage imageNamed:@"square_release.png"];
+    [_baseView addSubview:GBView];
     
-    _titleAry = @[@"广播", @"广场", @"群组", @""];
+    label=[[UILabel alloc]init];
+    label.frame=CGRectMake(60, 15, 80, 25);
+    label.text=@"亦庄站";
+    label.textColor = [UIColor whiteColor];
+    [_baseView addSubview:label];
+    
+    
+    UIImageView *selectimg=[[UIImageView alloc]init];
+    selectimg.frame = CGRectMake(label.frame.size.width - 8, label.frame.size.height - 8, 8, 8);
+    selectimg.image=[UIImage imageNamed:@"selected_comment_icon.png"];
+    [label addSubview:selectimg];
+
+    UITapGestureRecognizer *tapGesture=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(onClickUILable:)];
+    
+    label.userInteractionEnabled=YES;
+    tapGesture.numberOfTouchesRequired=1;
+    [label addGestureRecognizer:tapGesture];
+    
+    UIImageView *SquareView=[[UIImageView alloc]init];
+    SquareView.frame=CGRectMake(185, 15, 30, 25);
+    SquareView.image=[UIImage imageNamed:@"square_icon_selected.png"];
+    [_baseView addSubview:SquareView];
+    
+    UITapGestureRecognizer *SquaretapGesture=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(SquareView:)];
+    SquareView.userInteractionEnabled=YES;
+    SquaretapGesture.numberOfTouchesRequired=1;
+    [SquareView addGestureRecognizer:SquaretapGesture];
+    
+    
+    UIImageView *GroupView=[[UIImageView alloc]init];
+    GroupView.frame=CGRectMake(235, 15, 30, 25);
+    GroupView.image=[UIImage imageNamed:@"group_icon.png"];
+    [_baseView addSubview:GroupView];
+    
+    UITapGestureRecognizer *GrouptapGesture=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(GroupView:)];
+    GroupView.userInteractionEnabled=YES;
+    GrouptapGesture.numberOfTouchesRequired=1;
+    [GroupView addGestureRecognizer:GrouptapGesture];
+
+    UIImageView *LinkmanView=[[UIImageView alloc]init];
+    LinkmanView.frame=CGRectMake(285, 15, 30, 25);
+    LinkmanView.image=[UIImage imageNamed:@"person_icon.png"];
+    [_baseView addSubview:LinkmanView];
+    
+    UITapGestureRecognizer *linktapGesture=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(LinkView:)];
+    LinkmanView.userInteractionEnabled=YES;
+    linktapGesture.numberOfTouchesRequired=1;
+    [LinkmanView addGestureRecognizer:linktapGesture];
+
+
+    /*
+    _titleAry = @[ @"广场", @"群组", @"我"];
     
     float www = 1.0 / [_titleAry count];
 
     for (int i = 0; i < [_titleAry count]; i++) {
         MyButton *btn = [MyButton buttonWithType:UIButtonTypeCustom];
-      
         btn.tag=i;
-        [btn addTarget:self action:@selector(clickBtn:) forControlEvents:UIControlEventTouchUpInside];
         btn.frame = [Common RectMakex:www * i y:0 w:www h:1.0 onSuperBounds:_baseView.bounds];
-        
-        /*btn2.frame = [Common RectMakex:(www * i)*1.5  y:0 w:www h:1.0 onSuperBounds:_baseView.bounds];
+        */
+    /*btn2.frame = [Common RectMakex:(www * i)*1.5  y:0 w:www h:1.0 onSuperBounds:_baseView.bounds];
         btn3.frame = [Common RectMakex:www * i y:0 w:www h:1.0 onSuperBounds:_baseView.bounds];
         btn4.frame = [Common RectMakex:www * i y:0 w:www h:1.0 onSuperBounds:_baseView.bounds];
        */
-       
-        if (btn.tag == [_titleAry count] - 4){
-            [btn setImage:[UIImage imageNamed:@"square_release.png"] forState:UIControlStateNormal];
-            [btn setImageEdgeInsets:UIEdgeInsetsMake(btn.frame.size.height/4, btn.frame.size.width/3, btn.frame.size.height /4, btn.frame.size.width /3)];
-        }
-         
-        else if(btn.tag  == [_titleAry count]-3){
-            [btn setImage:[UIImage imageNamed:@"square_icon_selected.png"] forState:UIControlStateNormal];
-            [btn setImageEdgeInsets:UIEdgeInsetsMake(btn.frame.size.height/4, btn.frame.size.width/1, btn.frame.size.height /4, btn.frame.size.width /3)];
+    /*
         
-        
-        }else if(btn.tag  == [_titleAry count]- 2){
-            [btn setImage:[UIImage imageNamed:@"group_icon.png"] forState:UIControlStateNormal];
-            [btn setImageEdgeInsets:UIEdgeInsetsMake(btn.frame.size.height/4, btn.frame.size.width/1, btn.frame.size.height /4, btn.frame.size.width /3)];
-        
-        }else if(btn.tag  == [_titleAry count] -1){
-        {
-           [btn setImage:[UIImage imageNamed:@"person_icon.png"] forState:UIControlStateNormal];
-           [btn setImageEdgeInsets:UIEdgeInsetsMake(btn.frame.size.height/4, btn.frame.size.width/3, btn.frame.size.height /4, btn.frame.size.width /3)];
-            
             
             [btn setTitle:[_titleAry objectAtIndex:i] forState:UIControlStateNormal];
             [btn setSelectedImageModel:E_Sanjiao];
             
             
         }
-        }
-        
+         */
+    /*
         [btn addTarget:self action:@selector(baseBtnAction:) forControlEvents:UIControlEventTouchUpInside];
         [btn setTag:i];
         
@@ -99,52 +134,104 @@ enum{
         
         [btn addTarget:self action:@selector(xxView:) forControlEvents:UIControlEventTouchUpInside];
         [btn setTag:i];
-        
-        [_baseView addSubview:btn];
+*/
+       
     
          
-    }
-    //--------- 在循环外面  就不导致label循环创建了----------//
-    label=[[UILabel alloc]init];
-    label.frame=[Common RectMakex:www  y:0 w:www h:1.0 onSuperBounds:_baseView.bounds];
-    label.text=@"亦庄站";
+
+        
+}
+
+-(void)SquareView:(UITapGestureRecognizer *)sender{
+ 
+
+    NSLog(@"11111");
     
-    label.textColor = [UIColor whiteColor];
-    [_baseView addSubview:label];
+    
+    
+    joinView.hidden=YES;
+    qrcodeView.hidden=YES;
+    GBView.hidden=NO;
+    newGrouplabel.text=label.text;
+    personlabel.text=@"";
    
+ 
+    
+   
+
+}
+-(void)GroupView:(UITapGestureRecognizer *)sender{
+    NSLog(@"22222");
+    personlabel.text=@"";
+    personlabel.hidden=YES;
+    joinView=[[UIImageView alloc]init];
+    joinView.frame=CGRectMake(17, 15, 30, 20);
+    joinView.image=[UIImage imageNamed:@"gshare_group.png"];
+    [_baseView addSubview:joinView];
+    joinView.hidden=YES;
+    GBView.image=joinView.image;
+    
+    label.hidden=YES;;
+  
+    joinView.hidden=YES;
+    personlabel.text=@"";
+    newGrouplabel=[[UILabel alloc]init];
+    newGrouplabel.frame=CGRectMake(60, 15, 80, 25);
+    newGrouplabel.text=@"新建群组";
+    newGrouplabel.textColor=[UIColor whiteColor];
+    [_baseView addSubview:newGrouplabel];
+    
     UIImageView *selectimg=[[UIImageView alloc]init];
-    selectimg.frame = CGRectMake(label.frame.size.width - 8, label.frame.size.height - 8, 8, 8);
+    selectimg.frame = CGRectMake(newGrouplabel.frame.size.width - 8, newGrouplabel.frame.size.height - 8, 8, 8);
     selectimg.image=[UIImage imageNamed:@"selected_comment_icon.png"];
-    //selectimg.frame=CGRectMake(60, 30, 8, 8);
-    [label addSubview:selectimg];
+    [newGrouplabel addSubview:selectimg];
+    label.text=newGrouplabel.text;
     
-    //创建手势实例，并连接方法UITapGestureRecognizer,点击手势
+    UITapGestureRecognizer *newtapGesture=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(newonClick:)];
     
-    UITapGestureRecognizer *tapGesture=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(onClickUILable:)];
-    
-    label.userInteractionEnabled=YES;
-    tapGesture.numberOfTouchesRequired=1;
-    [label addGestureRecognizer:tapGesture];
-   
+    newGrouplabel.userInteractionEnabled=YES;
+    newtapGesture.numberOfTouchesRequired=1;
+    [newGrouplabel addGestureRecognizer:newtapGesture];
 
+    
+    
+    
 }
--(void)clickBtn:(id)sender{
+-(void)LinkView:(UITapGestureRecognizer *)sender{
 
-    UIButton *btn=(UIButton *)sender;
-    if (btn.tag==0) {
-        //第一个方法
-    }else if(btn.tag==1){
-       //第二个方法
-    }else if(btn.tag==2){
-       //第三个方法
-    }else if (btn.tag==3){
-      //第四个方法
+    NSLog(@"3333");
     
-    }
-
-
-
+    view3.hidden=YES;
+    label.text=@"";
+    newGrouplabel.text=@"";
+    newGrouplabel.hidden=YES;
+    qrcodeView=[[UIImageView alloc]init];
+    qrcodeView.frame=CGRectMake(17, 15, 25, 20);
+    qrcodeView.image=[UIImage imageNamed:@"scanner.png"];
+    [_baseView addSubview:qrcodeView];
+    joinView.hidden=YES;
+    GBView.hidden=YES;
+    joinView.image=qrcodeView.image;
+    
+    
+    personlabel=[[UILabel alloc]init];
+    personlabel.frame=CGRectMake(60, 15, 80, 25);
+    personlabel.text=@"罗阳";
+    personlabel.textColor=[UIColor whiteColor];
+    [_baseView addSubview:personlabel];
+    //newGrouplabel.text=personlabel.text;
+    UIImageView *selectimg=[[UIImageView alloc]init];
+    selectimg.frame = CGRectMake(newGrouplabel.frame.size.width - 8, newGrouplabel.frame.size.height - 8, 8, 8);
+    selectimg.image=[UIImage imageNamed:@"selected_comment_icon.png"];
+    [personlabel addSubview:selectimg];
+    //newGrouplabel.text=personlabel.text;
+    
+    
+    
+    
+    
 }
+/*
 -(void)xxView:(MyButton *)sender{
 
     NSLog(@"ccccc");
@@ -152,7 +239,7 @@ enum{
     float www = 1.0 / [_titleAry count];
     UILabel  *label4=[[UILabel alloc]init];
     label4.frame=[Common RectMakex:www  y:0 w:www h:1.0 onSuperBounds:_baseView.bounds];
-    label4.text=@"新建群组";
+    label4.text=@"新建";
     label4.textColor=[UIColor whiteColor];
     [_baseView addSubview:label4];
     
@@ -162,7 +249,6 @@ enum{
     newtapGesture.numberOfTouchesRequired=1;
     [label4 addGestureRecognizer:newtapGesture];
 
-    
     /*
     xxView=[[UIView  alloc]init];
     xxView.frame=CGRectMake(9, 90, 305, 300);
@@ -270,16 +356,16 @@ enum{
     */
     
     
-}
+//}
+
 -(void)newonClick:(UITapGestureRecognizer *)sender{
     
     
-    
+    NSLog(@"-----");
     view3=[[UIView alloc]initWithFrame:CGRectMake(40, 80, 240, 350)];
     view3.backgroundColor = [UIColor whiteColor];
     view3.tag=1;
     view3.userInteractionEnabled=YES;
-    NSLog(@"333");
     [self.window addSubview:view3];
     
     
@@ -303,7 +389,7 @@ enum{
     [label1 setBackgroundColor:[UIColor clearColor]];
     [label1 setFont:[UIFont systemFontOfSize:13.0]];
     label1.textColor = [UIColor blackColor];
-    label1.text=@"新建群组";
+    label1.text=@"新建群组1";
     [view3 addSubview:label1];
     
     UIImageView *newimg2=[[UIImageView alloc]initWithFrame:CGRectMake(200, 60,8, 30)];
@@ -314,17 +400,58 @@ enum{
     newlineview1.backgroundColor=[UIColor grayColor];
     [view3 addSubview:newlineview1];
     
-    UIImageView *Groupimg1=[[UIImageView alloc]init];
-    Groupimg1.image=[UIImage imageNamed:@"gshare_group.png"];
     
-    [view1 addSubview:Groupimg1];
+    UIImageView *img3=[[UIImageView alloc]initWithFrame:CGRectMake(30, 105,42, 42)];
+    img3.image=[UIImage imageNamed:@"face_man.png"];
+  
+    img3.layer.cornerRadius = 20;
+    img3.layer.masksToBounds = YES;
+    [view3 addSubview:img3];
+    
+    label2=[[UILabel alloc]initWithFrame:CGRectMake(83, 105, 60, 50)];
+    [label2 setBackgroundColor:[UIColor clearColor]];
+    [label2 setFont:[UIFont systemFontOfSize:13.0]];
+    label2.textColor = [UIColor blackColor];
+    label2.text=@"新建群组2";
+    [view3 addSubview:label2];
+    CATransition *animation = [CATransition animation];
+    animation.type = kCATransitionPush;
+    animation.duration = 0.4;
+    [view3.layer addAnimation:animation forKey:nil];
+
+   
+    UIImageView *newimg4=[[UIImageView alloc]initWithFrame:CGRectMake(200, 115,8, 30)];
+    newimg4.image=[UIImage imageNamed:@"dialog_mach.png"];
+    [view3 addSubview:newimg4];
+    
+    UIView *newlineview2=[[UIView alloc]initWithFrame:CGRectMake(25, 155, 200, 1)];
+    newlineview2.backgroundColor=[UIColor grayColor];
+    [view3 addSubview:newlineview2];
+    
+    MHview=[[UIView  alloc]initWithFrame:CGRectMake(10, 20, 300,500)];
+    //MHview.alpha=0.4;
+    MHview.backgroundColor=[UIColor  clearColor];
+    [self.window addSubview:MHview];
+    [MHview addSubview:view3];
 
     
-    
-    
-    
+    /*
+    for (int i = 0; i < [_titleAry count]; i++) {
 
+    MyButton *btn = [MyButton buttonWithType:UIButtonTypeCustom];
+    float www = 1.0 / [_titleAry count];
+     btn.frame = [Common RectMakex:www * i y:0 w:www h:1.0 onSuperBounds:_baseView.bounds];
+    if(btn.tag == [_titleAry count] - 4){
+       
+        [btn setImage:[UIImage imageNamed:@"gshare_group.png"] forState:UIControlStateNormal];
+        [btn setImageEdgeInsets:UIEdgeInsetsMake(btn.frame.size.height/4, btn.frame.size.width/3, btn.frame.size.height /4, btn.frame.size.width /3)];
+    }else{
+        
+    }
+    
+    }
 
+*/
 
 }
 -(void)cancelbtn1:(UIButton *)sender{
@@ -333,6 +460,7 @@ enum{
   animation.duration = 0.4;
   [view3.layer addAnimation:animation forKey:nil];
   view3.hidden=YES;
+  MHview.hidden=YES;
 }
 
 -(void)onClickUILable:(UITapGestureRecognizer *)sender{
