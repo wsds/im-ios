@@ -60,6 +60,16 @@ typedef enum {
     UILabel *newGrouplabel;
     UIImageView *qrcodeView;
     UILabel *personlabel;
+    UIImageView *LinkmanView;
+    UIImageView *LinkmanView1;
+    UIImageView *GroupView;
+     UIImageView *GroupView1;
+    UIImageView *SquareView;
+    UIImageView *SquareView1;
+    
+    UIImageView *currentShowMenuView;
+    int a1;
+    int b1;
     
     
     

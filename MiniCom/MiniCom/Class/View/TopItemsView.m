@@ -67,10 +67,13 @@ enum{
     tapGesture.numberOfTouchesRequired=1;
     [label addGestureRecognizer:tapGesture];
     
-    UIImageView *SquareView=[[UIImageView alloc]init];
+    SquareView=[[UIImageView alloc]init];
     SquareView.frame=CGRectMake(185, 15, 30, 25);
     SquareView.image=[UIImage imageNamed:@"square_icon_selected.png"];
+    SquareView.tag=102;
     [_baseView addSubview:SquareView];
+    
+    currentShowMenuView = SquareView;
     
     UITapGestureRecognizer *SquaretapGesture=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(SquareView:)];
     SquareView.userInteractionEnabled=YES;
@@ -78,9 +81,10 @@ enum{
     [SquareView addGestureRecognizer:SquaretapGesture];
     
     
-    UIImageView *GroupView=[[UIImageView alloc]init];
+    GroupView=[[UIImageView alloc]init];
     GroupView.frame=CGRectMake(235, 15, 30, 25);
     GroupView.image=[UIImage imageNamed:@"group_icon.png"];
+    GroupView.tag=103;
     [_baseView addSubview:GroupView];
     
     UITapGestureRecognizer *GrouptapGesture=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(GroupView:)];
@@ -88,16 +92,19 @@ enum{
     GrouptapGesture.numberOfTouchesRequired=1;
     [GroupView addGestureRecognizer:GrouptapGesture];
 
-    UIImageView *LinkmanView=[[UIImageView alloc]init];
+    LinkmanView=[[UIImageView alloc]init];
     LinkmanView.frame=CGRectMake(285, 15, 30, 25);
     LinkmanView.image=[UIImage imageNamed:@"person_icon.png"];
+    LinkmanView.tag=104;
     [_baseView addSubview:LinkmanView];
     
     UITapGestureRecognizer *linktapGesture=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(LinkView:)];
     LinkmanView.userInteractionEnabled=YES;
     linktapGesture.numberOfTouchesRequired=1;
     [LinkmanView addGestureRecognizer:linktapGesture];
-
+    
+    
+   
 
     /*
     _titleAry = @[ @"广场", @"群组", @"我"];
@@ -146,91 +153,148 @@ enum{
  
 
     NSLog(@"11111");
-    
-    
-    
-    joinView.hidden=YES;
-    qrcodeView.hidden=YES;
-    GBView.hidden=NO;
-    newGrouplabel.text=label.text;
-    personlabel.text=@"";
+    /*
+    SquareView1=[[UIImageView alloc]init];
+    SquareView1.frame=CGRectMake(185, 15, 30, 25);
+    SquareView1.image=[UIImage imageNamed:@"square_icon_selected.png"];
+    [_baseView addSubview:SquareView1];
+    */
+    // SquareView.image=SquareView1.image;
+//    if(currentShowMenuView == GroupView){
+//        currentShowMenuView.image = [UIImage imageNamed:@"group_icon.png"];
+//    
+//    }else if(currentShowMenuView == LinkmanView){
+//        currentShowMenuView.image = [UIImage imageNamed:@"person_icon.png"];
+//    }
+//    currentShowMenuView = SquareView;
+//    currentShowMenuView.image =[UIImage imageNamed:@"square_icon_selected.png"];
    
- 
+    [self switchTopMenuView:(SquareView) b1:(@"square_icon_selected.png")];
     
-   
-
+    
 }
 -(void)GroupView:(UITapGestureRecognizer *)sender{
     NSLog(@"22222");
-    personlabel.text=@"";
-    personlabel.hidden=YES;
+  
+    joinView.hidden=YES;
+    GBView.image=joinView.image;
+    label.hidden=YES;
+    qrcodeView.hidden=YES;
+    //qrcodeView.image=nil;
+    
+    
+  
     joinView=[[UIImageView alloc]init];
     joinView.frame=CGRectMake(17, 15, 30, 20);
     joinView.image=[UIImage imageNamed:@"gshare_group.png"];
     [_baseView addSubview:joinView];
-    joinView.hidden=YES;
-    GBView.image=joinView.image;
     
-    label.hidden=YES;;
-  
-    joinView.hidden=YES;
-    personlabel.text=@"";
+   
     newGrouplabel=[[UILabel alloc]init];
     newGrouplabel.frame=CGRectMake(60, 15, 80, 25);
     newGrouplabel.text=@"新建群组";
     newGrouplabel.textColor=[UIColor whiteColor];
     [_baseView addSubview:newGrouplabel];
     
+    personlabel.text=newGrouplabel.text;
+    
     UIImageView *selectimg=[[UIImageView alloc]init];
     selectimg.frame = CGRectMake(newGrouplabel.frame.size.width - 8, newGrouplabel.frame.size.height - 8, 8, 8);
     selectimg.image=[UIImage imageNamed:@"selected_comment_icon.png"];
     [newGrouplabel addSubview:selectimg];
-    label.text=newGrouplabel.text;
+    //label.text=newGrouplabel.text;
+   
     
     UITapGestureRecognizer *newtapGesture=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(newonClick:)];
     
     newGrouplabel.userInteractionEnabled=YES;
     newtapGesture.numberOfTouchesRequired=1;
     [newGrouplabel addGestureRecognizer:newtapGesture];
+    
+    
+    /*
+    GroupView1=[[UIImageView alloc]init];
+    GroupView1.frame=CGRectMake(235, 15, 30, 25);
+    GroupView1.image=[UIImage imageNamed:@"group_icon_selected.png"];
+    [_baseView addSubview:GroupView1];
+    */
+   
+    
+    
+    //GroupView.image=GroupView1.image;
+    
+    
+    
+    
+//    if(currentShowMenuView == SquareView){
+//        currentShowMenuView.image = [UIImage imageNamed:@"square_icon.png"];
+//        
+//    }else if(currentShowMenuView == LinkmanView){
+//        currentShowMenuView.image = [UIImage imageNamed:@"person_icon.png"];
+//    }
+//    currentShowMenuView = GroupView;
+//    currentShowMenuView.image =[UIImage imageNamed:@"group_icon_selected.png"];
+    
+    [self switchTopMenuView:(GroupView) b1:(@"group_icon_selected.png")];
 
-    
-    
     
 }
 -(void)LinkView:(UITapGestureRecognizer *)sender{
 
     NSLog(@"3333");
-    
-    view3.hidden=YES;
-    label.text=@"";
-    newGrouplabel.text=@"";
     newGrouplabel.hidden=YES;
-    qrcodeView=[[UIImageView alloc]init];
-    qrcodeView.frame=CGRectMake(17, 15, 25, 20);
-    qrcodeView.image=[UIImage imageNamed:@"scanner.png"];
-    [_baseView addSubview:qrcodeView];
-    joinView.hidden=YES;
-    GBView.hidden=YES;
-    joinView.image=qrcodeView.image;
-    
-    
+    newGrouplabel.text=@"";
+ 
     personlabel=[[UILabel alloc]init];
-    personlabel.frame=CGRectMake(60, 15, 80, 25);
+    personlabel.frame=CGRectMake(60, 15, 70, 25);
     personlabel.text=@"罗阳";
     personlabel.textColor=[UIColor whiteColor];
     [_baseView addSubview:personlabel];
-    //newGrouplabel.text=personlabel.text;
+    
+    
+    
     UIImageView *selectimg=[[UIImageView alloc]init];
     selectimg.frame = CGRectMake(newGrouplabel.frame.size.width - 8, newGrouplabel.frame.size.height - 8, 8, 8);
     selectimg.image=[UIImage imageNamed:@"selected_comment_icon.png"];
     [personlabel addSubview:selectimg];
+    
+    view3.hidden=YES;
+    joinView.hidden=YES;
+    GBView.hidden=YES;
+   
     //newGrouplabel.text=personlabel.text;
+    joinView.image=qrcodeView.image;
+    qrcodeView=[[UIImageView alloc]init];
+    qrcodeView.frame=CGRectMake(17, 15, 25, 20);
+    qrcodeView.image=[UIImage imageNamed:@"scanner.png"];
+    [_baseView addSubview:qrcodeView];
+ 
     
     
+    /*
+    LinkmanView1=[[UIImageView alloc]init];
+    LinkmanView1.frame=CGRectMake(285, 15, 30, 25);
+    LinkmanView1.image=[UIImage imageNamed:@"person_icon_selected.png"];
     
+    [_baseView addSubview:LinkmanView1];
+    */
+    //LinkmanView1.hidden=YES;
     
+   //LinkmanView.image=LinkmanView.image;
+
     
-}
+//    if(currentShowMenuView == SquareView){
+//        currentShowMenuView.image = [UIImage imageNamed:@"square_icon.png"];
+//        
+//    }else if(currentShowMenuView == GroupView){
+//        currentShowMenuView.image = [UIImage imageNamed:@"group_icon.png"];
+//    }
+//    currentShowMenuView = LinkmanView;
+//    currentShowMenuView.image =[UIImage imageNamed:@"person_icon_selected.png"];
+
+    [self switchTopMenuView:(LinkmanView) b1:(@"person_icon_selected.png")];
+
+
 /*
 -(void)xxView:(MyButton *)sender{
 
@@ -356,7 +420,23 @@ enum{
     */
     
     
-//}
+}
+-(void)switchTopMenuView: (UIImageView *)a b1:(NSString *)b2 {
+    
+    if(currentShowMenuView != a && currentShowMenuView == SquareView){
+        currentShowMenuView.image = [UIImage imageNamed:@"square_icon.png"];
+        
+    }else if(currentShowMenuView != a && currentShowMenuView == GroupView ){
+        currentShowMenuView.image = [UIImage imageNamed:@"group_icon.png"];
+    }else if(currentShowMenuView != a && currentShowMenuView == LinkmanView){
+        currentShowMenuView.image = [UIImage imageNamed:@"person_icon.png"];
+    }
+    
+    if(currentShowMenuView != a){
+        currentShowMenuView = a;
+        currentShowMenuView.image = [UIImage imageNamed:b2];
+    }
+}
 
 -(void)newonClick:(UITapGestureRecognizer *)sender{
     
@@ -370,12 +450,10 @@ enum{
     
     
     UIButton *deletebtn1=[UIButton buttonWithType:UIButtonTypeCustom];
-    
     deletebtn1.frame=CGRectMake(0, 0, 14, 14);
     deletebtn1.tag=101;
     [deletebtn1 setBackgroundImage:[UIImage imageNamed:@"input_clear.png"] forState:UIControlStateNormal];
     [deletebtn1 addTarget:self action:@selector(cancelbtn1:) forControlEvents:UIControlEventTouchUpInside];
-    
     [view3 addSubview:deletebtn1];
     
     UIImageView *newimg1=[[UIImageView alloc]initWithFrame:CGRectMake(30, 50,42, 42)];
