@@ -68,8 +68,18 @@ typedef enum {
     UIImageView *SquareView1;
     
     UIImageView *currentShowMenuView;
+    UIImageView *currentShowMenuView1;
+    UIImageView *currentShowMenuView2;
+    //UIView *publicLabelView;
+    UIView *BigSquareView;
+    UIView *BigGroupView;
+    UIView *BigLinkmanView;
+
     int a1;
     int b1;
+    
+    int c1;
+    int c2;
     
     
     
