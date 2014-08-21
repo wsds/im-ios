@@ -23,6 +23,7 @@ typedef enum {
 
 @protocol TopItemsViewBtnSelectDelegate <NSObject>
 
+
 - (void)showSquareSelectViewByTag:(E_ShowView_Square)tag;
 
 - (void)showGroupSelectViewByTag:(E_ShowView_Group)tag;
@@ -75,6 +76,21 @@ typedef enum {
     UIView *BigGroupView;
     UIView *BigLinkmanView;
 
+    UIView  *testGroupView;
+    UIImageView *GroupImgView;
+    
+    UIView *KuangView1;
+    UIView *KuangView2;
+    UIView *KuangView3;
+    UIView *KuangView4;
+    
+    UIImageView  *personView1;
+    UIImageView  *personView2;
+    UIImageView  *personView3;
+    UIImageView  *personView4;
+    
+    
+    
     int a1;
     int b1;
     
@@ -92,6 +108,20 @@ typedef enum {
 @property(nonatomic, assign) E_ShowView_Square   squareIndex;
 @property(nonatomic, assign) E_ShowView_Group    groupIndex;
 @property(nonatomic, assign) E_ShowView_Own      ownIndex;
+
+//可滚动页面
+
+@property (retain, nonatomic) UIScrollView *scrollView;
+
+//页点
+
+@property (retain, nonatomic) UIPageControl *pageControl;
+
+//保存图片的数组
+
+@property (retain, nonatomic) NSMutableArray *imageArray;
+
+
 
 
 - (void)setLocalTitle:(NSString *)loacl;

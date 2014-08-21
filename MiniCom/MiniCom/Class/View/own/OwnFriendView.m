@@ -22,11 +22,12 @@
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
-        
+        /*
         _ScrollV = [[UIScrollView alloc] initWithFrame:self.bounds];
         _ScrollV.showsVerticalScrollIndicator = NO;
         [self addSubview:_ScrollV];
-        
+        */
+        /*
         _newFriend_btn = [UIButton buttonWithType:UIButtonTypeCustom];
         _newFriend_btn.frame = [Common RectMakex:0.0 y:0.0 w:1.0 h:0.1 onSuperBounds:_ScrollV.bounds];
         [_newFriend_btn setBackgroundImage:[UIImage imageNamed:@"button_background_click.png"] forState:UIControlStateNormal];
@@ -48,6 +49,16 @@
         
 #warning temp need use shareLongSessionData
         [self updateNewFriendAry:nil];
+         */
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
     return self;
 }

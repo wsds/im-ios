@@ -31,6 +31,8 @@
     UIView *_circleView;
 
     UIButton *_moreFriend_btn;
+    
+    
 }
 @property(assign, nonatomic) id <OwnFriendViewDelegate>delegate;
 

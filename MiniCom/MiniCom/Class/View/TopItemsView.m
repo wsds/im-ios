@@ -9,6 +9,7 @@
 #import "TopItemsView.h"
 #import "Common.h"
 #import "MyButton.h"
+#import "SendMessageViewController.h"
 
 enum{
     E_square,
@@ -21,6 +22,10 @@ enum{
 
 #define TopH 0.2
 #define SubH (1.0 - TopH) / 2
+
+
+
+
 
 @implementation TopItemsView
 
@@ -49,6 +54,13 @@ enum{
     GBView.image=[UIImage imageNamed:@"square_release.png"];
     [_baseView addSubview:GBView];
     
+    //事件
+    UITapGestureRecognizer *GBtapGesture=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(onClickGBView:)];
+    
+    GBView.userInteractionEnabled=YES;
+    GBtapGesture.numberOfTouchesRequired=1;
+    [GBView addGestureRecognizer:GBtapGesture];
+
     label=[[UILabel alloc]init];
     label.frame=CGRectMake(60, 15, 80, 25);
     label.text=@"亦庄站";
@@ -142,7 +154,19 @@ enum{
         [btn addTarget:self action:@selector(xxView:) forControlEvents:UIControlEventTouchUpInside];
         [btn setTag:i];
 */
-       
+
+
+-(void)onClickGBView:(UITapGestureRecognizer *)sender{
+
+
+    NSLog(@"+++++++++");
+   
+}
+
+
+
+
+
 
 -(void)SquareView:(UITapGestureRecognizer *)sender{
  
@@ -150,9 +174,16 @@ enum{
     NSLog(@"11111");
 
    [self switchTopMenuView:(SquareView) b1:(@"square_icon_selected.png") c1:(@"square_release.png") d1:(@"亦庄站")];
+    testGroupView.hidden=YES;
+    GroupImgView.hidden=YES;
+    KuangView1.hidden=YES;
+    KuangView2.hidden=YES;
+    KuangView3.hidden=YES;
+    KuangView4.hidden=YES;
     
-   
-
+    personView1.hidden=YES;
+    personView2.hidden=YES;
+    personView3.hidden=YES;
 }
 -(void)GroupView:(UITapGestureRecognizer *)sender{
     NSLog(@"22222");
@@ -173,13 +204,87 @@ enum{
     
 
     [self switchTopMenuView:(GroupView) b1:(@"group_icon_selected.png") c1:(@"gshare_group.png") d1:(@"新建群组")];
+    
+    //滚动视图----------------------------
+    GroupImgView=[[UIImageView alloc]initWithFrame:CGRectMake(270, 74,40 , 30)];
+    GroupImgView.image=[UIImage imageNamed:@"square_release.png"];
+    [self addSubview:GroupImgView];
+    
+    
+    //------________----头像
+    
+    personView1=[[UIImageView alloc]init];
+    personView1.frame=CGRectMake(10, 71, 40, 34);
+    personView1.image=[UIImage imageNamed:@"face_man.png"];
+    personView1.layer.cornerRadius = 18;
+    personView1.layer.masksToBounds = YES;
 
+   
+    [self  addSubview:personView1];
+    
+    personView2=[[UIImageView alloc]init];
+    personView2.frame=CGRectMake(60, 71, 40, 34);
+    personView2.image=[UIImage imageNamed:@"face_man.png"];
+    personView2.layer.cornerRadius = 18;
+    personView2.layer.masksToBounds = YES;
+    [self  addSubview:personView2];
+    
+    personView3=[[UIImageView alloc]init];
+    personView3.frame=CGRectMake(110, 71, 40, 34);
+    personView3.image=[UIImage imageNamed:@"face_man.png"];
+    personView3.layer.cornerRadius = 18;
+    personView3.layer.masksToBounds = YES;
+    [self  addSubview:personView3];
+
+
+    
+    
+   
+    //----------------------------
+    //GROUPVIEW
+    
+    testGroupView=[[UIView  alloc]init];
+    testGroupView.frame=CGRectMake(10, 110, 300, 300);
+    testGroupView.backgroundColor=[UIColor  clearColor];
+    //[self addSubview:testGroupView];
+    //-----------长方形框
+    KuangView1=[[UIView alloc]init];
+    KuangView1.frame=CGRectMake(10, 110, 1, 300);
+    KuangView1.backgroundColor=[UIColor whiteColor];
+    [self addSubview:KuangView1];
+    
+    KuangView2=[[UIView alloc]init];
+    KuangView2.frame=CGRectMake(10, 110, 300, 1);
+    KuangView2.backgroundColor=[UIColor whiteColor];
+    [self addSubview:KuangView2];
+
+    KuangView3=[[UIView alloc]init];
+    KuangView3.frame=CGRectMake(310, 110, 1, 300);
+    KuangView3.backgroundColor=[UIColor whiteColor];
+    [self addSubview:KuangView3];
+
+    KuangView4=[[UIView alloc]init];
+    KuangView4.frame=CGRectMake(10, 410, 300, 1);
+    KuangView4.backgroundColor=[UIColor whiteColor];
+    [self addSubview:KuangView4];
+    //----------------------//
+    
+    
     
 }
 -(void)LinkView:(UITapGestureRecognizer *)sender{
 
     NSLog(@"3333");
-
+    testGroupView.hidden=YES;
+    GroupImgView.hidden=YES;
+    KuangView1.hidden=YES;
+    KuangView2.hidden=YES;
+    KuangView3.hidden=YES;
+    KuangView4.hidden=YES;
+    
+    personView1.hidden=YES;
+    personView2.hidden=YES;
+    personView3.hidden=YES;
  /*
     personlabel=[[UILabel alloc]init];
     personlabel.frame=CGRectMake(60, 15, 70, 25);
@@ -194,37 +299,125 @@ enum{
     selectimg.image=[UIImage imageNamed:@"selected_comment_icon.png"];
     [personlabel addSubview:selectimg];
     
-    
-    /*
-    qrcodeView=[[UIImageView alloc]init];
-    qrcodeView.frame=CGRectMake(17, 15, 25, 20);
-    qrcodeView.image=[UIImage imageNamed:@"scanner.png"];
-    [_baseView addSubview:qrcodeView];
-   */
-
- 
     [self switchTopMenuView:(LinkmanView) b1:(@"person_icon_selected.png") c1:(@"scanner.png") d1:(@"罗阳")];
+    
+    
+/*
+    xxView=[[UIView  alloc]init];
+    xxView.frame=CGRectMake(9, 90, 305, 300);
+    xxView.backgroundColor=[UIColor clearColor];
+    xxView.backgroundColor = [UIColor colorWithPatternImage: [UIImage imageNamed:@"background4.jpg"] ];
+    [_baseView addSubview:xxView];
+    //搜索好友
+    UIView *searchFriendView=[[UIView  alloc]init];
+    searchFriendView.frame=CGRectMake(1, 10, 304, 35);
+    searchFriendView.backgroundColor=[UIColor grayColor];
+    [xxView addSubview:searchFriendView];
+    
+    UIImageView *searchImg=[[UIImageView alloc]initWithFrame:CGRectMake(10, 10,20 , 20)];
+    searchImg.image=[UIImage imageNamed:@"dialog_search.png"];
+    [searchFriendView  addSubview:searchImg];
+    
+    UILabel * searchLabel=[[UILabel alloc]init];
+    searchLabel.frame=CGRectMake(40, 10, 100, 20);
+    searchLabel.text=@"搜索好友";
+    searchLabel.textColor=[UIColor whiteColor];
+    [searchFriendView addSubview:searchLabel];
+    
+    //新的好友
+    
+    UIView *newFriendView=[[UIView  alloc]init];
+    newFriendView.frame=CGRectMake(0, 50, 304, 35);
+    newFriendView.backgroundColor=[UIColor grayColor];
+    [xxView addSubview:newFriendView];
+    
+    UIImageView *newImg=[[UIImageView alloc]initWithFrame:CGRectMake(10, 10,20 , 20)];
+    newImg.image=[UIImage imageNamed:@"header.png"];
+    [newFriendView addSubview:newImg];
+    
+    UILabel * newLabel=[[UILabel alloc]init];
+    newLabel.frame=CGRectMake(40, 10, 100, 20);
+    newLabel.text=@"新的好友";
+    newLabel.textColor=[UIColor whiteColor];
+    [newFriendView addSubview:newLabel];
+    
+    //默认分组
+    UIView  *defaultGroupview=[[UIView  alloc]init];
+    defaultGroupview.frame=CGRectMake(0, 90, 304, 210);
+    defaultGroupview.backgroundColor=[UIColor grayColor];
+    [xxView addSubview:defaultGroupview];
+    
+    UIImageView *newImg1=[[UIImageView alloc]initWithFrame:CGRectMake(10, 10,20 , 20)];
+    newImg1.image=[UIImage imageNamed:@"header.png"];
+    [defaultGroupview addSubview:newImg1];
+    
+    
+    UILabel * defaultLabel=[[UILabel alloc]init];
+    defaultLabel.frame=CGRectMake(40, 10, 100, 20);
+    defaultLabel.text=@"默认分组(3)";
+    defaultLabel.textColor=[UIColor whiteColor];
+    [defaultGroupview addSubview:defaultLabel];
+    
+    UIView *lineView=[[UIView alloc]init];
+    lineView.frame=CGRectMake(0, 40, 290, 1);
+    lineView.backgroundColor=[UIColor whiteColor];
+    [defaultGroupview addSubview:lineView];
+    
+    
+    UIImageView *defaultimg1=[[UIImageView alloc]initWithFrame:CGRectMake(15, 50,50, 50)];
+    defaultimg1.image=[UIImage imageNamed:@"face_man.png"];
+    //把图片设置成圆形
+    defaultimg1.layer.cornerRadius = 25;
+    defaultimg1.layer.masksToBounds = YES;
+    [defaultGroupview addSubview:defaultimg1];
+    
+    UIImageView *defaultimg2=[[UIImageView alloc]initWithFrame:CGRectMake(75, 50,50, 50)];
+    defaultimg2.image=[UIImage imageNamed:@"face_man.png"];
+    //把图片设置成圆形
+    defaultimg2.layer.cornerRadius = 25;
+    defaultimg2.layer.masksToBounds = YES;
+    [defaultGroupview addSubview:defaultimg2];
+    
+    
+    UIImageView *defaultimg3=[[UIImageView alloc]initWithFrame:CGRectMake(135, 50,50, 50)];
+    defaultimg3.image=[UIImage imageNamed:@"face_man.png"];
+    //把图片设置成圆形
+    defaultimg3.layer.cornerRadius = 25;
+    defaultimg3.layer.masksToBounds = YES;
+    [defaultGroupview addSubview:defaultimg3];
+    
+    UILabel *labelperson1=[[UILabel alloc]init];
+    labelperson1.frame=CGRectMake(25, 101, 50, 20);
+    labelperson1.text=@"152~";
+    [labelperson1 setFont:[UIFont systemFontOfSize:13.0]];
+    labelperson1.textColor=[UIColor whiteColor];
+    [defaultGroupview addSubview:labelperson1];
+    
+    UILabel *labelperson2=[[UILabel alloc]init];
+    labelperson2.frame=CGRectMake(80, 101, 50, 20);
+    labelperson2.text=@"乔晓松";
+    [labelperson2 setFont:[UIFont systemFontOfSize:13.0]];
+    labelperson2.textColor=[UIColor whiteColor];
+    [defaultGroupview addSubview:labelperson2];
+    
+    UILabel *labelperson3=[[UILabel alloc]init];
+    labelperson3.frame=CGRectMake(145, 101, 50, 20);
+    labelperson3.text=@"罗阳";
+    [labelperson3 setFont:[UIFont systemFontOfSize:13.0]];
+    labelperson3.textColor=[UIColor whiteColor];
+    [defaultGroupview addSubview:labelperson3];
+    */
 
+    
+    
+    
+    
 
+}
 /*
 -(void)xxView:(MyButton *)sender{
 
-    NSLog(@"ccccc");
-    label.text=@"";
-    float www = 1.0 / [_titleAry count];
-    UILabel  *label4=[[UILabel alloc]init];
-    label4.frame=[Common RectMakex:www  y:0 w:www h:1.0 onSuperBounds:_baseView.bounds];
-    label4.text=@"新建";
-    label4.textColor=[UIColor whiteColor];
-    [_baseView addSubview:label4];
-    
-    UITapGestureRecognizer *newtapGesture=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(newonClick:)];
-    
-    label4.userInteractionEnabled=YES;
-    newtapGesture.numberOfTouchesRequired=1;
-    [label4 addGestureRecognizer:newtapGesture];
 
-    /*
     xxView=[[UIView  alloc]init];
     xxView.frame=CGRectMake(9, 90, 305, 300);
     xxView.backgroundColor=[UIColor clearColor];
@@ -328,10 +521,11 @@ enum{
     [labelperson3 setFont:[UIFont systemFontOfSize:13.0]];
     labelperson3.textColor=[UIColor whiteColor];
     [defaultGroupview addSubview:labelperson3];
-    */
+    
     
     
 }
+ */
 -(void)switchTopMenuView: (UIImageView *)a b1:(NSString *)b2 c1:(NSString *)c2 d1:(NSString *)d2{
     
     if(currentShowMenuView != a && currentShowMenuView == SquareView){
@@ -578,6 +772,7 @@ enum{
     MHview=[[UIView  alloc]initWithFrame:CGRectMake(10, 20, 300,500)];
     //MHview.alpha=0.4;
     MHview.backgroundColor=[UIColor  clearColor];
+    
     [self.window addSubview:MHview];
     [MHview addSubview:view1];
     //VIEW3
@@ -642,11 +837,12 @@ enum{
 - (void)loadSubView
 {
     //_subView = [[UIView alloc] initWithFrame:[Common RectMakex:0 y:baseH w:1.0 h:subH onSuperBounds:self.bounds]];
-    _subView = [[UIView alloc] initWithFrame:[Common RectMakex:0 y:TopH + SubH w:1.0 h:SubH onSuperBounds:self.bounds]];
-    _subView.backgroundColor = [UIColor grayColor];
+    //_subView = [[UIView alloc] initWithFrame:[Common RectMakex:0 y:TopH + SubH w:1.0 h:SubH onSuperBounds:self.bounds]];
+    //_subView.backgroundColor = [UIColor grayColor];
     [self addSubview:_subView];
     
     //square
+    
     _subView1 = [[UIView alloc] initWithFrame:[Common RectMakex:0 y:0.0 w:1.0 h:1.0 onSuperBounds:_subView.bounds]];
     //_subView1.backgroundColor = [UIColor grayColor];
     [_subView addSubview:_subView1];
@@ -681,10 +877,12 @@ enum{
     }
     */
     //group
+    
     _subView2 = [[UIView alloc] initWithFrame:[Common RectMakex:0 y:0.0 w:1.0 h:1.0 onSuperBounds:_subView.bounds]];
     //_subView2.backgroundColor = [UIColor grayColor];
     [_subView addSubview:_subView2];
     _subView2.tag = E_group;
+    
   /*
     NSArray *subView2titleAry = @[@"我的", @"附近"];
     float w2 = 1.0 / [subView2titleAry count];
@@ -700,11 +898,13 @@ enum{
     }
     */
     //own
+    
     _subView3 = [[UIView alloc] initWithFrame:[Common RectMakex:0 y:0.0 w:1.0 h:1.0 onSuperBounds:_subView.bounds]];
     //_subView3.backgroundColor = [UIColor grayColor];
     [_subView addSubview:_subView3];
+    
     _subView3.tag = E_own;
-
+/*
     NSArray *subView3titleAry = @[@"好友", @"消息", @"我"];
     float w3 = 1.0 / [subView3titleAry count];
     for (int i = 0; i < [subView3titleAry count]; i++) {
@@ -717,7 +917,7 @@ enum{
         [btn setTag:i];
         [_subView3 addSubview:btn];
     }
- 
+ */
     
 }
 
