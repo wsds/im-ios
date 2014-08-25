@@ -34,7 +34,7 @@ typedef enum {
 
 @end
 
-@interface TopItemsView : UIView
+@interface TopItemsView : UIView<UIScrollViewDelegate>
 {
     UIView *_baseView;
     UIView *_subView;
@@ -89,6 +89,15 @@ typedef enum {
     UIImageView  *personView3;
     UIImageView  *personView4;
     
+    UIScrollView *messview;
+    UIView  *BigmessView;
+    UIView *sendView;
+    //图文
+    UILabel *sendLabel;
+    //语音
+    UILabel *sendLabel1;
+    
+    UIImageView *imagetextView;
     
     
     int a1;

@@ -10,12 +10,13 @@
 #import "Common.h"
 #import "MyButton.h"
 #import "SendMessageViewController.h"
-
+#import "pickViewController.h"
 enum{
     E_square,
     E_group,
     E_own
 };
+
 
 //#define baseH 0.6
 //#define subH 1.0 - baseH
@@ -184,6 +185,8 @@ enum{
     personView1.hidden=YES;
     personView2.hidden=YES;
     personView3.hidden=YES;
+    
+    messview.hidden=YES;
 }
 -(void)GroupView:(UITapGestureRecognizer *)sender{
     NSLog(@"22222");
@@ -205,11 +208,18 @@ enum{
 
     [self switchTopMenuView:(GroupView) b1:(@"group_icon_selected.png") c1:(@"gshare_group.png") d1:(@"新建群组")];
     
-    //滚动视图----------------------------
+   
     GroupImgView=[[UIImageView alloc]initWithFrame:CGRectMake(270, 74,40 , 30)];
     GroupImgView.image=[UIImage imageNamed:@"square_release.png"];
     [self addSubview:GroupImgView];
     
+    UITapGestureRecognizer *sendtapGesture=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(sendClick:)];
+    
+    GroupImgView.userInteractionEnabled=YES;
+    sendtapGesture.numberOfTouchesRequired=1;
+    [GroupImgView addGestureRecognizer:sendtapGesture];
+
+   
     
     //------________----头像
     
@@ -247,31 +257,233 @@ enum{
     testGroupView.frame=CGRectMake(10, 110, 300, 300);
     testGroupView.backgroundColor=[UIColor  clearColor];
     //[self addSubview:testGroupView];
+    //-------UItabelview---------//
+    
+    
+    BigmessView=[[UIView alloc]init];
+    BigmessView.frame=CGRectMake(5, 110, 310, 650);
+    BigmessView.userInteractionEnabled=YES;
+    BigmessView.backgroundColor=[UIColor clearColor];
+    
+    [self.window addSubview:BigmessView];
+    
+    
+    messview =[[UIScrollView   alloc] initWithFrame:CGRectMake(0,10, 310, 500)];
+    
+    messview.userInteractionEnabled=YES;
+    messview.backgroundColor=[UIColor clearColor];
+    messview.scrollEnabled = YES;
+  
+    messview.contentSize=CGSizeMake(300, 1000);
+   [BigmessView  addSubview: messview];
+    
+    //------mess
+    UILabel *Timelabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, 200, 20)];
+    Timelabel.backgroundColor = [UIColor clearColor];
+    Timelabel.textColor=[UIColor whiteColor];
+    Timelabel.text = @"2014.08.26";
+    [messview addSubview:Timelabel];
+    
+    UIImageView *perView=[[UIImageView alloc]init];
+    perView.frame=CGRectMake(15, 28, 30, 28);
+    perView.image=[UIImage imageNamed:@"face_man.png"];
+    perView.layer.cornerRadius = 15;
+    perView.layer.masksToBounds = YES;
+    [messview addSubview:perView];
+    
+    UILabel *perLabel=[[UILabel alloc]init];
+    perLabel.frame=CGRectMake(50, 28, 100, 30);
+    perLabel.text=@"索拉卡";
+    perLabel.textColor=[UIColor whiteColor];
+    [perLabel setFont:[UIFont systemFontOfSize:13.0]];
+    [messview addSubview:perLabel];
+    
+    
+    UIImageView *TimeView=[[UIImageView alloc]init];
+    TimeView.frame=CGRectMake(210, 35, 25, 20);
+    TimeView.image=[UIImage imageNamed:@"gshare_time.png"];
+    [messview addSubview:TimeView];
+
+    
+    UILabel *Timelabel1=[[UILabel alloc]init];
+    Timelabel1.frame=CGRectMake(240, 35, 50, 20);
+    Timelabel1.text=@"19:25";
+    Timelabel1.textColor=[UIColor whiteColor];
+    [messview addSubview:Timelabel1];
+    
+    
+    UIImageView *BigimageView=[[UIImageView alloc]init];
+    BigimageView.frame=CGRectMake(10, 60, 290, 200);
+    BigimageView.image=[UIImage imageNamed:@"Group_Himage.jpg"];
+    [messview addSubview:BigimageView];
+    
+    UILabel *Sendmesslabel=[[UILabel alloc]init];
+    Sendmesslabel.frame=CGRectMake(20, 265, 100, 20);
+    Sendmesslabel.text=@"It's Lufei.";
+    Sendmesslabel.textColor=[UIColor whiteColor];
+    [Sendmesslabel setFont:[UIFont systemFontOfSize:13.0]];
+    [messview addSubview:Sendmesslabel];
+    
+    UILabel *Xlinelabel=[[UILabel alloc]init];
+    Xlinelabel.frame=CGRectMake(10, 290, 305, 5);
+    Xlinelabel.text=@"-----------------------------------------------------------";
+    Xlinelabel.textColor=[UIColor grayColor];
+    [messview addSubview:Xlinelabel];
+    
+    UIImageView *heartView=[[UIImageView alloc]init];;
+    heartView.frame=CGRectMake(160, 297, 38, 28);
+    heartView.image=[UIImage imageNamed:@"gshare_praised.png"];
+    [messview addSubview:heartView];
+    
+    
+    UILabel *numLabel=[[UILabel alloc]init];
+    numLabel.frame=CGRectMake(205, 305, 10, 15);
+    numLabel.text=@"2";
+    numLabel.textColor=[UIColor whiteColor];
+    [messview addSubview:numLabel];
+    
+    UIImageView *commentView=[[UIImageView alloc]init];;
+    commentView.frame=CGRectMake(235, 297, 38, 28);
+    commentView.image=[UIImage imageNamed:@"gshare_comment.png"];
+    [messview addSubview:commentView];
+
+    UILabel *commentLabel=[[UILabel alloc]init];
+    commentLabel.frame=CGRectMake(280, 305, 10, 15);
+    commentLabel.text=@"1";
+    commentLabel.textColor=[UIColor whiteColor];
+    [messview addSubview:commentLabel];
+
+    //---------tabelview-------//
+    
     //-----------长方形框
     KuangView1=[[UIView alloc]init];
-    KuangView1.frame=CGRectMake(10, 110, 1, 300);
+    KuangView1.frame=CGRectMake(10, 20, 1, 310);
     KuangView1.backgroundColor=[UIColor whiteColor];
-    [self addSubview:KuangView1];
+     KuangView1.userInteractionEnabled=YES;
+    [messview addSubview:KuangView1];
     
     KuangView2=[[UIView alloc]init];
-    KuangView2.frame=CGRectMake(10, 110, 300, 1);
+    KuangView2.frame=CGRectMake(10, 20, 290, 1);
     KuangView2.backgroundColor=[UIColor whiteColor];
-    [self addSubview:KuangView2];
+     KuangView2.userInteractionEnabled=YES;
+    [messview addSubview:KuangView2];
 
     KuangView3=[[UIView alloc]init];
-    KuangView3.frame=CGRectMake(310, 110, 1, 300);
+    KuangView3.frame=CGRectMake(300, 20, 1, 310);
     KuangView3.backgroundColor=[UIColor whiteColor];
-    [self addSubview:KuangView3];
+     KuangView3.userInteractionEnabled=YES;
+    [messview addSubview:KuangView3];
 
     KuangView4=[[UIView alloc]init];
-    KuangView4.frame=CGRectMake(10, 410, 300, 1);
+    KuangView4.frame=CGRectMake(10, 330, 290, 1);
     KuangView4.backgroundColor=[UIColor whiteColor];
-    [self addSubview:KuangView4];
+     KuangView4.userInteractionEnabled=YES;
+    [messview addSubview:KuangView4];
     //----------------------//
     
     
     
 }
+-(void)sendClick:(UITapGestureRecognizer *)sender{
+
+   NSLog(@"oooooooooooo");
+
+    sendView=[[UIView alloc]init];
+    sendView.frame=CGRectMake(0, 0, 640, 1136);
+    sendView.backgroundColor=[UIColor blackColor];
+    sendView.alpha=0.8;
+    [self.window addSubview:sendView];
+    
+    UITapGestureRecognizer *sendViewtapGesture=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(sendmessClick:)];
+    
+    sendView.userInteractionEnabled=YES;
+    sendViewtapGesture.numberOfTouchesRequired=1;
+    [sendView addGestureRecognizer:sendViewtapGesture];
+    
+   
+    imagetextView=[[UIImageView alloc]init];
+    imagetextView.frame=CGRectMake(60, 190, 82,80);
+    imagetextView.image=[UIImage imageNamed:@"reloption_bk_sel.png"];
+    [sendView addSubview:imagetextView];
+    
+    UIImageView *photoView=[[UIImageView alloc]init];
+    photoView.frame=CGRectMake(10, 15, 56,42);
+    photoView.image=[UIImage imageNamed:@"reloption_camer.png"];
+    [imagetextView addSubview:photoView];
+    
+    sendLabel=[[UILabel alloc]init];
+    sendLabel.frame=CGRectMake(85, 275, 50, 20);
+    sendLabel.text=@"图文";
+    sendLabel.textColor=[UIColor whiteColor];
+    [self.window addSubview:sendLabel];
+    //------------push
+    
+   
+    
+    
+    
+    UIImageView *voiceView=[[UIImageView alloc]init];
+    voiceView.frame=CGRectMake(170, 190, 82,80);
+    voiceView.image=[UIImage imageNamed:@"reloption_bk_sel.png"];
+    [sendView addSubview:voiceView];
+    
+    UIImageView *voiceView1=[[UIImageView alloc]init];
+    voiceView1.frame=CGRectMake(20, 15, 44,63);
+    voiceView1.image=[UIImage imageNamed:@"reloption_voice.png"];
+    [voiceView addSubview:voiceView1];
+    
+    sendLabel1=[[UILabel alloc]init];
+    sendLabel1.frame=CGRectMake(195, 275, 50, 20);
+    sendLabel1.text=@"语音";
+    sendLabel1.textColor=[UIColor whiteColor];
+    [self.window addSubview:sendLabel1];
+
+    
+
+}
+-(void)sendmessClick:(UITapGestureRecognizer *)sender{
+
+    sendView.hidden=YES;
+    sendLabel.hidden=YES;
+    sendLabel1.hidden=YES;
+
+}
+/*
+-(NSInteger)numberOfSectionsInTableView:(UITableView*)tableView{
+    
+     return 1;
+}
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+
+    return 30;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+
+    
+    static NSString *reuseIdetify = @"SvTableViewCell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdetify];
+    if (!cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseIdetify];
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        cell.showsReorderControl = YES;
+       
+}
+    
+    cell.textLabel.backgroundColor = [UIColor grayColor];
+    cell.textLabel.text=@"xxxxxxxx";
+    return cell;
+   
+
+}
+
+
+//设置cell每行间隔的高度
+- (CGFloat)tableView:(UITableView *)tableViewheightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 10;
+}
+ */
+
 -(void)LinkView:(UITapGestureRecognizer *)sender{
 
     NSLog(@"3333");
@@ -285,6 +497,7 @@ enum{
     personView1.hidden=YES;
     personView2.hidden=YES;
     personView3.hidden=YES;
+      messview.hidden=YES;
  /*
     personlabel=[[UILabel alloc]init];
     personlabel.frame=CGRectMake(60, 15, 70, 25);
@@ -615,9 +828,22 @@ enum{
     
     MHview=[[UIView  alloc]initWithFrame:CGRectMake(10, 20, 300,500)];
     //MHview.alpha=0.4;
-    MHview.backgroundColor=[UIColor  clearColor];
+    MHview.backgroundColor=[UIColor  blackColor];
     [self.window addSubview:MHview];
     [MHview addSubview:view3];
+
+    UITapGestureRecognizer *MHViewtapGesture=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(MHviewClick:)];
+    
+    MHview.userInteractionEnabled=YES;
+    MHViewtapGesture.numberOfTouchesRequired=1;
+    [MHview addGestureRecognizer:MHViewtapGesture];
+}
+-(void)MHviewClick:(UITapGestureRecognizer *)sender{
+
+
+    view1.hidden=YES;
+    view3.hidden=YES;
+
 
 
 }
@@ -834,34 +1060,35 @@ enum{
 
     
 }
+
 - (void)loadSubView
 {
-    //_subView = [[UIView alloc] initWithFrame:[Common RectMakex:0 y:baseH w:1.0 h:subH onSuperBounds:self.bounds]];
+   // _subView = [[UIView alloc] initWithFrame:[Common RectMakex:0 y:baseH w:1.0 h:subH onSuperBounds:self.bounds]];
     //_subView = [[UIView alloc] initWithFrame:[Common RectMakex:0 y:TopH + SubH w:1.0 h:SubH onSuperBounds:self.bounds]];
-    //_subView.backgroundColor = [UIColor grayColor];
-    [self addSubview:_subView];
+   // _subView.backgroundColor = [UIColor redColor];
+   //[self addSubview:_subView];
     
     //square
     
-    _subView1 = [[UIView alloc] initWithFrame:[Common RectMakex:0 y:0.0 w:1.0 h:1.0 onSuperBounds:_subView.bounds]];
-    //_subView1.backgroundColor = [UIColor grayColor];
-    [_subView addSubview:_subView1];
+  //  _subView1 = [[UIView alloc] initWithFrame:[Common RectMakex:0 y:0.0 w:1.0 h:1.0 onSuperBounds:_subView.bounds]];
+    _subView1.backgroundColor = [UIColor redColor];
+   // [_subView addSubview:_subView1];
     _subView1.tag = E_square;
     
     
     //local title
     _loaclLb = [[UILabel alloc] init];
-    _loaclLb.frame = [Common RectMakex:0 y:0 w:0.25 h:1.0 onSuperBounds:_subView1.bounds];
+  //  _loaclLb.frame = [Common RectMakex:0 y:0 w:0.25 h:1.0 onSuperBounds:_subView1.bounds];
     //_loaclLb.text = @"我的位置";
     _loaclLb.textColor = [UIColor blackColor];
     _loaclLb.textAlignment = NSTextAlignmentCenter;
     [_subView1 addSubview:_loaclLb];
     //
     _scrollv = [[UIScrollView alloc] init];
-    _scrollv.frame = [Common RectMakex:0.25 y:0 w:0.75 h:1.0 onSuperBounds:_subView1.bounds];
+  //  _scrollv.frame = [Common RectMakex:0.25 y:0 w:0.75 h:1.0 onSuperBounds:_subView1.bounds];
     _scrollv.contentSize = CGSizeMake(_subView1.bounds.size.width * 1.1, _subView1.bounds.size.height);
     _scrollv.showsHorizontalScrollIndicator = NO;
-    [_subView1 addSubview:_scrollv];
+   // [_subView1 addSubview:_scrollv];
     /*
     NSArray *subView1titleAry = @[@"精华", @"全部", @"活动", @"吐槽01"];
     float w1 = _scrollv.contentSize.width / [subView1titleAry count];
@@ -878,9 +1105,9 @@ enum{
     */
     //group
     
-    _subView2 = [[UIView alloc] initWithFrame:[Common RectMakex:0 y:0.0 w:1.0 h:1.0 onSuperBounds:_subView.bounds]];
+  //  _subView2 = [[UIView alloc] initWithFrame:[Common RectMakex:0 y:0.0 w:1.0 h:1.0 onSuperBounds:_subView.bounds]];
     //_subView2.backgroundColor = [UIColor grayColor];
-    [_subView addSubview:_subView2];
+    //[_subView addSubview:_subView2];
     _subView2.tag = E_group;
     
   /*
@@ -899,9 +1126,9 @@ enum{
     */
     //own
     
-    _subView3 = [[UIView alloc] initWithFrame:[Common RectMakex:0 y:0.0 w:1.0 h:1.0 onSuperBounds:_subView.bounds]];
+  //  _subView3 = [[UIView alloc] initWithFrame:[Common RectMakex:0 y:0.0 w:1.0 h:1.0 onSuperBounds:_subView.bounds]];
     //_subView3.backgroundColor = [UIColor grayColor];
-    [_subView addSubview:_subView3];
+    //[_subView addSubview:_subView3];
     
     _subView3.tag = E_own;
 /*
