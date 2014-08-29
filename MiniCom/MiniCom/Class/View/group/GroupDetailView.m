@@ -102,7 +102,7 @@
         CGSize size = CGSizeMake(wh * count, wh);
         _memberIconView.contentSize = size;
         
-        for (int i = 0; i < count; i++) {
+        for (int i = 0; i < count; i++){
             
             AccountData *acc = [ary objectAtIndex:i];
             

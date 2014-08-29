@@ -11,6 +11,9 @@
 #import "MyButton.h"
 #import "SendMessageViewController.h"
 #import "pickViewController.h"
+#import "UrlHeader.h"
+#import "JSONKit.h"
+
 enum{
     E_square,
     E_group,
@@ -208,6 +211,9 @@ enum{
 
     [self switchTopMenuView:(GroupView) b1:(@"group_icon_selected.png") c1:(@"gshare_group.png") d1:(@"新建群组")];
     
+    
+    
+    
    
     GroupImgView=[[UIImageView alloc]initWithFrame:CGRectMake(270, 74,40 , 30)];
     GroupImgView.image=[UIImage imageNamed:@"square_release.png"];
@@ -293,7 +299,7 @@ enum{
     
     UILabel *perLabel=[[UILabel alloc]init];
     perLabel.frame=CGRectMake(50, 28, 100, 30);
-    perLabel.text=@"索拉卡";
+    perLabel.text=@"路飞飞";
     perLabel.textColor=[UIColor whiteColor];
     [perLabel setFont:[UIFont systemFontOfSize:13.0]];
     [messview addSubview:perLabel];
@@ -825,11 +831,6 @@ enum{
     UIView *newlineview2=[[UIView alloc]initWithFrame:CGRectMake(25, 155, 200, 1)];
     newlineview2.backgroundColor=[UIColor grayColor];
     [view3 addSubview:newlineview2];
-    
-    MHview=[[UIView  alloc]initWithFrame:CGRectMake(10, 20, 300,500)];
-    //MHview.alpha=0.4;
-    MHview.backgroundColor=[UIColor  blackColor];
-    [self.window addSubview:MHview];
     [MHview addSubview:view3];
 
     UITapGestureRecognizer *MHViewtapGesture=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(MHviewClick:)];
@@ -995,24 +996,93 @@ enum{
     [label4 addGestureRecognizer:tapGesture];
     
     
-    MHview=[[UIView  alloc]initWithFrame:CGRectMake(10, 20, 300,500)];
-    //MHview.alpha=0.4;
-    MHview.backgroundColor=[UIColor  clearColor];
-    
-    [self.window addSubview:MHview];
+    MHview=[[UIView  alloc]initWithFrame:CGRectMake(0, 0, 640,1136)];
+    MHview.alpha=0.8;
+    MHview.backgroundColor=[UIColor  blackColor];
+ 
+    [self.window  addSubview:MHview];
     [MHview addSubview:view1];
     //VIEW3
     /*UIView  *view3=[[UIView alloc]initWithFrame:CGRectMake(10, 70, 250, 360)];
     view3.backgroundColor=[UIColor clearColor];
     [view1 addSubview:view3];
-*/
+   */
+    /*
+    -----------------------------------
+    //异步POST
+    //第一步，创建url
+    
+    NSURL *url = [NSURL URLWithString:@"http://www.we-links.com/api2/group/getgroupsandmembers"];
+    //第二步，创建请求
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc]initWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:10];
+    [request setHTTPMethod:@"POST"];
+    NSString *str = @"type=focus-c";
+    NSData *data = [str dataUsingEncoding:NSUTF8StringEncoding];
+    [request setHTTPBody:data];
+    //第三步，连接服务器
+    NSURLConnection *connection = [[NSURLConnection alloc]initWithRequest:request delegate:self];
+
+    //NSLog(@"%@",data);
+     */
+    
+    //-------------------------------------同步请求
+    
+    NSURL *url = [NSURL URLWithString:@"http://www.we-links.com/api2/group/getgroupsandmembers"];
+   
+    //第二步，创建请求
+  
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc]initWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:10];
+  
+    [request setHTTPMethod:@"POST"];//设置请求方式为POST，默认为GET
+    
+    //NSString *str = @"phone=%@&accessKey=%@";//设置参数
+   
+    NSString *str = @"phone=%@&accessKey=lejoying";
+    NSData *data = [str dataUsingEncoding:NSUTF8StringEncoding];
+    
+    
+    [request setHTTPBody:data];
+   // [request setPostValue:obj forKey:key];
+    
+    //第三步，连接服务器
+   
+    NSData *received = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
+  
+    NSString *str1 = [[NSString alloc]initWithData:received encoding:NSUTF8StringEncoding];
+    
+    
+    NSLog(@"str1=======%@",str1);
+   
+    
+   //写进字典
+    NSError *error = nil;
+    
+    NSData *data1 = [NSData dataWithContentsOfURL:url];
+    
+    NSDictionary *dic = [NSJSONSerialization
+                           
+                           JSONObjectWithData:data1
+                           
+                           options:NSJSONReadingMutableLeaves
+                           
+                           error:&error];
+    
+    NSString *phone = [dic objectForKey:@"phone"];
+    
+    NSString *accessKey = [dic objectForKey:@"accessKey"];
+    
+    NSString *returnString=[dic JSONString];
+    
+    NSLog(@"dic=========%@",dic);
+   
 }
+
 -(void)onClickUILable1:(UITapGestureRecognizer *)sender{
         label.text=@"";
         label.text=label1.text;
         view1.hidden=YES;
         MHview.hidden=YES;
-   
+    
     
 }
 -(void)onClickUILable2:(UITapGestureRecognizer *)sender{
@@ -1023,13 +1093,12 @@ enum{
   
 }
 -(void)onClickUILable3:(UITapGestureRecognizer *)sender{
-         label.text=@"";
+        label.text=@"";
         label.text=label3.text;
         view1.hidden=YES;
         MHview.hidden=YES;
    
 }
-
 -(void)onClickUILable4:(UITapGestureRecognizer *)sender{
 
     UILabel *label5=[[UILabel alloc]initWithFrame:CGRectMake(40, 280,200 , 16)];
