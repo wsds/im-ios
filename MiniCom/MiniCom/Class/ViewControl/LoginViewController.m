@@ -385,12 +385,12 @@ enum
 
 - (void)changePasswordRequestOldPass:(NSString *)oldPass newPass:(NSString *)newPass
 {
-    NSString *nickName = [AccountManager SharedInstance].userInfoData.nickName;
-    NSString *sex = [AccountManager SharedInstance].userInfoData.sex;
-    NSString *phone = [AccountManager SharedInstance].userInfoData.phone;
-    NSString *mainBusiness = [AccountManager SharedInstance].userInfoData.mainBusiness;
-    NSString *head = [AccountManager SharedInstance].userInfoData.head;
-    NSString *userBackground = [AccountManager SharedInstance].userInfoData.userBackground;
+    NSString *nickName = @"";
+    NSString *sex = @"";
+    NSString *phone = @"";
+    NSString *mainBusiness = @"";
+    NSString *head = @"";
+    NSString *userBackground = @"";
     NSString *password = newPass;
     
     NSDictionary *accountDic = @{@"phone":phone,
@@ -550,7 +550,7 @@ enum
                                  pbKey:[AccountManager SharedInstance].pbKey];
 
             }
-            else if([response isEqualToString:@"修改用户信息成功失败"])
+            else if([response isEqualToString:@"修改用户信息失败"])
             {
                 NSString *error = [dic valueForKey:@"失败原因"];
                 [Common alert4error:error tag:0 delegate:nil];

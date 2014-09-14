@@ -221,8 +221,14 @@
 - (void)showAccountInfo:(AccountData *)account
 {
     UserInfoViewController *userVC = [[UserInfoViewController alloc] init];
+    userVC.delegate = self;
     userVC.account = account;
     [self presentViewController:userVC animated:YES completion:nil];
+}
+
+- (void)backVC
+{
+    [self dismissViewControllerAnimated:NO completion:nil];
 }
 
 ////

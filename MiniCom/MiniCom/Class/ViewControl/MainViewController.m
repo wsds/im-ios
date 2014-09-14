@@ -315,6 +315,7 @@
             view = _myFriendsView;
             //[self getAskFriends];
             //[self getCirclesAndFriends];
+            [self requestOwn];
             break;
         case E_ShowView_Own_XiaoXi:
             view = _myMessageView;

@@ -371,9 +371,10 @@
 		AFBA21921984EFC200E2FE80 /* SendSquareFileEditView.m in Sources */ = {isa = PBXBuildFile; fileRef = AFBA21911984EFC200E2FE80 /* SendSquareFileEditView.m */; };
 		AFBA24831997293F00E2FE80 /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AFBA24811997293F00E2FE80 /* libcrypto.a */; };
 		AFBA24841997293F00E2FE80 /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AFBA24821997293F00E2FE80 /* libssl.a */; };
-		AFBA255A1997439100E2FE80 /* libRSA1.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AFBA25591997439100E2FE80 /* libRSA1.a */; };
 		AFBA255F199A5A7400E2FE80 /* GTMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = AFBA255D199A5A7400E2FE80 /* GTMBase64.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		AFC41EDB195FEB260079716D /* UIColor+Custom.m in Sources */ = {isa = PBXBuildFile; fileRef = AFC41EDA195FEB260079716D /* UIColor+Custom.m */; };
+		AFCE659319C5AA0600EC9641 /* ResoucesUploader.m in Sources */ = {isa = PBXBuildFile; fileRef = AFCE659219C5AA0600EC9641 /* ResoucesUploader.m */; };
+		AFCE65C119C5B80100EC9641 /* libRSA1.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AFCE65C019C5B80100EC9641 /* libRSA1.a */; };
 		AFE7741C194D9DC400C505C8 /* ChatMessData.m in Sources */ = {isa = PBXBuildFile; fileRef = AFE7741B194D9DC400C505C8 /* ChatMessData.m */; };
 /* End PBXBuildFile section */
 
@@ -885,14 +886,16 @@
 		AFBA21911984EFC200E2FE80 /* SendSquareFileEditView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SendSquareFileEditView.m; sourceTree = "<group>"; };
 		AFBA24811997293F00E2FE80 /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libcrypto.a; sourceTree = "<group>"; };
 		AFBA24821997293F00E2FE80 /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libssl.a; sourceTree = "<group>"; };
-		AFBA25581997439100E2FE80 /* RSA1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSA1.h; sourceTree = "<group>"; };
-		AFBA25591997439100E2FE80 /* libRSA1.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libRSA1.a; sourceTree = "<group>"; };
 		AFBA255C199A5A7400E2FE80 /* GTMBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMBase64.h; sourceTree = "<group>"; };
 		AFBA255D199A5A7400E2FE80 /* GTMBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMBase64.m; sourceTree = "<group>"; };
 		AFBA255E199A5A7400E2FE80 /* GTMDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
 		AFBA2560199D082800E2FE80 /* ReadMe.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReadMe.h; sourceTree = "<group>"; };
 		AFC41ED9195FEB260079716D /* UIColor+Custom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Custom.h"; sourceTree = "<group>"; };
 		AFC41EDA195FEB260079716D /* UIColor+Custom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Custom.m"; sourceTree = "<group>"; };
+		AFCE659119C5AA0600EC9641 /* ResoucesUploader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResoucesUploader.h; sourceTree = "<group>"; };
+		AFCE659219C5AA0600EC9641 /* ResoucesUploader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResoucesUploader.m; sourceTree = "<group>"; };
+		AFCE65BF19C5B80100EC9641 /* RSA1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSA1.h; sourceTree = "<group>"; };
+		AFCE65C019C5B80100EC9641 /* libRSA1.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libRSA1.a; sourceTree = "<group>"; };
 		AFE7741A194D9DC400C505C8 /* ChatMessData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatMessData.h; sourceTree = "<group>"; };
 		AFE7741B194D9DC400C505C8 /* ChatMessData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatMessData.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -908,7 +911,7 @@
 				AF322AD41923CF9C003A8816 /* libxml2.dylib in Frameworks */,
 				AF322AD21923CED7003A8816 /* libz.dylib in Frameworks */,
 				AF322ACD1923CEA7003A8816 /* libsqlite3.0.dylib in Frameworks */,
-				AFBA255A1997439100E2FE80 /* libRSA1.a in Frameworks */,
+				AFCE65C119C5B80100EC9641 /* libRSA1.a in Frameworks */,
 				AF322AC81923CD6A003A8816 /* CFNetwork.framework in Frameworks */,
 				AF322AC91923CD6A003A8816 /* MobileCoreServices.framework in Frameworks */,
 				AF322ACA1923CD6A003A8816 /* SystemConfiguration.framework in Frameworks */,
@@ -950,6 +953,7 @@
 			children = (
 				AF3229EE1923C87A003A8816 /* MiniCom */,
 				AF322A071923C87A003A8816 /* MiniComTests */,
+				AFCE659A19C5B4D900EC9641 /* RSA1 */,
 				AF3229E71923C87A003A8816 /* Frameworks */,
 				AF3229E61923C87A003A8816 /* Products */,
 			);
@@ -1319,6 +1323,8 @@
 				AF805BD2195C86DC00A951F8 /* MyHttpRequest.m */,
 				AF805BD3195C86DC00A951F8 /* MyNetManager.h */,
 				AF805BD4195C86DC00A951F8 /* MyNetManager.m */,
+				AFCE659119C5AA0600EC9641 /* ResoucesUploader.h */,
+				AFCE659219C5AA0600EC9641 /* ResoucesUploader.m */,
 				AF805BD5195C86DC00A951F8 /* Params4Http.h */,
 				AF805BD6195C86DC00A951F8 /* Params4Http.m */,
 				AF805BD7195C86DC00A951F8 /* RequestResult.h */,
@@ -1780,8 +1786,8 @@
 		AFBA2397199720C600E2FE80 /* RSA */ = {
 			isa = PBXGroup;
 			children = (
-				AFBA25561997439100E2FE80 /* include */,
-				AFBA25591997439100E2FE80 /* libRSA1.a */,
+				AFCE65BD19C5B80100EC9641 /* include */,
+				AFCE65C019C5B80100EC9641 /* libRSA1.a */,
 			);
 			path = RSA;
 			sourceTree = "<group>";
@@ -1803,22 +1809,6 @@
 			path = lib;
 			sourceTree = "<group>";
 		};
-		AFBA25561997439100E2FE80 /* include */ = {
-			isa = PBXGroup;
-			children = (
-				AFBA25571997439100E2FE80 /* RSA1 */,
-			);
-			path = include;
-			sourceTree = "<group>";
-		};
-		AFBA25571997439100E2FE80 /* RSA1 */ = {
-			isa = PBXGroup;
-			children = (
-				AFBA25581997439100E2FE80 /* RSA1.h */,
-			);
-			path = RSA1;
-			sourceTree = "<group>";
-		};
 		AFBA255B199A5A7400E2FE80 /* GTMBase64 */ = {
 			isa = PBXGroup;
 			children = (
@@ -1827,6 +1817,29 @@
 				AFBA255E199A5A7400E2FE80 /* GTMDefines.h */,
 			);
 			path = GTMBase64;
+			sourceTree = "<group>";
+		};
+		AFCE659A19C5B4D900EC9641 /* RSA1 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = RSA1;
+			sourceTree = "<group>";
+		};
+		AFCE65BD19C5B80100EC9641 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				AFCE65BE19C5B80100EC9641 /* RSA1 */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		AFCE65BE19C5B80100EC9641 /* RSA1 */ = {
+			isa = PBXGroup;
+			children = (
+				AFCE65BF19C5B80100EC9641 /* RSA1.h */,
+			);
+			path = RSA1;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -2254,6 +2267,7 @@
 				AF322ABD1923CC62003A8816 /* JSONKit.m in Sources */,
 				AFAFDD471930793000E50066 /* MyInfoViewController.m in Sources */,
 				AF65EDB419801B0E00AD4A02 /* SourceManager.m in Sources */,
+				AFCE659319C5AA0600EC9641 /* ResoucesUploader.m in Sources */,
 				AFC41EDB195FEB260079716D /* UIColor+Custom.m in Sources */,
 				AFB363F4194759BF004723B1 /* GroupNavView.m in Sources */,
 				AF6B5AB4194F5399001B1F3E /* MoreAccountView.m in Sources */,

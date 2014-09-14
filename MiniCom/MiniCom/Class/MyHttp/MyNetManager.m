@@ -42,6 +42,7 @@ static MyNetManager *object = nil;
         hostReach = [Reachability reachabilityWithHostName:@"www.baidu.com"];
         [hostReach startNotifier];
         
+        [[NSNotificationCenter defaultCenter] removeObserver:self name:kReachabilityChangedNotification object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reachabilityChanged:) name:kReachabilityChangedNotification object:nil];
 
     }

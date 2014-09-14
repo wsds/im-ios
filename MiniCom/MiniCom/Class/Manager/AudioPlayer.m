@@ -55,6 +55,15 @@ static AudioPlayer *sharedSingleton = nil;
     {
         self.audioPlayer = [[AVAudioPlayer alloc] initWithData:data error:&error];
         self.audioPlayer.delegate = self;
+        
+        UInt32 doChangeDefaultRoute = 1;
+        
+        AudioSessionSetProperty (
+                                 kAudioSessionProperty_OverrideCategoryDefaultToSpeaker,
+                                 sizeof (doChangeDefaultRoute),
+                                 &doChangeDefaultRoute
+                                 );
+        
         if(error)
         {
             NSLog(@"game audioPlayer error==%@",[error description]);

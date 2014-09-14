@@ -373,6 +373,7 @@
         NSString *response = [dic valueForKey:ResponseMessKey];
         if ([response isEqualToString:@"修改用户信息成功"]) {
             NSLog(@"修改用户信息成功成功");
+            [self backAction];
         }
         else if([response isEqualToString:@"修改用户信息成功失败"])
         {

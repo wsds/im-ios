@@ -14,6 +14,9 @@
 #import "ChoosePhotoViewController.h"
 #import "RecordVoiceViewController.h"
 
+#import "GTMBase64.h"
+#import "ResoucesUploader.h"
+
 #import "Header.h"
 
 #import "NavView.h"
@@ -476,9 +479,15 @@
     else
     {
         UserInfoViewController *userVC = [[UserInfoViewController alloc] init];
+        userVC.delegate = self;
         userVC.account = account;
         [self presentViewController:userVC animated:YES completion:nil];
     }
+}
+
+- (void)backVC
+{
+    [self dismissViewControllerAnimated:NO completion:nil];
 }
 
 #pragma mark input
@@ -533,11 +542,15 @@
     NSString *key = [[Common getUrlWithImageName:imageFileName] absoluteString];
     [[SDImageCache sharedImageCache] storeImage:image forKey:key];
     
-    //upload image
-    [[MyNetManager SharedInstance] reqestUploadResouceData:data name:imageFileName];
+//    //upload image
+//    [[MyNetManager SharedInstance] reqestUploadResouceData:data name:imageFileName];
+//    
+//    //send mess
+//    [self sendContentType:ContentType_Image content:imageFileName];
     
-    //send mess
-    [self sendContentType:ContentType_Image content:imageFileName];
+    _uploader = [[ResoucesUploader alloc] init];
+    _uploader.delegate = self;
+    [_uploader reqestUploadResouceData:data name:imageFileName type:ContentType_Image];
 }
 
 - (void)recordCtrViewDone:(NSData *)data
@@ -546,10 +559,19 @@
     NSString *voiceFileName = [Common getFileNameResouceData:data type:@"aac"];
     
     //upload voice
-    [[MyNetManager SharedInstance] reqestUploadResouceData:data name:voiceFileName];
+    //[[MyNetManager SharedInstance] reqestUploadResouceData:data name:voiceFileName];
     
     //send mess
-    [self sendContentType:ContentType_Voice content:voiceFileName];
+    //[self sendContentType:ContentType_Voice content:voiceFileName];
+    
+    _uploader = [[ResoucesUploader alloc] init];
+    _uploader.delegate = self;
+    [_uploader reqestUploadResouceData:data name:voiceFileName type:ContentType_Voice];
+}
+
+- (void)uploadSucess:(NSString *)fileName type:(NSString *)type
+{
+    [self sendContentType:type content:fileName];
 }
 
 #pragma mark nav callback

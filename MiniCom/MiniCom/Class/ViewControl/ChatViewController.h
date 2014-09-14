@@ -15,6 +15,9 @@
 @class HPGrowingTextView;
 @class JXEmoji;
 
+@class ResoucesUploader;
+@protocol uploadFileDelegate;
+
 //typedef enum{
 //    /**
 //     * 单聊
@@ -27,7 +30,7 @@
 //    
 //}ENUM_ChatType;
 
-@interface ChatViewController : UIViewController<UITableViewDataSource, UITableViewDelegate>
+@interface ChatViewController : UIViewController<UITableViewDataSource, UITableViewDelegate, uploadFileDelegate>
 {
     GroupNavView *_navView;
     UITableView *_chatTableView;
@@ -39,6 +42,8 @@
     JXEmoji *_messageConent;
     
     EmojiView* _faceView;
+    
+    ResoucesUploader *_uploader;
 }
 
 //@property(nonatomic, assign) ENUM_ChatType chatType;

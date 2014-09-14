@@ -10,6 +10,12 @@
 #import "AccountData.h"
 @class GroupListView;
 
+@protocol UserInfoViewBackDelegate <NSObject>
+
+- (void)backVC;
+
+@end
+
 @interface UserInfoViewController : UIViewController
 {
     UIScrollView *_scrollv;
@@ -18,6 +24,8 @@
     
     BOOL _isFriend;
 }
+
+@property (nonatomic, assign) id<UserInfoViewBackDelegate> delegate;
 
 @property (nonatomic, retain) AccountData *account;
 

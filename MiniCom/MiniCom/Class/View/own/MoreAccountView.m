@@ -89,7 +89,7 @@
         {
             page = (int)(([ary count] - 1 )/ onePageCount) + 1;
         }
-        NSLog(@"friend page==%d", page);
+        //NSLog(@"friend page==%d", page);
         _pageController.numberOfPages = page;
         
         self.scrollv.contentSize = CGSizeMake(self.scrollv.bounds.size.width * page, self.scrollv.bounds.size.height);

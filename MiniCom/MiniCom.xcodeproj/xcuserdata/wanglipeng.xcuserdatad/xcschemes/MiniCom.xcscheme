@@ -92,7 +92,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "AFBA252A19973DE100E2FE80"
+               BlueprintIdentifier = "AFCE65A419C5B4D900EC9641"
                BuildableName = "RSA1Tests.xctest"
                BlueprintName = "RSA1Tests"
                ReferencedContainer = "container:MiniCom.xcodeproj">

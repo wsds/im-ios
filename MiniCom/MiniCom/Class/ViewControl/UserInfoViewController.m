@@ -310,7 +310,11 @@
         NSString *response = [dic valueForKey:ResponseMessKey];
         if ([response isEqualToString:@"删除成功"]) {
             NSLog(@"删除成功");
+            [self dismissViewControllerAnimated:YES completion:^{
+                [self.delegate backVC];
+            }];
             
+            [[NSNotificationCenter defaultCenter] postNotificationName:SessionEvent_Own object:nil];
         }
         else if([response isEqualToString:@"删除失败"])
         {

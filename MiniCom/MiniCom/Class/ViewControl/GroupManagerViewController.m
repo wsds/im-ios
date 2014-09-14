@@ -364,7 +364,7 @@
         NSString *response = [dic valueForKey:ResponseMessKey];
         if ([response isEqualToString:@"修改群组信息成功"]) {
             NSLog(@"修改群组信息成功");
-
+            [self backAction];
         }
         else if([response isEqualToString:@"修改群组信息失败"])
         {

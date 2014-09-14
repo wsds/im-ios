@@ -143,6 +143,10 @@ static SessionEvent *object = nil;
             NSLog(@"**********session_event friendaccept***************\n");
             [[NSNotificationCenter defaultCenter] postNotificationName:SessionEvent_Own object:nil];
         }
+        else if ([event isEqualToString:@"friendstatuschanged"]) {
+            NSLog(@"**********session_event friendstatuschanged***************\n");
+            [[NSNotificationCenter defaultCenter] postNotificationName:SessionEvent_Own object:nil];
+        }
         else if ([event isEqualToString:@"groupstatuschanged"]) {
             NSLog(@"**********session_event groupstatuschanged***************\n");
             //创建时 {"提示信息":"成功","event":"groupstatuschanged","event_content":{"gid":314,"operation":true}}
