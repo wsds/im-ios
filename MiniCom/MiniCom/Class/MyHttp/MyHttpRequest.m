@@ -127,7 +127,7 @@
 
 - (RequestResult *)getResultFromRequest:(ASIHTTPRequest *)request{
     NSString *str_r = [request responseString];
-    //NSLog(@"responseString==%@\n", str_r);
+    NSLog(@"responseString==%@\n", str_r);
 
     NSDictionary *dic = [str_r objectFromJSONString];
     //NSLog(@"result dic==%@", dic);

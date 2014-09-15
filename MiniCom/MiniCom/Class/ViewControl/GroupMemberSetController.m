@@ -247,6 +247,10 @@
         if ([response isEqualToString:@"加入群组成功"]) {
             NSLog(@"加入群组成功");
             [self cancelAction];
+            
+            if (self.delegate && [self.delegate respondsToSelector:@selector(addedMember)]) {
+                [self.delegate addedMember];
+            }
         }
         else if([response isEqualToString:@"加入群组失败"])
         {

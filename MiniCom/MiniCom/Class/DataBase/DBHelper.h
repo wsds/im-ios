@@ -56,6 +56,8 @@
 
 - (BOOL)deleteChatMessesAll;
 
+- (BOOL)deleteChatMessesByFriendPhone:(NSString *)phone;
+
 //当前用户的最新一条会话列表
 - (NSArray *)getLastChatMessAryCurPhone:(NSString *)curPhone;
 

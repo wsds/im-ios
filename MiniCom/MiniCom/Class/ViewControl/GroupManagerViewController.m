@@ -201,7 +201,7 @@
         {
             GroupMemberSetController *addGroupVC = [[GroupMemberSetController alloc] init];
             addGroupVC.groupManagerType = ENUM_GROUP_Type_Add;
-            //addGroupVC.myFriendsAry = [AccountManager SharedInstance].friendsAry;
+            addGroupVC.delegate = self;
             addGroupVC.myCircleAry = [AccountManager SharedInstance].circleAry;
             addGroupVC.curGroup = self.groupData;
             [self.navigationController pushViewController:addGroupVC animated:YES];
@@ -371,9 +371,15 @@
             NSLog(@"修改群组信息失败");
             NSString *error = [dic valueForKey:@"失败原因"];
             NSLog(@"error==%@", error);
+            [Common alert4error:error tag:0 delegate:nil];
         }
     }
 
+}
+
+- (void)addedMember
+{
+    [self backAction];
 }
 
 - (void)didReceiveMemoryWarning

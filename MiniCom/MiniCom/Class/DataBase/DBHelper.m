@@ -420,6 +420,17 @@ static DBHelper *gSharedInstance = nil;
     return f;
 }
 
+- (BOOL)deleteChatMessesByFriendPhone:(NSString *)phone
+{
+    __block BOOL f = NO;
+    [self.dbQueue inTransaction:^(FMDatabase *db, BOOL *rollback) {
+        NSString *sql = @"delete from tab_chatLog where phoneToOrFrom = ?";
+        f = [db executeUpdate:sql,phone];
+    }];
+    [self.dbQueue close];
+    return f;
+}
+
 //
 - (NSArray *)getLastChatMessAryCurPhone:(NSString *)curPhone
 {

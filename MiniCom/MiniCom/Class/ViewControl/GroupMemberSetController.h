@@ -17,12 +17,19 @@ typedef enum{
     ENUM_GROUP_Type_Change,
 }ENUM_GROUP_MANAGER_Type;
 
+@protocol groupMemberSetDelegate <NSObject>
+
+- (void)addedMember;
+
+@end
+
 @interface GroupMemberSetController : UIViewController
 {
     UIScrollView *_myCircleView;
     
     GroupMemberSelectView *_memberSelectView;
 }
+@property (nonatomic, assign)id <groupMemberSetDelegate>delegate;
 
 @property (nonatomic, assign)ENUM_GROUP_MANAGER_Type groupManagerType;
 

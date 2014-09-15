@@ -309,8 +309,10 @@
         NSDictionary *dic = result.myData;
         NSString *response = [dic valueForKey:ResponseMessKey];
         if ([response isEqualToString:@"删除成功"]) {
-            NSLog(@"删除成功");
+            NSLog(@"删除 %@ 成功",self.account.phone);
             [self dismissViewControllerAnimated:YES completion:^{
+                //主动删除好友后，清除其所有聊天记录
+                [[DBHelper sharedInstance] deleteChatMessesByFriendPhone:self.account.phone];
                 [self.delegate backVC];
             }];
             

@@ -64,10 +64,10 @@
 - (void)updateTableAry:(NSArray *)ary
 {
     self.friendAry = ary;
-    if ([self.friendAry count] > 0) {
+    //if ([self.friendAry count] > 0) {
         _friendTableView.hidden = NO;
         [_friendTableView reloadData];
-    }
+    //}
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -173,6 +173,8 @@
             //刷新
             [self getAskFriends];
             
+            [[NSNotificationCenter defaultCenter] postNotificationName:SessionEvent_Own object:nil];
+
             [Common alert4error:@"添加成功" tag:0 delegate:nil];
         }
         else if([response isEqualToString:@"添加失败"])
